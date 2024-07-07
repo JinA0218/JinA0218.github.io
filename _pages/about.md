@@ -29,8 +29,8 @@ I've been working as a research intern at [KAIST MLAI](https://www.mlai-kaist.co
 🌱 I was born in New York, raised in Hong Kong(5 years) and South Korea. I love building connections with people from diverse backgrounds. Happy to connect!
 
 # 🔥 News
-- *2024.05*: &nbsp;🎉 One paper submitted to **NeurIPS 2024**! 
-- *2024.05*: &nbsp;📢 One paper was successfully presented at **ICLR 2024**.
+- *2024.05*: &nbsp;🎉 One paper **submitted** to **NeurIPS 2024**! 
+- *2024.05*: &nbsp;📢 One paper was successfully **presented** at **ICLR 2024**.
 - *2024.03*: &nbsp;🏅 Received **College of Engineering Leadership Award (Research Excellence)** from KAIST.
 - *2024.03*: &nbsp;🏅 Received **Lim Mi Suk Scholarship** from KAIST CS department.
 - *2024.02*: &nbsp;🏅 Appointed as **KAIST Honor Student**.
