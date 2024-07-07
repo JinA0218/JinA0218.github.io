@@ -30,7 +30,7 @@ I've been working as a research intern at [KAIST MLAI](https://www.mlai-kaist.co
 
 # 🔥 News
 - *2024.05*: &nbsp;🎉 One paper submitted to NeurIPS 2024! 
-- *2024.05*: &nbsp;📢 One paper successfully presented at ICLR 2024.
+- *2024.05*: &nbsp;📢 One paper was successfully presented at ICLR 2024.
 - *2024.03*: &nbsp;🏅 Received College of Engineering Leadership Award (Research Excellence) from KAIST.
 - *2024.03*: &nbsp;🏅 Received Lim Mi Suk Scholarship from KAIST CS department.
 - *2024.02*: &nbsp;🏅 Appointed as KAIST Honor Student.
