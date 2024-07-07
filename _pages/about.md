@@ -72,12 +72,12 @@ Was the only Freshman to be approved to attend the course and developed 4 app/we
 
 # 📖 Educations
 - *2022.03 - Present*, KAIST (Daejeon, South Korea) majoring CS & minoring BCS
-- *2021.03 - 2022.03*, Korea University (Seoul, South Korea) majoiring CS, GPA: 4.37/4.5
+- *2021.03 - 2022.03*, Korea University (Seoul, South Korea) majoiring CS
 
 # 🏆 Scholarship
 - *2024.03-2024.07*, KAIST Lim Mi Suk Scholarship
 - *2022.03-Present*, National Excellence Scholarship (Natural Sciences and Engineering)
-- *2019.03-2021.03*, Sonjaehan Scholarship
+- *2019.03-2021.03*, [Sonjaehan Scholarship](https://www.sonjaehan.com/)
 
 # 🌍 Additional Activities
 - *2023.08-2024.03*, KAIST Buddy Program (mentored 9 foreign exchange students @KAIST)
