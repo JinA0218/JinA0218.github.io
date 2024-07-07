@@ -85,5 +85,5 @@ Was the **only Freshman to be approved** to attend the course and developed 4 ap
 - *2019.03-2021.03*, [**Sonjaehan Scholarship**](https://www.sonjaehan.com/index.php)
 
 # 🌍 Additional Activities
-- *2023.08-2024.03*, KAIST Buddy Program (mentored 9 foreign exchange students @KAIST)
-- *2022.04-Present*, KAIST CCC Christian Club
+- *2023.08-2024.03*, KAIST **Buddy Program** (mentored 9 foreign exchange students @KAIST)
+- *2022.04-Present*, KAIST **CCC Christian Club**
