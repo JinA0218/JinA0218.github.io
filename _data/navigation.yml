@@ -10,7 +10,6 @@ main:
     url: "/#-publications"
 
   - title: "Internship and Projects"
-    url: "/#-internship-and-projects"
 
   - title: "Honors and Awards"
     url: "/#-honors-and-awards"
@@ -22,4 +21,3 @@ main:
     url: "/#-scholarship"
 
   - title: "Additional Activities"
-    url: "/#-additional activities"
