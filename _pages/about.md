@@ -24,10 +24,12 @@ I love **mathematics**, **neuroscience**, and especially **artificial intelligen
 
 I've been working as a **research intern** at [KAIST MLAI](https://www.mlai-kaist.com/) (advisor: [Prof. Sung Ju Hwang](http://www.sungjuhwang.com/)) **since 2022 Fall**.
 
+
 ✨ My current **research interest** lies in
 - <span >**Model Merging**</span>
 - <span >**Efficient Transformer**</span>
 - <span >**Interpretable AI (Brain inspired AI)**</span>
+
 
 🌱 I love building connections with people from diverse backgrounds. Happy to connect!
 
