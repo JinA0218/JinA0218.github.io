@@ -91,4 +91,4 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 
 # 🌍 Additional Activities
 - *2022.04 - Present*, KAIST **CCC Christian Club**
-- *2023.08 - 2024.03*, KAIST **Buddy Program** (mentored 9 foreign exchange students @KAIST)
+- *2023.08 - 2024.03*, KAIST **Buddy Program** (mentored 9 foreign exchange students)
