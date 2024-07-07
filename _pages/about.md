@@ -17,42 +17,80 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. Suspendisse condimentum, libero vel tempus mattis, risus risus vulputate libero, elementum fermentum mi neque vel nisl. Maecenas facilisis maximus dignissim. Curabitur mattis vulputate dui, tincidunt varius libero luctus eu. Mauris mauris nulla, scelerisque eget massa id, tincidunt congue felis. Sed convallis tempor ipsum rhoncus viverra. Pellentesque nulla orci, accumsan volutpat fringilla vitae, maximus sit amet tortor. Aliquam ultricies odio ut volutpat scelerisque. Donec nisl nisl, porttitor vitae pharetra quis, fringilla sed mi. Fusce pretium dolor ut aliquam consequat. Cras volutpat, tellus accumsan mattis molestie, nisl lacus tempus massa, nec malesuada tortor leo vel quam. Aliquam vel ex consectetur, vehicula leo nec, efficitur eros. Donec convallis non urna quis feugiat.
+Hi!👋 
+I'm an undergraduate student at [KAIST](https://www.kaist.ac.kr/en/), majoring [CS](https://cs.kaist.ac.kr/) and minoring [BCS](https://bcs.kaist.ac.kr/).  I love mathematics, neuroscience, and especially artificial intelligence.
+I'm working as a research intern at [KAIST MLAI](https://www.mlai-kaist.com/) (advisor: [Prof. Sung Ju Hwang](http://www.sungjuhwang.com/)), since 2022 Fall.
 
-My research interest includes neural machine translation and computer vision. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
+✨ My current research interest lies in
+- <span >**Model Merging**</span>
+- <span >**Efficient Transformer**</span>
+- <span >**Interpretable AI (Brain inspired AI)**</span>
 
+🌱 I was born in New York, raised in Hong Kong(5 years) and South Korea. I love building connections with people from diverse backgrounds 😊 Happy to connect!
 
 # 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2024.05*: &nbsp;🎉 One paper submitted to Neurips 2024! 
+- *2024.05*: &nbsp;📢 One paper successfully presented at ICLR 2024.
+- *2024.03*: &nbsp;🏅 Received College of Engineering Leadership Award(Research Excellence) from KAIST.
+- *2024.03*: &nbsp;🏅 Received Lim Mi Suk Scholarship from KAIST CS department.
+- *2024.02*: &nbsp;🏅 Appointed as KAIST Honor Student.
+- *2024.01*: &nbsp;🛫 Received Travel Grant for ICLR 2024!
+- *2024.01*: &nbsp;🎉 One paper got accepted to ICLR 2024 as a poster!
 
 # 📝 Publications 
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
+- [**HiP Attention: Sparse Sub-Quadratic Attention with Hierarchical Attention Pruning**](https://arxiv.org/pdf/2406.09827)
 
-**Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun
+Heejun Lee*, Geon Park*, Youngwan Lee*, **Jina Kim***, Wonyoung Jeong, Myeongjae Jeon, Sung Ju Hwang
+**Under Review**
 
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- [**SEA: Sparse Linear Attention with Estimated Attention Mask**](https://arxiv.org/pdf/2310.01777)
+
+Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
+**ICLR** 2024
+
 </div>
 </div>
 
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
+# 🗂️ Projects
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+  
+- *2023.03-2023.06*: [**An in-depth interpretation on Transformer Attention**]([https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC](https://colab.research.google.com/drive/1XNw7FqOiSmBhoArVsFjJx6mzCj_XI37_#scrollTo=QiMTPo3fIr9a)) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+Individual Project done in CS376 Machine Learning course (2023 Spring), which motivated the utilization of [Performer](https://arxiv.org/abs/2009.14794) as an Attention Estimator in [**SEA: Sparse Linear Attention with Estimated Attention Mask**](https://arxiv.org/pdf/2310.01777). For more detail, please refer to Section 8, 9, 10.
 
-# 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2022.07-2022.07*: [**ACM FAcct 2022 Communication Committee**](https://facctconference.org/2022/)
+Selected as one of the 8 undergraduate students to represent KAIST at the conference and Provided research highlights on various papers presented at the conference for KAIST students.
+
+- *2022.06-2022.07*: [**KAIST Seminar <Immersion Camp: Intensive Programming and Startup>**](https://madcamp.io/)
+Was the only Freshman to be approved to attend the course and developed 4 app/web applications in team (2~3 members) for four weeks. Appointed twice to present results to KAIST professors and CEOs from diverse business sectors. Prjoects : [KAIST_What_Team](https://github.com/JinA0218/Kaist_What_Team), [9Gong9](https://github.com/9Gong9/9Gong9_Android), [Mad Music Maker](https://github.com/JinA0218/mad_music_maker)
+
+</div>
+</div>
+
+# 🏅 Honors and Awards
+- *2024.03* [KAIST College of Engineering Leadership Award](https://engineering.kaist.ac.kr/student/innovator) (Research Excellence, top 11)
+- *2024.02* KAIST Honor Student
+- *2022.12* KAIST Best Freshman Awards
+- *2022.12* KAIST Best Freshman Class Awards
+- *2022.08* Dean’s List Awards, KAIST School of Freshman (2022 Spring, top 3%)
+- *2022.02* Semester High Honors, Department of Computer Science @Korea University (2021 Fall)
+- *2021.08* First Prize in Summer Hackathon @Korea University
+- *2021.08* Semester High Honors, Department of Computer Science @Korea University (2021 Spring)
+- *2019.08* Awards of Creativity in Summer Hackathon @Seoul Science Park
 
 # 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2022.03 - Present*, KAIST (Daejeon, South Korea) majoring CS & minoring BCS
+- *2021.03 - 2022.03*, Korea University (Seoul, South Korea) majoiring CS, GPA: 4.37/4.5
 
-# 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
+# 🏆 Scholarship
+- *2024.03-2024.07*, KAIST Lim Mi Suk Scholarship
+- *2022.03-Present*, National Excellence Scholarship (Natural Sciences and Engineering)
+- *2019.03-2021.03*, Sonjaehan Scholarship
 
-# 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
+# 🌍 Additional Activities
+- *2023.08-2024.03*, KAIST Buddy Program (mentored 9 foreign exchange students @KAIST)
+- *2022.04-Present*, KAIST CCC Christian Club
