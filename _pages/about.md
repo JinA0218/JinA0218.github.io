@@ -41,15 +41,11 @@ I've been working as a research intern at [KAIST MLAI](https://www.mlai-kaist.co
 
 - [**HiP Attention: Sparse Sub-Quadratic Attention with Hierarchical Attention Pruning**](https://arxiv.org/pdf/2406.09827)
 
-Heejun Lee*, Geon Park*, Youngwan Lee*, **Jina Kim***, Wonyoung Jeong, Myeongjae Jeon, Sung Ju Hwang
-
-**Under Review**
+Heejun Lee*, Geon Park*, Youngwan Lee*, **Jina Kim***, Wonyoung Jeong, Myeongjae Jeon, Sung Ju Hwang, **Under Review**
 
 - [**SEA: Sparse Linear Attention with Estimated Attention Mask**](https://arxiv.org/pdf/2310.01777)
 
-Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
-
-**ICLR** 2024 (poster)
+Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang, **ICLR** 2024 (poster)
 
 
 # 🗂️ Projects
