@@ -46,7 +46,7 @@ I've been working as a **research intern** at [KAIST MLAI](https://www.mlai-kais
 
 - [**HiP Attention: Sparse Sub-Quadratic Attention with Hierarchical Attention Pruning**](https://arxiv.org/pdf/2406.09827)
 
-Heejun Lee*, Geon Park*, Youngwan Lee*, **Jina Kim***, Wonyoung Jeong, Myeongjae Jeon, Sung Ju Hwang
+Heejun Lee\*, Geon Park\*, Youngwan Lee\*, **Jina Kim**\*, Wonyoung Jeong, Myeongjae Jeon, Sung Ju Hwang
 
 **Under Review**
 
