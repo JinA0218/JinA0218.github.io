@@ -34,13 +34,13 @@ I've been working as a **research intern** at [KAIST MLAI](https://www.mlai-kais
 🌱 I love building connections with people from diverse backgrounds. Happy to connect!
 
 # 🔥 News
-- *2024.05*: &nbsp;🎉 One paper **submitted** to **NeurIPS 2024**! 
-- *2024.05*: &nbsp;📢 One paper was successfully **presented** at **ICLR 2024**.
-- *2024.03*: &nbsp;🏅 Received **College of Engineering Leadership Award (Research Excellence)** from KAIST.
-- *2024.03*: &nbsp;🏅 Received **Lim Mi Suk Scholarship** from KAIST CS department.
-- *2024.02*: &nbsp;🏅 Appointed as **KAIST Honor Student**.
-- *2024.01*: &nbsp;🛫 Received Travel Grant for **ICLR 2024**!
-- *2024.01*: &nbsp;🎉 One paper got accepted to **ICLR 2024** as a **poster**!
+- *2024.05*, &nbsp;🎉 One paper **submitted** to **NeurIPS 2024**! 
+- *2024.05*, &nbsp;📢 One paper was successfully **presented** at **ICLR 2024**.
+- *2024.03*, &nbsp;🏅 Received **College of Engineering Leadership Award (Research Excellence)** from KAIST.
+- *2024.03*, &nbsp;🏅 Received **Lim Mi Suk Scholarship** from KAIST CS department.
+- *2024.02*, &nbsp;🏅 Appointed as **KAIST Honor Student**.
+- *2024.01*, &nbsp;🛫 Received Travel Grant for **ICLR 2024**!
+- *2024.01*, &nbsp;🎉 One paper got accepted to **ICLR 2024** as a **poster**!
 
 # 📝 Publications 
 
@@ -59,12 +59,12 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 
 # 🗂️ Internship and Projects
 
-- *2022.11 - Present*: **Research Intern** @[**MLAI KAIST Lab**](https://www.mlai-kaist.com/) (advisor: [**Prof. Sung Ju Hwang**](http://www.sungjuhwang.com/))
-- *2022.07 - 2022.07*: [**ACM FAcct 2022 Communication Committee**](https://facctconference.org/2022/)
+- *2022.11 - Present*, **Research Intern** @[**MLAI KAIST Lab**](https://www.mlai-kaist.com/) (advisor: [**Prof. Sung Ju Hwang**](http://www.sungjuhwang.com/))
+- *2022.07 - 2022.07*, [**ACM FAcct 2022 Communication Committee**](https://facctconference.org/2022/)
 
   Selected as one of the **8 undergraduate students** to **represent KAIST at the conference** and provided **research highlights** on various papers presented at the conference for KAIST students.
 
-- *2022.06 - 2022.07*: [**KAIST CS496 Immersion Camp: Intensive Programming and Startup**](https://madcamp.io/)
+- *2022.06 - 2022.07*, [**KAIST CS496 Immersion Camp: Intensive Programming and Startup**](https://madcamp.io/)
 
   Was the **only Freshman to be approved** to attend the course and developed 4 app/web applications in team (2~3 members) for four weeks. **Appointed twice to present results** to KAIST professors and CEOs from diverse business sectors.
 
