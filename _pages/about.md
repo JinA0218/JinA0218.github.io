@@ -64,14 +64,14 @@ Was the **only Freshman to be approved** to attend the course and developed 4 ap
 
 
 # 🏅 Honors and Awards
-- *2024.03*, [KAIST College of Engineering Leadership Award](https://engineering.kaist.ac.kr/student/innovator) (**Research Excellence**, **top 11**)
-- *2024.02*, KAIST Honor Student
-- *2022.12*, KAIST Best Freshman Awards
-- *2022.12*, KAIST Best Freshman Class Awards
-- *2022.08*, Dean’s List Awards, KAIST School of Freshman (2022 Spring, **top 3%**)
-- *2022.02*, Semester High Honors, Department of Computer Science @Korea University (2021 Fall)
+- *2024.03*, [KAIST **College of Engineering Leadership Award**](https://engineering.kaist.ac.kr/student/innovator) (**Research Excellence**, **top 11**)
+- *2024.02*, KAIST **Honor Student**
+- *2022.12*, KAIST **Best Freshman** Awards
+- *2022.12*, KAIST **Best Freshman Class** Awards
+- *2022.08*, **Dean’s List Awards**, KAIST School of Freshman (2022 Spring, **top 3%**)
+- *2022.02*, **Semester High Honors**, Department of Computer Science @Korea University (2021 Fall)
 - *2021.08*, **First Prize** in Summer Hackathon @Korea University
-- *2021.08*, Semester High Honors, Department of Computer Science @Korea University (2021 Spring)
+- *2021.08*, **Semester High Honors**, Department of Computer Science @Korea University (2021 Spring)
 - *2019.08*, Awards of **Creativity** in Summer Hackathon @Seoul Science Park
 
 # 📖 Educations
