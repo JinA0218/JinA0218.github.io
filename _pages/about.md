@@ -82,7 +82,7 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 
 # 📖 Educations
 - *2022.03 - Present*, [KAIST](https://www.kaist.ac.kr/en/) major: CS, minor: BCS
-- *2021.03 - 2022.03*, [Korea University](https://www.korea.edu/mbshome/mbs/en/index.do) majoir: CS
+- *2021.03 - 2022.03*, [Korea University](https://www.korea.edu/mbshome/mbs/en/index.do) major: CS
 
 # 🏆 Scholarship
 - *2024.03-2024.07*, KAIST **Lim Mi Suk Scholarship**
