@@ -34,7 +34,7 @@ I've been working as a **research intern** at [KAIST MLAI](https://www.mlai-kais
 🌱 I lived in US(New York), Hong Kong, South Korea(Seoul, Daejeon) and I love building connections with people from diverse backgrounds. Happy to connect!😊
 
 # 🔥 News
-- *2024.05*, &nbsp;🎉 Approved as a **top 2 CS undergrad student** to research with **support from** the [KAIST URP Program](https://engineering.kaist.ac.kr/content?menu=61)(Creative Research)! 
+- *2024.07*, &nbsp;🎉 Approved as a **top 2 CS undergrad student** to research with **support from** the [KAIST URP Program (Creative Research)](https://engineering.kaist.ac.kr/content?menu=61)! 
 - *2024.05*, &nbsp;🎉 One paper **submitted** to **NeurIPS 2024**! 
 - *2024.05*, &nbsp;📢 One paper was successfully **presented** at **ICLR 2024**.
 - *2024.03*, &nbsp;🏅 Received **College of Engineering Leadership Award (Research Excellence)** from KAIST.
