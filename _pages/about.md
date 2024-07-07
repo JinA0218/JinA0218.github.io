@@ -75,7 +75,7 @@ Was the only Freshman to be approved to attend the course and developed 4 app/we
 - *2019.08* Awards of **Creativity** in Summer Hackathon @Seoul Science Park
 
 # 📖 Educations
-- *2022.03 - Present*, KAIST (Daejeon, South Korea) majoring CS & minoring BCS
+- *2022.03 - Present*, KAIST (Daejeon, South Korea) major: CS, minor: BCS
 - *2021.03 - 2022.03*, Korea University (Seoul, South Korea) majoiring CS
 
 # 🏆 Scholarship
