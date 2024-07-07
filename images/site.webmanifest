@@ -3,12 +3,12 @@
     "short_name": "",
     "icons": [
        {
-          "src": "/jina-avatar.png",
+          "src": "/blossom-192x192.png",
           "sizes": "192x192",
           "type": "image/png"
        },
        {
-        "src": "/jina-avatar.jpg",
+        "src": "/blossom-512x512.jpg",
         "sizes": "512x512",
         "type": "image/png"
         }
