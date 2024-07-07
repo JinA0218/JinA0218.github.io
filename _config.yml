@@ -161,5 +161,3 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
-github: [metadata]
