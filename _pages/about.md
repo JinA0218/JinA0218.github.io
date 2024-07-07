@@ -26,7 +26,7 @@ I've been working as a **research intern** at [KAIST MLAI](https://www.mlai-kais
 - <span >**Efficient Transformer**</span>
 - <span >**Interpretable AI (Brain inspired AI)**</span>
 
-🌱 I was born in New York, raised in Hong Kong(5 years) and South Korea. I love building connections with people from diverse backgrounds. Happy to connect!
+🌱 I love building connections with people from diverse backgrounds. Happy to connect!
 
 # 🔥 News
 - *2024.05*: &nbsp;🎉 One paper **submitted** to **NeurIPS 2024**! 
