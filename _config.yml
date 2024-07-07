@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Jina Kim"
-description              : "Research intern @MLAI-KAIST (advisor: Prof. Sung Ju Hwang)"
+description              : "Research intern @MLAI-KAIST"
 repository               : "JinA0218/JinA0218.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -23,7 +23,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Jina Kim"
   avatar           : "images/jina-linkedin.jpg"
-  bio              : "Undergrad @KAIST, CS & BCS"
+  bio              : "KAIST, CS & BCS"
   location         : "Daejeon, South Korea"
   employer         :
   pubmed           : 
