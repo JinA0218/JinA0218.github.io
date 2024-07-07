@@ -18,7 +18,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 Hi!👋 
-I'm an undergraduate student at KAIST, **majoring [CS](https://cs.kaist.ac.kr/)** and **minoring [BCS](https://bcs.kaist.ac.kr/)**.  
+I'm an **undergraduate student** at KAIST, **majoring [CS](https://cs.kaist.ac.kr/)** and **minoring [BCS](https://bcs.kaist.ac.kr/)**.  
 
 I love **mathematics**, **neuroscience**, and especially **artificial intelligence**.
 
