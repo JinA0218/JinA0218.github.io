@@ -82,7 +82,7 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 - *2022.02*, **Semester High Honors**, Department of Computer Science @Korea University (2021 Fall)
 - *2021.08*, **First Prize** in **Summer Hackathon** @Korea University
 - *2021.08*, **Semester High Honors**, Department of Computer Science @Korea University (2021 Spring)
-- *2019.08*, Awards of **Creativity** in **Summer Hackathon** held by Seoul Science Park
+- *2019.08*, Awards for **Creativity** in **Summer Hackathon** held by Seoul Science Park
 
 # 📖 Educations
 - *2022.03 - Present*, [KAIST](https://www.kaist.ac.kr/en/) major: CS, minor: BCS
