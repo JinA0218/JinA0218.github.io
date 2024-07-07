@@ -31,7 +31,7 @@ I've been working as a **research intern** at [KAIST MLAI](https://www.mlai-kais
 - <span >**Interpretable AI (Brain inspired AI)**</span>
 
 
-🌱 I lived in US(New York), Hong Kong, South Korea(Seoul, Daejeon) and I love building connections with people from diverse backgrounds. Happy to connect!
+🌱 I lived in US(New York), Hong Kong, South Korea(Seoul, Daejeon) and I love building connections with people from diverse backgrounds. Happy to connect!😊
 
 # 🔥 News
 - *2024.05*, &nbsp;🎉 One paper **submitted** to **NeurIPS 2024**! 
