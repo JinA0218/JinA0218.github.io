@@ -59,7 +59,7 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
   
-- *2023.03-2023.06*: [**An in-depth interpretation on Transformer Attention**]([https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC](https://colab.research.google.com/drive/1XNw7FqOiSmBhoArVsFjJx6mzCj_XI37_#scrollTo=QiMTPo3fIr9a)) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+- *2023.03-2023.06*: [**An in-depth interpretation on Transformer Attention**](https://colab.research.google.com/drive/1XNw7FqOiSmBhoArVsFjJx6mzCj_XI37_#scrollTo=QiMTPo3fIr9a) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 Individual Project done in CS376 Machine Learning course (2023 Spring), which motivated the utilization of [Performer](https://arxiv.org/abs/2009.14794) as an Attention Estimator in [**SEA: Sparse Linear Attention with Estimated Attention Mask**](https://arxiv.org/pdf/2310.01777). For more detail, please refer to Section 8, 9, 10.
 
 - *2022.07-2022.07*: [**ACM FAcct 2022 Communication Committee**](https://facctconference.org/2022/)
