@@ -75,8 +75,8 @@ Was the **only Freshman to be approved** to attend the course and developed 4 ap
 - *2019.08*, Awards of **Creativity** in Summer Hackathon @Seoul Science Park
 
 # 📖 Educations
-- *2022.03 - Present*, KAIST (Daejeon, South Korea) major: CS, minor: BCS
-- *2021.03 - 2022.03*, Korea University (Seoul, South Korea) majoiring CS
+- *2022.03 - Present*, [KAIST](https://www.kaist.ac.kr/en/) major: CS, minor: BCS
+- *2021.03 - 2022.03*, [Korea University](https://www.korea.edu/mbshome/mbs/en/index.do) majoir: CS
 
 # 🏆 Scholarship
 - *2024.03-2024.07*, KAIST Lim Mi Suk Scholarship
