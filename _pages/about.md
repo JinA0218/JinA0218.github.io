@@ -52,7 +52,7 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 **ICLR** 2024 (poster)
 
 
-# 🗂️ Internship & Projects
+# 🗂️ Internship and Project
 
 - *2022.11-Present*: **Research Intern** @[**MLAI KAIST Lab**](https://www.mlai-kaist.com/) (advisor: [**Prof. Sung Ju Hwang**](http://www.sungjuhwang.com/))
 - *2022.07-2022.07*: [**ACM FAcct 2022 Communication Committee**](https://facctconference.org/2022/)
