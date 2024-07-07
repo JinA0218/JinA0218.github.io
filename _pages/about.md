@@ -56,7 +56,7 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 
 - *2022.07-2022.07*: [**ACM FAcct 2022 Communication Committee**](https://facctconference.org/2022/)
 
-Selected as one of the **8 undergraduate students** to **represent KAIST at the conference** and Provided **research highlights** on various papers presented at the conference for KAIST students.
+Selected as one of the **8 undergraduate students** to **represent KAIST at the conference** and provided **research highlights** on various papers presented at the conference for KAIST students.
 
 - *2022.06-2022.07*: [**KAIST CS496 Immersion Camp: Intensive Programming and Startup**](https://madcamp.io/)
 
