@@ -34,6 +34,7 @@ I've been working as a **research intern** at [KAIST MLAI](https://www.mlai-kais
 🌱 I lived in US(New York), Hong Kong, South Korea(Seoul, Daejeon) and I love building connections with people from diverse backgrounds. Happy to connect!😊
 
 # 🔥 News
+- *2024.05*, &nbsp;🎉 Approved as the top 2 CS undergrad student to get supported by the [URP Program(Creative Research)](https://engineering.kaist.ac.kr/content?menu=61)! 
 - *2024.05*, &nbsp;🎉 One paper **submitted** to **NeurIPS 2024**! 
 - *2024.05*, &nbsp;📢 One paper was successfully **presented** at **ICLR 2024**.
 - *2024.03*, &nbsp;🏅 Received **College of Engineering Leadership Award (Research Excellence)** from KAIST.
@@ -60,6 +61,7 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 # 🗂️ Internship and Projects
 
 - *2022.11 - Present*, **Research Intern** @[**KAIST MLAI**](https://www.mlai-kaist.com/) (advisor: [**Prof. Sung Ju Hwang**](http://www.sungjuhwang.com/))
+- *2024.07 - Present*, [**KAIST URP Program**](https://engineering.kaist.ac.kr/content?menu=61) (advisor: [**Prof. Sung Ju Hwang**](http://www.sungjuhwang.com/))
 - *2022.07 - 2022.07*, [**ACM FAcct 2022 Communication Committee**](https://facctconference.org/2022/)
 
   Selected as one of the **8 undergraduate students** to **represent KAIST at ACM FAcct 2022 conference** and provided **research highlights** on various papers presented at the conference for KAIST students.
