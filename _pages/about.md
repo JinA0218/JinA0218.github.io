@@ -35,7 +35,7 @@ I've been working as a research intern at [KAIST MLAI](https://www.mlai-kaist.co
 - *2024.03*: &nbsp;🏅 Received **Lim Mi Suk Scholarship** from KAIST CS department.
 - *2024.02*: &nbsp;🏅 Appointed as **KAIST Honor Student**.
 - *2024.01*: &nbsp;🛫 Received Travel Grant for **ICLR 2024**!
-- *2024.01*: &nbsp;🎉 One paper got accepted to **ICLR 2024** as a poster!
+- *2024.01*: &nbsp;🎉 One paper got accepted to **ICLR 2024** as a **poster**!
 
 # 📝 Publications 
 
