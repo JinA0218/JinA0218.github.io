@@ -77,8 +77,8 @@ Was the only Freshman to be approved to attend the course and developed 4 app/we
 # 🏆 Scholarship
 - *2024.03-2024.07*, KAIST Lim Mi Suk Scholarship
 - *2022.03-Present*, National Excellence Scholarship (Natural Sciences and Engineering)
-- *2019.03-2021.03*, [Sonjaehan Scholarship](https://www.sonjaehan.com/)
+- *2019.03-2021.03*, [Sonjaehan Scholarship](https://www.sonjaehan.com/index.php?module=Html&action=SiteComp&sSubNo=13)
 
 # 🌍 Additional Activities
 - *2023.08-2024.03*, KAIST Buddy Program (mentored 9 foreign exchange students @KAIST)
-- *2022.04-Present*, KAIST CCC Christian Club
+- *2022.04-Present*, [KAIST CCC Christian Club](https://www.instagram.com/ccc._.kaist/)
