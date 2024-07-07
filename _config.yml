@@ -7,8 +7,8 @@
 
 # Site Settings
 title                    : "Jina Kim"
-description              : "CS undergrad @KAIST | Research intern @MLAI-KAIST (advisor: Prof. Sung Ju Hwang)"
-repository               : "JinA0218/jina.github.io"
+description              : "Research intern @MLAI-KAIST"
+repository               : "JinA0218/JinA0218.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -22,7 +22,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Jina Kim"
-  avatar           : "images/jina-linkedin.png"
+  avatar           : "images/jina-linkedin.jpg"
   bio              : "KAIST, CS & BCS"
   location         : "Daejeon, South Korea"
   employer         :
@@ -43,7 +43,7 @@ author:
   instagram        :
   impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "Jina Kim"
+  linkedin         : "jina-kaist-cs-undergrad"
   dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
   orcid            : # e.g., "https://orcid.org/xxxx"
   pinterest        :

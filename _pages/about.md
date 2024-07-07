@@ -18,13 +18,18 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 Hi!👋 
-I'm an undergraduate student at KAIST, **majoring [CS](https://cs.kaist.ac.kr/)** and **minoring [BCS](https://bcs.kaist.ac.kr/)**.  I love **mathematics**, **neuroscience**, and especially **artificial intelligence**.
+I'm an **undergraduate student** at KAIST, **majoring [CS](https://cs.kaist.ac.kr/)** and **minoring [BCS](https://bcs.kaist.ac.kr/)**.  
+
+I love **mathematics**, **neuroscience**, and especially **artificial intelligence**.
+
 I've been working as a **research intern** at [KAIST MLAI](https://www.mlai-kaist.com/) (advisor: [Prof. Sung Ju Hwang](http://www.sungjuhwang.com/)) **since 2022 Fall**.
+
 
 ✨ My current **research interest** lies in
 - <span >**Model Merging**</span>
 - <span >**Efficient Transformer**</span>
 - <span >**Interpretable AI (Brain inspired AI)**</span>
+
 
 🌱 I love building connections with people from diverse backgrounds. Happy to connect!
 
@@ -57,11 +62,11 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 - *2022.11-Present*: **Research Intern** @[**MLAI KAIST Lab**](https://www.mlai-kaist.com/) (advisor: [**Prof. Sung Ju Hwang**](http://www.sungjuhwang.com/))
 - *2022.07-2022.07*: [**ACM FAcct 2022 Communication Committee**](https://facctconference.org/2022/)
 
-Selected as one of the **8 undergraduate students** to **represent KAIST at the conference** and provided **research highlights** on various papers presented at the conference for KAIST students.
+  Selected as one of the **8 undergraduate students** to **represent KAIST at the conference** and provided **research highlights** on various papers presented at the conference for KAIST students.
 
 - *2022.06-2022.07*: [**KAIST CS496 Immersion Camp: Intensive Programming and Startup**](https://madcamp.io/)
 
-Was the **only Freshman to be approved** to attend the course and developed 4 app/web applications in team (2~3 members) for four weeks. **Appointed twice to present results** to KAIST professors and CEOs from diverse business sectors.
+  Was the **only Freshman to be approved** to attend the course and developed 4 app/web applications in team (2~3 members) for four weeks. **Appointed twice to present results** to KAIST professors and CEOs from diverse business sectors.
 
 
 # 🏅 Honors and Awards
@@ -71,13 +76,13 @@ Was the **only Freshman to be approved** to attend the course and developed 4 ap
 - *2022.12*, KAIST **Best Freshman Class** Awards
 - *2022.08*, **Dean’s List Awards**, KAIST School of Freshman (2022 Spring, **top 3%**)
 - *2022.02*, **Semester High Honors**, Department of Computer Science @Korea University (2021 Fall)
-- *2021.08*, **First Prize** in Summer Hackathon @Korea University
+- *2021.08*, **First Prize** in **Summer Hackathon** @Korea University
 - *2021.08*, **Semester High Honors**, Department of Computer Science @Korea University (2021 Spring)
-- *2019.08*, Awards of **Creativity** in Summer Hackathon @Seoul Science Park
+- *2019.08*, Awards of **Creativity** in **Summer Hackathon** held by Seoul Science Park
 
 # 📖 Educations
 - *2022.03 - Present*, [KAIST](https://www.kaist.ac.kr/en/) major: CS, minor: BCS
-- *2021.03 - 2022.03*, [Korea University](https://www.korea.edu/mbshome/mbs/en/index.do) majoir: CS
+- *2021.03 - 2022.03*, [Korea University](https://www.korea.edu/mbshome/mbs/en/index.do) major: CS
 
 # 🏆 Scholarship
 - *2024.03-2024.07*, KAIST **Lim Mi Suk Scholarship**
@@ -85,5 +90,5 @@ Was the **only Freshman to be approved** to attend the course and developed 4 ap
 - *2019.03-2021.03*, [**Sonjaehan Scholarship**](https://www.sonjaehan.com/index.php)
 
 # 🌍 Additional Activities
-- *2023.08-2024.03*, KAIST **Buddy Program** (mentored 9 foreign exchange students @KAIST)
 - *2022.04-Present*, KAIST **CCC Christian Club**
+- *2023.08-2024.03*, KAIST **Buddy Program** (mentored 9 foreign exchange students @KAIST)
