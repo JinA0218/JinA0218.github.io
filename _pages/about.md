@@ -39,9 +39,6 @@ I'm working as a research intern at [KAIST MLAI](https://www.mlai-kaist.com/) (a
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
 - [**HiP Attention: Sparse Sub-Quadratic Attention with Hierarchical Attention Pruning**](https://arxiv.org/pdf/2406.09827)
 
 Heejun Lee*, Geon Park*, Youngwan Lee*, **Jina Kim***, Wonyoung Jeong, Myeongjae Jeon, Sung Ju Hwang
@@ -52,8 +49,6 @@ Heejun Lee*, Geon Park*, Youngwan Lee*, **Jina Kim***, Wonyoung Jeong, Myeongjae
 Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 **ICLR** 2024
 
-</div>
-</div>
 
 # 🗂️ Projects
 
