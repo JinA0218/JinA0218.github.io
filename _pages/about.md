@@ -90,8 +90,8 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 - *2021.03 - 2022.03*, [Korea University](https://www.korea.edu/mbshome/mbs/en/index.do) major: CS
 
 # 🏆 Scholarship
-- *2024.03 - 2024.07*, KAIST **Lim Mi Suk Scholarship**
 - *2022.03 - Present*, **National Excellence Scholarship** (Natural Sciences and Engineering)
+- *2024.03 - 2024.07*, KAIST **Lim Mi Suk Scholarship**
 - *2019.03 - 2021.03*, [**Sonjaehan Scholarship**](https://www.sonjaehan.com/index.php)
 
 # 🌍 Additional Activities
