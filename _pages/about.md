@@ -73,8 +73,10 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 
   Was the **only Freshman to be approved** to attend the course and developed **four app/web applications** in team (2~3 members) for four weeks. **Appointed twice to present results** to **KAIST professors and CEOs** from diverse business sectors.
 - *2021.08*, **Summer Hackathon** sponsered by **AWS Korea**, **Naver D2**
+
   Participated as a **frontend developer** and developed a **website** that **enables students to exchange books** and acess **detailed library information**(e.g. loan availability, location)
-- *2019.08*, **Summer Hackathon** held by **Seoul Science Park**
+- *2019.08*, [**Summer Hackathon** held by **Seoul Science Park**](https://sites.google.com/view/we-are-makers)
+
   Participated as a **team leader** and made a **prototype of a school bus** using **Arduino**, with **sensors** attached to the **stairs** in order to **count** the number of **passengers in real time**. Prevents **young children** from **being forgotten** on the bus and **reducing related accidents**.
 
 # 🏅 Honors and Awards
