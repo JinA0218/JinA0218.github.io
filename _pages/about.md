@@ -77,7 +77,7 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
   Participated as a **frontend developer** and developed a **website** that **enables students to exchange books** and acess **detailed library information**(e.g. loan availability, location)
 - *2019.08*, [**Summer Hackathon** held by **Seoul Science Park**](https://sites.google.com/view/we-are-makers) (**Award of Creativity**)
 
-  Participated as a **team leader** and made a **prototype of a school bus** using **Arduino**, with **sensors** attached to the **stairs** in order to **count** the number of **passengers in real time**. Prevents **young children** from **being forgotten** on the bus and **reducing related accidents**.
+  Participated as a **team leader** and made a **prototype of a school bus** using **Arduino**, equipped with **sensors** on the **stairs** to **count passengers in real time**. Prevents **young children** from **being forgotten** on the bus and **reduces related accidents**.
 
 # 🏅 Honors and Awards
 - *2024.03*, [KAIST **College of Engineering Leadership Award**](https://engineering.kaist.ac.kr/student/innovator) (**Research Excellence**, **top 11**)
