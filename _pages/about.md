@@ -61,7 +61,7 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 
 # 🗂️ Internship and Projects
 
-- *2024.07 - Present*, Researching **Model Merging** supported by [**KAIST URP Program**](https://engineering.kaist.ac.kr/content?menu=61) (advisor: [**Prof. Sung Ju Hwang**](http://www.sungjuhwang.com/))
+- *2024.07 - Present*, Researching with support from [**KAIST URP Program**](https://engineering.kaist.ac.kr/content?menu=61) (advisor: [**Prof. Sung Ju Hwang**](http://www.sungjuhwang.com/))
   
 - *2022.11 - Present*, **Research Intern** @[**KAIST MLAI**](https://www.mlai-kaist.com/) (advisor: [**Prof. Sung Ju Hwang**](http://www.sungjuhwang.com/))
   
