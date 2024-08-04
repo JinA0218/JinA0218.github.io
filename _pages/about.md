@@ -100,5 +100,5 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 - *2019.03 - 2021.03*, [**Sonjaehan Scholarship**](https://www.sonjaehan.com/index.php)
 
 # 🌍 Additional Activities
-- *2022.04 - Present*, KAIST **CCC Christian Club**
+- *2022.04 - 2024.07*, KAIST **CCC Christian Club**
 - *2023.08 - 2024.03*, KAIST **Buddy Program** (mentored 9 foreign exchange students)
