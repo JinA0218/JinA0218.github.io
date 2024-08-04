@@ -28,7 +28,7 @@ I've been working as a **research intern** at [KAIST MLAI](https://www.mlai-kais
 ✨ My current **research interest** lies in
 - <span >**Large Language Models**</span>
 - <span >**Efficient Transformer**</span>
-- <span >**Interpretable AI (Brain inspired AI)**</span>
+- <span >**Interpretable AI**</span>
 
 
 🌱 I lived in US(New York), Hong Kong, South Korea(Seoul, Daejeon) and I love building connections with people from diverse backgrounds. 
