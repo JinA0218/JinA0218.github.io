@@ -26,7 +26,7 @@ I've been working as a **research intern** at [KAIST MLAI](https://www.mlai-kais
 
 
 ✨ My current **research interest** lies in
-- <span >**Model Merging**</span>
+- <span >**Large Language Models**</span>
 - <span >**Efficient Transformer**</span>
 - <span >**Interpretable AI (Brain inspired AI)**</span>
 
