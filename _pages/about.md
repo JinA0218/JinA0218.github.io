@@ -20,7 +20,7 @@ redirect_from:
 Hi!👋 
 I'm an **undergraduate student** at KAIST, **majoring [CS](https://cs.kaist.ac.kr/)** and **minoring [BCS](https://bcs.kaist.ac.kr/)**.  
 
-I love **mathematics**, **neuroscience**, and especially **artificial intelligence**.
+I'm interested in **mathematics**, **neuroscience**, and especially **artificial intelligence**.
 
 I've been working as a **research intern** at [KAIST MLAI](https://www.mlai-kaist.com/) (advisor: [Prof. Sung Ju Hwang](http://www.sungjuhwang.com/)) **since 2022 Fall**.
 
