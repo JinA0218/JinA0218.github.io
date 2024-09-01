@@ -84,7 +84,7 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 - *2024.02*, KAIST **Honor Student**
 - *2022.12*, KAIST **Best Freshman** Awards (**top 33**)
 - *2022.12*, KAIST **Best Freshman Class** Awards (**top 1**)
-- *2022.08*, **Dean’s List Awards**, KAIST School of Freshman (2022 Spring, **top 3%**)
+- *2022.08*, [**Dean’s List Awards**](https://drive.google.com/file/d/1nkonsWJkELEKOQkOzZCDvcfTFlIWRpKG/view?usp=sharing), KAIST School of Freshman (2022 Spring, **top 3%**)
 - *2022.02*, **Semester High Honors**, Department of Computer Science @Korea University (2021 Fall)
 - *2021.08*, **First Prize** in **Summer Hackathon** @Korea University
 - *2021.08*, **Semester High Honors**, Department of Computer Science @Korea University (2021 Spring)
