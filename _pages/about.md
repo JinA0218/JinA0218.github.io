@@ -92,7 +92,7 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 
 # 📖 Educations
 - *2022.03 - Present*, KAIST major: CS, minor: BCS
-- *2021.03 - 2022.03*, Korea University major: CS, [GPA: 4.37](https://drive.google.com/file/d/11asXR9gFVv8uxSeDR4pWrDRpPpkKZCgw/view?usp=sharing)
+- *2021.03 - 2022.03*, Korea University major: CS, [GPA: 4.37/4.5](https://drive.google.com/file/d/11asXR9gFVv8uxSeDR4pWrDRpPpkKZCgw/view?usp=sharing)
 
 # 🏆 Scholarship
 - *2022.03 - Present*, **National Excellence Scholarship** (Natural Sciences and Engineering)
