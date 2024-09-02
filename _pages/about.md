@@ -91,8 +91,8 @@ Heejun Lee, **Jina Kim**, Jeffrey Willette, Sung Ju Hwang
 - *2019.08*, [Awards for **Creativity** in **Summer Hackathon**](https://sites.google.com/view/we-are-makers) held by Seoul Science Park
 
 # 📖 Educations
-- *2022.03 - Present*, [KAIST](https://www.kaist.ac.kr/en/) major: CS, minor: BCS
-- *2021.03 - 2022.03*, [Korea University](https://drive.google.com/file/d/11asXR9gFVv8uxSeDR4pWrDRpPpkKZCgw/view?usp=sharing) major: CS
+- *2022.03 - Present*, KAIST major: CS, minor: BCS
+- *2021.03 - 2022.03*, Korea University major: CS, [GPA: 4.37](https://drive.google.com/file/d/11asXR9gFVv8uxSeDR4pWrDRpPpkKZCgw/view?usp=sharing)
 
 # 🏆 Scholarship
 - *2022.03 - Present*, **National Excellence Scholarship** (Natural Sciences and Engineering)
