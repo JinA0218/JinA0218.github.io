@@ -36,7 +36,6 @@ I've been working as a **research intern** at [KAIST MLAI](https://www.mlai-kais
 
 # 🔥 News
 - *2024.07*, &nbsp;🎉 Appointed as one of the **top 2 CS undergrads** to research with **support from** the [**KAIST URP Program (Creative Research)**](https://engineering.kaist.ac.kr/content?menu=61)! 
-- *2024.05*, &nbsp;🎉 One paper **submitted** to **NeurIPS 2024**! 
 - *2024.05*, &nbsp;📢 One paper was successfully **presented** at **ICLR 2024**.
 - *2024.03*, &nbsp;🏅 Received **College of Engineering Leadership Award (Research Excellence)** from KAIST.
 - *2024.03*, &nbsp;🏅 Received **Lim Mi Suk Scholarship** from KAIST CS department.
