@@ -7,7 +7,7 @@ importance: 1
 category: coursework
 ---
 
-#### **[[arXiv]](https://arxiv.org/abs/2506.16014) [[code]](https://github.com/JinA0218/CS377_Project) [[slide]](https://drive.google.com/file/d/1th0FzY0WbpATT7SdJMwVqOIlV8qA40Kv/view?usp=sharing)**.
+#### **_VRAIL: Vectorized Reward-based Attribution for Interpretable Learning_ [[arXiv]](https://arxiv.org/abs/2506.16014) [[code]](https://github.com/JinA0218/CS377_Project) [[slide]](https://drive.google.com/file/d/1th0FzY0WbpATT7SdJMwVqOIlV8qA40Kv/view?usp=sharing)**.
 
 - authors: Jina Kim, Youjin Jang, Jeongjin Han (equal contribution)
 - affiliations: KAIST, South Korea
