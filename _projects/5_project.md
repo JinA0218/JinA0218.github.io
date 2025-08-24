@@ -1,10 +1,10 @@
 ---
 layout: page
 title: CS.93000
-description: Immersion Camp: Intensive Programming & Startup - GroupGroceries
-img: assets/img/project/GroupGroceries.jpg
+description: Immersion Camp: Intensive Programming & Startup - GroupGroceries App
+img: assets/img/project/GroupGroceries.png
 redirect: https://github.com/9Gong9
-importance: 35
+importance: 5
 category: coursework
 ---
 

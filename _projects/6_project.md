@@ -1,10 +1,11 @@
 ---
 layout: page
 title: project 6
-description: a project with no image
-img:
-importance: 4
-category: fun
+description: Immersion Camp: Intensive Programming & Startup - Collaborative Music Composition Website
+img: assets/img/project/music.png
+redirect: https://github.com/JinA0218/Mad-Music-Maker
+importance: 6
+category: coursework
 ---
 
 Every project has a beautiful feature showcase page.
