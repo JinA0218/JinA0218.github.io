@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Seoul Science Park Hackathon
+title: High School Hackathon @Seoul Science Park
 description: Real-Time Passenger Counting System for School Bus Child Safety [During High School Years]
 img: assets/img/project/hack.png
 redirect: https://sites.google.com/view/for-a-better-world/6?authuser=0
