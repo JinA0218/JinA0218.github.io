@@ -30,7 +30,7 @@ My research interest lies in
 - Interpretable AI
 
 After my 2nd year, I was recognized as a [KAIST Honor Student](https://herald.kaist.ac.kr/news/articleView.html?idxno=510), earning eligibility for doctoral-level courses and pursuing interdisciplinary studies across departments:
-- **[AI](https://gsai.kaist.ac.kr/) (Doctoral Level)**: Geometric Deep Learning(A+), Bayesian Machine Learning(A0)
+- **[AI (Doctoral Level)](https://gsai.kaist.ac.kr/)**: Geometric Deep Learning(A+), Bayesian Machine Learning(A0)
 - **CS** : Introduction to Deep Learning(A+), Introduction to Reinforcement Learning(A0), Generative AI for society(A+), Discrete Mathematics(A0), Immersion Camp: Intensive Programming and Startup
 - **Mathematics**: Analysis I(Score: 83.66/100, Class average: 62.87/100; Absolutely Graded), Calculus I(A+), Calculus II(A0), Intro to Linear Algebra(A0), Probability and Statistics(A+)
 - **Cognitive Neuroscience**: How AI and Brain work(A+), Neuroscience-inspired AI(A0), System Neuroscience(A+)
