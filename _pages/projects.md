@@ -2,7 +2,7 @@
 layout: page
 title: selected projects
 permalink: /projects/
-description: Coursework, Hackathons, and Beyond.
+description: Coursework, Hackathons, Presentations, and Beyond.
 nav: true
 nav_order: 2
 display_categories: [coursework, hackathon, presentation]
