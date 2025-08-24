@@ -7,12 +7,12 @@ subtitle: # <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 profile:
   align: right
   image: jinakim.jpg
-  image_circular: true # crops the image to make it circular
-  address: >
-    <p>Room 36-776A</p>
-    <p>50 Vassar St. </p>
-    <p>(MIT building 36) </p>
-    <p>Cambridge, MA 02139</p>
+  image_circular: false # crops the image to make it circular
+  # address: >
+  #   <p>Room 36-776A</p>
+  #   <p>50 Vassar St. </p>
+  #   <p>(MIT building 36) </p>
+  #   <p>Cambridge, MA 02139</p>
 
 news: true  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
