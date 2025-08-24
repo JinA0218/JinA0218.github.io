@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html --><html>
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+    <!-- Website verification -->
+    <meta name="google-site-verification" content="MARJu3erA7Z6jybcmR5fgSNRNtCNYMAYkk0jidGGr8A">
+<!-- Avoid warning on Google Chrome
+        Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
+        see https://stackoverflow.com/a/75119417
+    -->
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Score-based Generative Modeling of Graphs via the System of Stochastic Differential Equations | Jina  Kim</title>
+    <meta name="author" content="Jina  Kim">
+    <meta name="description" content="Score-based generative models have achieved strong results in image and molecular generation, but applying them to graph-structured data remains challenging due to the complex interplay between node features and graph topology. In this blog, we explore GDSS (Graph Diffusion via the System of Stochastic differential equations), a model that tackles this problem by jointly modeling the evolution of node attributes and adjacency matrices through a system of coupled stochastic differential equations. Using a permutation-equivariant graph neural network and score matching, GDSS generates graphs that maintain both structural validity and semantic coherence.">
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Bootstrap Table -->
+    <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+
+    
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="/assets/img/cook.png">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://jina0218.github.io/blog/2025/paper-1/">
+
+    <!-- Dark Mode -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+    
+
+
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    <script src="/assets/js/distillpub/overrides.js"></script>
+    
+  </head>
+
+  <body>
+<d-front-matter>
+    <script async type="text/json">{
+      "title": "Score-based Generative Modeling of Graphs via the System of Stochastic Differential Equations",
+      "description": "Score-based generative models have achieved strong results in image and molecular generation, but applying them to graph-structured data remains challenging due to the complex interplay between node features and graph topology. In this blog, we explore GDSS (Graph Diffusion via the System of Stochastic differential equations), a model that tackles this problem by jointly modeling the evolution of node attributes and adjacency matrices through a system of coupled stochastic differential equations. Using a permutation-equivariant graph neural network and score matching, GDSS generates graphs that maintain both structural validity and semantic coherence.",
+      "published": "June 1, 2025",
+      "authors": [
+        {
+          "author": "Jina Kim",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST, South Korea",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Jina </span>Kim</a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">about</a>
+              </li>
+              
+              <!-- Blog -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/blog/">blog<span class="sr-only">(current)</span></a>
+              </li>
+
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/publications/">publications</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/cv/">cv</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/teaching/">teaching</a>
+              </li>
+
+              <!-- Toogle theme mode -->
+              <li class="toggle-container">
+                <button id="light-toggle" title="Change theme">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Scrolling Progress Bar -->
+      <progress id="progress" value="0">
+        <div class="progress-container">
+          <span class="progress-bar"></span>
+        </div>
+      </progress>
+    </header>
+
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1>Score-based Generative Modeling of Graphs via the System of Stochastic Differential Equations</h1>
+        <p>Score-based generative models have achieved strong results in image and molecular generation, but applying them to graph-structured data remains challenging due to the complex interplay between node features and graph topology. In this blog, we explore GDSS (Graph Diffusion via the System of Stochastic differential equations), a model that tackles this problem by jointly modeling the evolution of node attributes and adjacency matrices through a system of coupled stochastic differential equations. Using a permutation-equivariant graph neural network and score matching, GDSS generates graphs that maintain both structural validity and semantic coherence.</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h1 id="introduction-why-graph-generation-matters">Introduction: Why Graph Generation Matters</h1>
+<p>Graphs are fundamental to representing structured relationships in various domains, such as molecular structures in drug discovery<d-cite key="simonovsky2018graphvaegenerationsmallgraphs"></d-cite> and understanding social networks<d-cite key="grover2019graphiteiterativegenerativemodeling"></d-cite>. Unlike data modalities such as images and sequences, graphs include both node-level semantics and edge-level topology, requiring models to simultaneously capture attribute dependencies and structural constraints. Effective graph generation requires not only realism in local features but also global coherence, validity, and invariance to node permutations<d-cite key="you2018graphrnngeneratingrealisticgraphs"></d-cite>.</p>
+
+<p>While traditional generative models, such as VAEs, GANs, and autoregressive models, have achieved limited success when applied to graphs due to these complexities, recent advancements in score-based generative modeling<d-cite key="song2021scorebasedgenerativemodelingstochastic"></d-cite> have shown promise in the continuous domain especially for image and molecule synthesis, raising the following question: <strong>can score-based methods be extended to graphs in a way that respects their structural complexities?</strong> This is the key motivation behind this work, <strong>GDSS</strong> (Graph Diffusion via the System of Stochastic differential equations).</p>
+
+<!-- Graphs are fundamental to representing structured relationships in a wide range of domains, from molecular structures in drug discovery to interactions in social and biological systems. Unlike other data modalities such as images or sequences, graphs encapsulate both node-level semantics and edge-level topology, requiring models to simultaneously capture attribute dependencies and structural constraints. Effective graph generation demands not only realism in local features but also global coherence, validity, and invariance to node permutations.
+
+Traditional generative models, including VAEs<d-cite key="simonovsky2018graphvaegenerationsmallgraphs"></d-cite>, GANs<d-cite key="decao2022molganimplicitgenerativemodel"></d-cite>, and autoregressive models<d-cite key="you2018graphrnngeneratingrealisticgraphs"></d-cite>, have achieved limited success when applied to graphs due to these complexities. They often suffer from issues like permutation sensitivity, limited global structure control, or unstable training dynamics.
+
+Recent breakthroughs in score-based generative modeling<d-cite key="song2021scorebasedgenerativemodelingstochastic"></d-cite> have shown promise in the continuous domain, especially for image and molecule synthesis. These models leverage stochastic differential equations to transform noise into structured data by learning the gradient of the data distribution (i.e., the score function). This has raised an exciting question: can such frameworks be adapted to the graph domain while addressing its unique structural challenges?
+
+**GDSS** (Graph Diffusion via System of SDEs)<d-cite key="jo2022scorebasedgenerativemodelinggraphs"></d-cite> is a principled and elegant framework that jointly models node features and adjacency structures through a coupled system of SDEs. By leveraging permutation-equivariant graph networks and learning score functions over noisy graphs, it enables stable and expressive graph generation, paving the way for progress in tasks like molecule generation and structured scientific discovery. -->
+
+<h2 id="limitations-of-existing-methods">Limitations of Existing Methods</h2>
+
+<p>Autoregressive models like GraphRNN<d-cite key="you2018graphrnngeneratingrealisticgraphs"></d-cite> generate graphs by adding nodes and edges sequentially. While flexible, they are sensitive to node ordering, inefficient for large graphs, and struggle with long-range dependencies.</p>
+
+<p>VAE-based models such as GraphVAE<d-cite key="simonovsky2018graphvaegenerationsmallgraphs"></d-cite> and JT-VAE<d-cite key="jin2019junctiontreevariationalautoencoder"></d-cite> rely on encoding entire graphs into continuous latent spaces and decoding them back. However, they often struggle to generate valid graphs and require complex heuristics to enforce constraints.</p>
+
+<p>GAN-based models like MolGAN<d-cite key="decao2022molganimplicitgenerativemodel"></d-cite> generate graph structures using adversarial training, which tends to be unstable and prone to mode collapse, especially in high-dimensional or sparse graph settings.</p>
+
+<p>Flow and early diffusion models like GraphAF<d-cite key="shi2020graphafflowbasedautoregressivemodel"></d-cite> and GeoDiff<d-cite key="xu2022geodiffgeometricdiffusionmodel"></d-cite> improve sample diversity and allow tractable density estimation. Yet, they often model node features and edge structures independently, neglecting their mutual dependencies.</p>
+
+<p>EDP-GNN<d-cite key="niu2020permutationinvariantgraphgeneration"></d-cite> is a score-based model but generates graphs via discrete perturbations of heuristically chosen noise
+scales to estimate the score function and edge-wise scores and only produce adjacency matrices, overlooking crucial node-edge dependencies in real-world graphs like molecules.</p>
+
+<p>While graph generation aims to synthesize graphs that closely match the distribution of observed data, these limitations highlight the need for a model that can jointly model nodes and edges on continuous-time domain, respect graph symmetries, and scale with complexity: and <strong>GDSS</strong> meets this need.</p>
+
+<h2 id="how-gdss-works">How GDSS Works</h2>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-1/fig0-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-1/fig0-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-1/fig0-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-1/fig0.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2202.02514" target="_blank" rel="external nofollow noopener">Figure 1: Concept figure of GDSS.</a>
+</div>
+
+<p><strong>GDSS</strong> tackles these limitations by proposing a (1) <strong>scored-based graph generation</strong> framework (2) on a <strong>continuous-time</strong> domain that can (3) generate <strong>both</strong> the node features and the adjacency matrix.</p>
+
+<!-- While graph generation aims to synthesize graphs that closely match the distribution of observed data, it is difficult to explicitly modeling this distribution. GDSS uses a continuous-time score-based framework with a novel diffusion process, defined by stochastic differential equations (SDEs), to transform graphs to noise and back while capturing node–edge dependencies. -->
+
+<p>During training, the model learns <strong>two score functions</strong> that approximate the gradients of the log-density of the noisy data with respect to node features and edges. A <strong>permutation-equivariant score based model</strong> learns these scores, capturing correlations between structure and semantics. This design allows GDSS to simulate the <strong>reverse-time SDEs</strong> and sample realistic graphs from noise, achieving state-of-the-art performance on both synthetic and molecular graph benchmarks.</p>
+
+<p>An overview of GDSS’s process is shown below.</p>
+
+<h3 id="0-data-representation">0. Data Representation</h3>
+
+<p>To start with, GDSS operates on undirected graphs with node features, represented as</p>
+
+<p>$G$ = ($X$, $A$): \(X \in \mathbb{R}^{N \times F}, \quad A \in \mathbb{R}^{N \times N}\),</p>
+
+<p>where $X$ is the node feature matrix for $N$ nodes, each with dimension $F$ features and $A$ is the symmetric adjacency matrix.</p>
+
+<h3 id="1-forward-diffusion-via-coupled-sdes">1. Forward Diffusion via Coupled SDEs</h3>
+<p>To model the dependency between $X$ and $A$, GDSS formulates a forward diffusion process of graphs that transforms both of them to a simple noise distribution. The forward process \({G_t = (X_t,A_t)}, t∈[0,T]\)
+ is defined by two independent SDEs, as shown below:</p>
+
+\[d\mathbf{G}_t = \mathbf{f}_t(\mathbf{G}_t) \, dt + \mathbf{g}_t(\mathbf{G}_t) \, d\mathbf{w}, \quad \mathbf{G}_0 \sim p_{\text{data}}\]
+
+<p>where $\mathbf{f}_t$ is the linear draft coefficient, $\mathbf{g}_t$ is the diffusion coefficient and $w$ is standard Wiener processes. $\mathbf{f}_t$ and $\mathbf{g}_t$ are chosen such that at the
+terminal time horizon $T$, the diffused sample $G_T$ approximately follows a prior distribution that has a tractable form
+to efficiently generate the samples, such as Gaussian
+distribution. To make it simpler, \(\mathbf{g}_t(\mathbf{G}_t)\) is chosen to be a scalar function $g_t$.</p>
+
+<h3 id="2-reverse-process-with-learned-score-functions">2. Reverse Process with Learned Score Functions</h3>
+
+<p>To generate graphs that follow the data distribution, GDSS start from samples of the prior distribution and leverage the following g reverse-time SDE<d-cite key="anderson1982reverse"></d-cite><d-cite key="song2021scorebasedgenerativemodelingstochastic"></d-cite>:</p>
+
+\[dG_t = \left[ f_t(G_t) - g_t^2 \nabla_{G_t} \log p_t(G_t) \right] dt + g_t d\bar{\omega},\]
+
+<p>where $p_t$ is the marginal distribution under the forward
+diffusion process at time \(t\), \(\bar{\mathbf{w}}\) is a reverse-time standard
+Wiener process, and \(d\bar{t}\) is an infinitesimal negative time step.</p>
+
+<p>For efficient computing of \(\nabla_{G_t} \log p_t(G_t)\), GDSS utilizes below equations, which operate the same function as above equation. This is a novel approach that interprets the diffusion of a graph as the diffusion of each component that are interrelated through time.</p>
+
+\[dX_t = [f_{1, t}(X_t)-g_{1, t}^2 \nabla_{X_t} \log p_t(X_t, A_t)] d\bar{t} + g_{1, t} d\bar{\mathbf{w}}_1\]
+
+\[dA_t = [f_{2, t}(A_t)-g_{2, t}^2 \nabla_{A_t} \log p_t(X_t, A_t)] d\bar{t} + g_{2, t} d\bar{\mathbf{w}}_2\]
+
+<p>The key property of GDSS is that the diffusion processes in the system are dependent on each other, as shown in the partial score functions, \(\nabla_{X_t} \log p_t(X_t, A_t)\) and \(\nabla_{A_t} \log p_t(X_t, A_t)\). To show the importance
+of modeling the dependency, Figure 2 compares the generated samples with the data distribution as bivaraite Gaussian mixture, which shows that GDSS successfully handles correlation of two variables while others ((c) GDSS-seq : that generates \(X\)
+and \(A\) sequentially and not simultaneously or (d) that ignores the diffusion process of \(X\)) can’t.</p>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-1/toy-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-1/toy-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-1/toy-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-1/toy.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2202.02514" target="_blank" rel="external nofollow noopener">Figure 2: A toy experiment on modeling the dependency.
+GDSS successfully models the correlation unlike others.</a>
+</div>
+
+<p>Now, since the exact score functions $\nabla_{X_t} \log p_t$ and $\nabla_{A_t} \log p_t$ are unknown, GDSS learns parameterized approximations as follow:</p>
+
+<p>\(s_{\theta, t}(G_t) \approx \nabla_{X_t} \log p_t(G_t), \quad s_A(\phi, t) \approx \nabla_{A_t} \log p_t(G_t)\).</p>
+
+<p>Considering that the score-based models should be trained to minimize the distance to the corresponding ground-truth partial scores, GDSS utilizes a novel objectives that generalize the score matching<d-cite key="score1"></d-cite> to the estimation of partial scores for the given graph dataset:</p>
+
+\[\min_{\theta} \, \mathbb{E}_t \left\{ \lambda_1(t) \, \mathbb{E}_{G_0} \, \mathbb{E}_{G_t|G_0} \left\| s_{\theta,t}(G_t) - \nabla_{X_t} \log p_t(G_t) \right\|_2^2 \right\}\]
+
+\[\min_{\phi} \, \mathbb{E}_t \left\{ \lambda_2(t) \, \mathbb{E}_{G_0} \, \mathbb{E}_{G_t|G_0} \left\| s_{\phi,t}(G_t) - \nabla_{A_t} \log p_t(G_t) \right\|_2^2 \right\}\]
+
+<p>However, in above equation, the ground-truth partial scores are not accessible, so GDSS denoises score matching to the partial scores, as shown below:</p>
+
+\[\min_{\theta} \, \mathbb{E}_t \left\{ \lambda_1(t) \, \mathbb{E}_{G_0} \, \mathbb{E}_{G_t|G_0} \left\| s_{\theta,t}(G_t) - \nabla_{X_t} \log p_{0t}(G_t | G_0) \right\|_2^2 \right\}\]
+
+\[\min_{\phi} \, \mathbb{E}_t \left\{ \lambda_2(t) \, \mathbb{E}_{G_0} \, \mathbb{E}_{G_t|G_0} \left\| s_{\phi,t}(G_t) - \nabla_{A_t} \log p_{0t}(G_t | G_0) \right\|_2^2 \right\}\]
+
+<p>Furthermore, since the drift coefficient of the forward diffusion process is linear as shown below,</p>
+
+\[d\mathbf{G}_t = \mathbf{f}_t(\mathbf{G}_t) \, dt + \mathbf{g}_t(\mathbf{G}_t) \, d\mathbf{w}, \quad \mathbf{G}_0 \sim p_{\text{data}}\]
+
+<p>we can get</p>
+
+\[p_{0t}(G_t \mid G_0) = p_{0t}(X_t \mid X_0) \cdot p_{0t}(A_t \mid A_0)\]
+
+<p>As a result, the final equation can be summarized as below, with more details for the derivations found in GDSS<d-cite key="gdss"></d-cite> (Appendix A.1, A.2):</p>
+
+\[\min_{\theta} \, \mathbb{E}_t \left\{ \lambda_1(t) \, \mathbb{E}_{G_0} \, \mathbb{E}_{G_t|G_0} \left\| s_{\theta,t}(G_t) - \nabla_{X_t} \log p_{0t}(X_t | X_0) \right\|_2^2 \right\}\]
+
+\[\min_{\phi} \, \mathbb{E}_t \left\{ \lambda_2(t) \, \mathbb{E}_{G_0} \, \mathbb{E}_{G_t|G_0} \left\| s_{\phi,t}(G_t) - \nabla_{A_t} \log p_{0t}(A_t | A_0) \right\|_2^2 \right\}\]
+
+<p>Now, it is important to note that estimating the partial scores of GDSS is different from estimating marginal scores 
+\(\nabla_{X_t} \log p_t(X_t) \quad \text{or} \quad \nabla_{A_t} \log p_t(A_t)\) 
+used in previous score-based generative models because GDSS requires capturing the dependency between node features $X_t$ and adjacency matrices $A_t$ through their joint probability over time. Since above training objectives enable effective estimation of these partial scores, the next step is to design model architectures capable of learning them.</p>
+
+<h3 id="3-permuation-equivariant-score-based-model">3. Permuation-equivariant Score-based Model</h3>
+
+<!-- GDSS employs a single Equivariant Graph Neural Network (EGNN) to learn both score functions jointly. This ensures (1) permutation equivariance, so the node order does not affect the output, (2) joint modeling, so that the node features and adjacency are processed together. -->
+
+<p>For this, GDSS propose two neural architectures based on Graph Neural Networks (GNNs).</p>
+
+<!-- To effectively learn the partial scores in GDSS, we need score networks that can capture the intricate dependencies between node features 
+$$
+X_t
+$$ 
+and adjacency structures 
+$$
+A_t.
+$$ 
+GDSS propose two neural architectures based on Graph Neural Networks (GNNs) that are tailored to this goal. -->
+
+<p>For the adjacency score, the model 
+\(s_{\phi,t}(G_t)\) 
+estimates the gradient 
+\(\nabla_{A_t} \log p_t(X_t, A_t).\) 
+This is done by graph multi-head (GMH) attention, which helps identify key relational patterns between nodes, along with higher-order adjacency matrices to account for long-range interactions. These representations are then passed through a multi-layer perceptron (MLP) to produce the final score.</p>
+
+<p>For the node feature score, the model 
+\(s_{\theta,t}(G_t)\) 
+targets 
+\(\nabla_{X_t} \log p_t(X_t, A_t).\) 
+It stacks multiple GNN layers to compute contextual node embeddings from the adjacency matrix, which are again aggregated via an MLP to form the score estimate.</p>
+
+<p>Importantly, both models incorporate time conditioning by scaling their outputs with the standard deviation of the diffusion process at time 
+\(t,\) 
+following previous work<d-cite key="song2020generativemodelingestimatinggradients"></d-cite>. Because GNNs and GMH layers are permutation-equivariant, the resulting score functions preserve the permutation invariance of graph distributions, which is an essential property for meaningful graph generation.</p>
+
+<h3 id="4-solving-the-reverse-time-sde-system-with-s4">4. Solving the Reverse Time SDE System with S4</h3>
+
+<p>Once GDSS learns the partial scores for nodes and edges, the next challenge is generating graphs by solving the <strong>reverse-time diffusion process</strong>:</p>
+
+\[\begin{cases}
+\mathrm{d}\mathbf{X}_t = f_{1,t}(\mathbf{X}_t)\,\mathrm{d}t + g_{1,t}\,\mathrm{d}\bar{\mathbf{w}}_1 \underbrace{-\, g_{1,t}^2\, s_{\theta,t}(\mathbf{X}_t, \mathbf{A}_t)\,\mathrm{d}t}_{\textbf{S}} \\
+\mathrm{d}\mathbf{A}_t = f_{2,t}(\mathbf{A}_t)\,\mathrm{d}t + g_{2,t}\,\mathrm{d}\bar{\mathbf{w}}_2 \underbrace{-\, g_{2,t}^2\, s_{\phi,t}(\mathbf{X}_t, \mathbf{A}_t)\,\mathrm{d}t}_{\textbf{S}}
+\end{cases}
+\quad
+\underbrace{\text{First two terms}}_{\textbf{F}}\]
+
+<p>These coupled SDEs are not trivial to solve due to the tight interdependence between $X_t$ and $A_t$. To address this, GDSS introduces <strong>S4 (Symmetric Splitting for Systems of SDEs)</strong>, a new solver that balances accuracy and efficiency by leveraging operator splitting techniques. The method is inspired by symmetric splitting samplers<d-cite key="dockhorn2022scorebasedgenerativemodelingcriticallydamped"></d-cite> and the predictor-corrector sampler for SDEs<d-cite key="song2021scorebasedgenerativemodelingstochastic"></d-cite>.</p>
+
+<p>Each reverse-time step is decomposed into three phases:</p>
+
+<ol>
+  <li>
+<strong>Score Computation:</strong> Estimate partial scores \(s_{\theta,t}\) and \(s_{\phi,t}\) using the trained networks.</li>
+  <li>
+<strong>Correction:</strong> Use a <strong>Langevin MCMC</strong><d-cite key="parisi1981correlation"></d-cite> step to refine the current state \(G_t\), ensuring alignment with the learned score.</li>
+  <li>
+<strong>Prediction:</strong> Use the Fokker-Planck operators for both drift (F) and score (S) terms in above equation to evolve the graph state backward. This is done via the <strong>Trotter splitting</strong><d-cite key="trotter1959product"></d-cite> <d-cite key="strang1968construction"></d-cite> scheme:</li>
+</ol>
+
+\[e^{\delta t L^*_F/2} \, e^{\delta t L^*_S} \, e^{\delta t L^*_F/2}\]
+
+<p>where the F-terms correspond to the dynamics of the forward diffusion process and can be sampled exactly from the known transition distribution. However, the S-term which represents score-based updates, is not analytically tractable and is approximated using a simple <strong>Euler method</strong>. This symmetric arrangement ensures second-order accuracy and reduces numerical artifacts that can accumulate during simulation. Further details regarding the derivations can be found in <d-cite key="gdss"></d-cite> (Appendix A.4 and A.5).</p>
+
+<p>Compared to traditional predictor-corrector samplers, S4 cuts the number of score network evaluations by half, achieving a significant reduction in compute without sacrificing fidelity. This design choice is critical because score network evaluation is typically the dominant computational bottleneck.</p>
+
+<p>Moreover, S4 generalizes to systems involving different types of SDEs, including <strong>Variance Exploding (VE)</strong> and <strong>Variance Preserving (VP)</strong> forms <d-cite key="song2021scorebasedgenerativemodelingstochastic"></d-cite>. This level of generality contrasts with earlier samplers like SSCS, which are restricted to specific SDE structures <d-cite key="dockhorn2022scorebasedgenerativemodelingcriticallydamped"></d-cite>.</p>
+
+<p>To further increase accuracy (at higher computational cost), it is possible to use higher-order integrators like the <strong>Runge–Kutta method</strong> or substitute <strong>Hamiltonian Monte Carlo (HMC)</strong> <d-cite key="neal2011mcmc"></d-cite> in place of Langevin dynamics during the correction phase.</p>
+
+<!-- By cleverly reusing the same precomputed scores in both the correction and prediction steps, S4 achieves high efficiency, and compared to PC samplers, S4 cuts the number of score network calls in half, saving compute without sacrificing quality.
+
+Importantly, S4 is also **generalizable**: it can handle systems involving both **Variance Exploding (VE)** and **Variance Preserving (VP)** SDEs<d-cite key="song2021scorebasedgenerativemodelingstochastic"></d-cite>, while methods like SSCS are restricted to specific cases<d-cite key="dockhorn2022scorebasedgenerativemodelingcriticallydamped"> . -->
+
+<h2 id="experimental-results">Experimental Results</h2>
+
+<h3 id="generic-graph-generation">Generic Graph Generation</h3>
+
+<p>To evaluate the ability of GDSS to generate graphs that match real-world and synthetic graph distributions, a series of experiments on four generic datasets are conducted. These datasets include a mix of small-scale, synthetic, and protein-structured graphs with diverse topologies and statistical properties:</p>
+
+<ul>
+  <li>
+<strong>Ego-small</strong>: 200 ego-centric graphs extracted from the Citeseer citation network <d-cite key="sen2008collective"></d-cite>.</li>
+  <li>
+<strong>Community-small</strong>: 100 synthetic graphs constructed from stochastic block models, each representing community structures.</li>
+  <li>
+<strong>Enzymes</strong>: 587 protein tertiary structure graphs from the BRENDA database <d-cite key="schomburg2004brenda"></d-cite>.</li>
+  <li>
+<strong>Grid</strong>: 100 standard 2D grid graphs, known to be challenging due to their regular, structured nature.</li>
+</ul>
+
+<p>The goal is to assess how well GDSS can learn the distribution of these datasets and generate samples with similar structural properties. Following standard graph generation benchmarks <d-cite key="you2018graphrnn"></d-cite>, the evaluation compares distributions of three graph statistics: (1) Node degree (2) Clustering coefficient (3) 4-node orbits.</p>
+
+<p>The similarity between generated and real distributions is quantified using <strong>maximum mean discrepancy (MMD)</strong>, computed with a <strong>Gaussian Earth Mover’s Distance (EMD) kernel</strong>, which is more stable and well-defined than total variation distance used in some earlier work <d-cite key="liao2019efficient"></d-cite>. The experiments use the same training/test splits and metrics to ensure a fair comparison.</p>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-1/table1-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-1/table1-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-1/table1-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-1/table1.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2202.02514" target="_blank" rel="external nofollow noopener">Table 1: Generation results on the generic graph datasets.</a>
+</div>
+
+<p>In Table 1, GDSS demonstrates significant improvements over prior one-shot graph generative models, including the previous score-based method EDP-GNN. GDSS not only surpasses all one-shot baselines but also outperforms most autoregressive models, which are typically more expressive but require much higher computational cost.</p>
+
+<p>In particular, on the <strong>Grid dataset</strong>, GDSS shows comparable the performance to GraphRNN, a strong autoregressive baseline, despite being a one-shot model. By contrast, EDP-GNN completely fails to model such structured graphs, highlighting the limitations of adjacency-only generation and discrete transition dynamics.</p>
+
+<p>Now, one concern in estimating the joint partial score
+\(\nabla_{A_t} \log p_t(X_t, A_t)\)
+is that it may appear significantly harder than estimating simpler, marginal-like scores such as
+\(\nabla_{A_t} \log p_t(X_0, A_t),\)
+which ignore the time-evolving dependency between node features and edges. Surprisingly, the empirical results indicate the opposite, as shown in Figure 3.</p>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-1/fig1-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-1/fig1-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-1/fig1-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-1/fig1.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2202.02514" target="_blank" rel="external nofollow noopener">Figure 3: Complexity of the score-based models.</a>
+</div>
+
+<p>To investigate this, the <strong>complexity of score-based models</strong> is measured using the <strong>squared Frobenius norm of the Jacobians</strong> of their score functions, denoted \(J_F(t)\). This metric reflects the sensitivity of the model and the smoothness of the learned score landscape. GDSS is compared against GDSS-seq, a variant that simplifies score estimation by decoupling node and edge interactions over time.</p>
+
+<p>As shown in Figure 3, GDSS consistently exhibits <strong>lower model complexity</strong> than GDSS-seq when trained on the Ego-small dataset. This holds for both partial score functions:</p>
+
+\[\nabla_{A_t} \log p_t(X_t, A_t)
+\quad \text{and} \quad
+\nabla_{X_t} \log p_t(X_t, A_t)\]
+
+<p>This counterintuitive result highlights a key strength of GDSS that, learning the <strong>true joint dynamics between node features and edges</strong> not only improves generative performance (as shown in Table 1), but also simplifies the optimization landscape. The reduced Jacobian norms suggest that joint modeling provides smoother, more learnable gradients, enabling more stable and efficient training.</p>
+
+<h3 id="molecule-generation-performance-and-efficiency">Molecule Generation Performance and Efficiency</h3>
+
+<p>To evaluate molecular graph generation, the experiments are conducted on two widely used datasets:</p>
+
+<ul>
+  <li>
+<strong>QM9</strong> <d-cite key="ramakrishnan2014quantum"></d-cite>: A dataset of small organic molecules with up to 9 heavy atoms.</li>
+  <li>
+<strong>ZINC250k</strong> <d-cite key="irwin2012zinc"></d-cite>: A subset of the ZINC database containing drug-like molecules.</li>
+</ul>
+
+<p>Following prior works <d-cite key="shi2020graphaf"></d-cite><d-cite key="luo2021graphdf"></d-cite>, molecules are kekulized using the RDKit toolkit <d-cite key="landrum2016rdkit"></d-cite>, and hydrogen atoms are removed to simplify structure while preserving core bonding patterns.</p>
+
+<p>The evaluation focuses on three aspects:</p>
+<ul>
+  <li>
+<strong>Fréchet ChemNet Distance (FCD)</strong> <d-cite key="preuer2018frechet"></d-cite>, which computes the distance between generated and real molecules in chemical feature space.</li>
+  <li>
+<strong>NSPDK MMD</strong> <d-cite key="costa2010fast"></d-cite>, a graph-structured MMD metric that captures both node and edge features.</li>
+  <li>
+<strong>Validity w/o correction</strong>, defined as the fraction of chemically valid molecules generated <strong>without any post-processing</strong> or valency correction. Notably, this differs from earlier works by allowing atoms with formal charges, following <d-cite key="zang2020moflow"></d-cite>, to better reflect the diversity of real-world molecular graphs.</li>
+</ul>
+
+<p>All models generate <strong>10,000 molecules</strong>, and generation time is measured in terms of RDKit-formatted outputs. Additional implementation details including hyperparameters are described in Appendix C.3 of the paper.</p>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-1/table2-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-1/table2-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-1/table2-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-1/table2.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2202.02514" target="_blank" rel="external nofollow noopener">Table 2: Generation results on the QM9 and ZINC250k dataset.</a>
+</div>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-1/fig3-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-1/fig3-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-1/fig3-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-1/fig3.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2202.02514" target="_blank" rel="external nofollow noopener">Figure 4: Visualization of the generated molecules with maximum Tanimoto similarity.</a>
+</div>
+
+<p>As shown in Table 2, GDSS achieves the <strong>highest validity</strong> among all methods <strong>without relying on post-hoc valency correction</strong>. This indicates that GDSS effectively learns the <strong>chemical valency rules</strong>, which fundamentally rely on modeling the relationship between atoms (nodes) and bonds (edges).</p>
+
+<p>GDSS also significantly outperforms all baselines in <strong>NSPDK MMD</strong>, and most in <strong>Fréchet ChemNet Distance (FCD)</strong>, demonstrating that the generated molecules are not only structurally realistic in graph space but also chemically plausible in feature space. This shows GDSS’s ability to model complex joint distributions of molecules with diverse node and edge types.</p>
+
+<p>Visualizations in Figure 4 further emphasize this result: molecules generated by GDSS often share <strong>large substructures</strong> with those from the training set. In contrast, baseline methods frequently produce molecules with less resemblance or completely unrelated structures, highlighting GDSS’s superior generative fidelity.</p>
+
+<p>Beyond quality, GDSS is also highly efficient, as shown in Table 2. On the <strong>QM9 dataset</strong>, GDSS achieves a <strong>450× speed-up</strong> in generation time compared to GraphDF, one of the strongest autoregressive baselines. This efficiency stems from GDSS’s continuous-time diffusion framework, which replaces costly sequential sampling with a more scalable reverse-time SDE simulation.</p>
+
+<p>Additionally, both GDSS and its variant GDSS-seq outperform EDP-GNN in generation speed. This further validates that <strong>modeling graph transformation as a continuous diffusion process</strong> is not only more expressive but also much more practical than discrete-step perturbation methods.</p>
+
+<!-- ## So.. why GDSS?
+Let’s take a closer look at the core components of GDSS and how they enable a novel approach compared to previous methods.
+
+### Score-Based Generative Modeling
+
+GDSS learns $$s_X \approx \nabla_{X_t} \log p_t(X_t, A_t)$$ $$s_A \approx \nabla_{A_t} \log p_t(X_t, A_t)$$ that guides the reverse diffusion process to recover structured graphs from noise. This enables estimating the gradient of the log-probability (score) of the data distribution for both node features and edges.
+
+#### Why it matters
+- Bypasses the need to model or approximate the full data likelihood, which is particularly challenging for graphs due to their combinatorial structure.
+
+- Provides a non-adversarial, non-latent-variable method of training generative models.
+
+- Enables denoising-based learning and sampling through reverse SDEs, making the generation process stable, interpretable, and theoretically grounded. -->
+
+<h2 id="ablation-studies">Ablation Studies</h2>
+
+<h3 id="why-modeling-node-edge-dependency-matters">Why Modeling Node-Edge Dependency Matters</h3>
+
+<p>To assess the importance of capturing the <strong>dependency between node features and edges</strong>, GDSS is compared with GDSS-seq, where GDSS models the <strong>joint dependency</strong> between $X$ and $A$, while GDSS-seq assumes that $A$ depends only on $X$, simplifying the reverse SDE system. This subtle design choice turns out to be crucial.</p>
+
+<p>Across all benchmarks in <strong>Table 1 (generic graphs)</strong> and <strong>Table 2 (molecules)</strong>, GDSS consistently outperforms GDSS-seq in every metric. The results clearly demonstrate that <strong>accurately modeling the graph distribution requires learning both node and edge interactions through time</strong>, rather than treating them as partially independent.</p>
+
+<p>For molecule generation in particular, the benefit is <strong>measurable in terms of chemical validity</strong>. GDSS achieves higher validity scores without needing valency correction, directly showing that it better captures the structure–function relationship between atoms and bonds.</p>
+
+<p>These findings confirm that the proposed system of SDEs—where the partial scores</p>
+
+\[\nabla_{X_t} \log p_t(X_t, A_t)\]
+
+<p>and</p>
+
+\[\nabla_{A_t} \log p_t(X_t, A_t)\]
+
+<p>are co-trained—provides a more faithful and powerful approach to generative graph modeling.</p>
+
+<h3 id="significance-of-s4-solver">Significance of S4 Solver</h3>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-1/table3-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-1/table3-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-1/table3-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-1/table3.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2202.02514" target="_blank" rel="external nofollow noopener">Table 3: Comparison between fixed step size SDE solvers.</a>
+</div>
+
+<!-- To evaluate the impact of the proposed **S4 solver**, the authors compare it against several baseline solvers for reverse-time diffusion, including: -->
+
+<!-- - **Euler–Maruyama (EM)** and **Reverse sampler**: simple, predictor-only methods with fixed step sizes.
+- **Predictor-Corrector (PC) samplers**: more advanced methods using Langevin MCMC for correction. -->
+
+<p>As shown in Table 3, <strong>S4 significantly outperforms both Euler–Maruyama (EM) and Reverse sampler</strong>, which are simple baseline solvers for reverse-time diffusion, validating the advantage of including both prediction and correction steps. More impressively, despite using <strong>half the number of score network evaluations</strong>, <strong>S4 also outperforms the PC samplers</strong>, a more advanced methods using Langevin MCMC for correction.</p>
+
+<p>This efficiency stems from S4’s use of <strong>symmetric splitting</strong> and <strong>score reuse</strong>, which allow it to maintain high sampling accuracy while dramatically reducing computational overhead. Since score-based model evaluations dominate the cost of solving stochastic differential equations (SDEs), this reduction is critical for scaling to large or complex graphs. By combining <strong>accuracy, efficiency, and generality</strong>, S4 becomes a powerful and practical solver for simulating the reverse diffusion process in GDSS.</p>
+
+<h2 id="personal-thoughts">Personal Thoughts</h2>
+
+<p><strong>GDSS</strong> redefines the paradigm of graph generation by enabling the <strong>joint</strong>, <strong>continuous</strong>, and <strong>permutation-invariant</strong> synthesis of both <strong>graph structure</strong> and <strong>semantic node features</strong>. It uses the <strong>stochastic differential equations (SDEs)</strong> and the <strong>score-based diffusion modeling</strong> to navigate the complex space of structured data. By coupling <strong>feature-edge diffusion dynamics</strong> and employing <strong>equivariant GNN-based score estimators</strong>, GDSS establishes a framework for generating <strong>valid</strong>, <strong>diverse</strong>, and <strong>semantically coherent</strong> graphs, contributing to areas including, <strong>molecular modeling</strong>, <strong>synthetic biology</strong>, and <strong>network science</strong>.</p>
+
+<h3 id="key-takeaways">Key Takeaways</h3>
+
+<ul>
+  <li>
+    <p><strong>Unified Joint Modeling</strong><br>
+By treating the adjacency matrix and node features as co-evolving under a <strong>system of SDEs</strong>, this work overcomes the typical fragmentation in graph generation. It significantly improves <strong>structural-semantic alignment</strong>, which is crucial for tasks like <strong>molecular graph synthesis</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Permutation-Invariant Score Learning</strong><br>
+Leveraging <strong>permutation-equivariant score-based model</strong> ensures that the model respects the graph’s inherent symmetries, meaning that the <strong>node permutations do not affect the outcome</strong>, addressing a key limitation in many autoregressive approaches.</p>
+  </li>
+  <li>
+    <p><strong>Continuous and Flexible Framework</strong><br>
+Diffusion-based generative modeling offers <strong>continuous-time flexibility</strong> and avoids common drawbacks like <strong>mode collapse</strong> seen in GANs and VAEs. It is especially suited for <strong>high-dimensional, sparse, and structured</strong> graph data.</p>
+  </li>
+  <li>
+    <p><strong>Empirical Strength</strong><br>
+The <strong>GDSS</strong> model achieves <strong>state-of-the-art results</strong> on graph generation tasks, outperforming both <strong>one-shot</strong> and <strong>autoregressive</strong> baselines on benchmarks like <strong>QM9</strong> and <strong>ZINC250k</strong> in terms of <strong>Validity (no correction)</strong>, <strong>NSPDK MMD</strong> (structural fidelity), <strong>FCD</strong> (chemical distribution closeness). Among the SDE types, <strong>VE-SDE</strong> paired with the efficient <strong>S4 solver</strong> delivers the best stability, quality, and <strong>sampling speed</strong>, outperforming existing solvers like EM and PC.</p>
+  </li>
+</ul>
+
+<h3 id="future-research-directions">Future Research Directions</h3>
+
+<p>Based on the proposed method, I believe that below approaches could be a possible further research direction.</p>
+
+<ul>
+  <li>
+    <p><strong>Conditional Graph Generation</strong><br>
+Extending the framework to support <strong>property or topology conditioned generation</strong> would broaden its utility in <strong>drug discovery</strong>, <strong>materials design</strong>, and <strong>graph-based reasoning</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Learning with Hard Constraints</strong><br>
+Incorporating <strong>domain-specific constraints</strong>, like <strong>chemical valency rules</strong>, as projection steps or within constraint-aware score functions could significantly improve the validity of generated graphs.</p>
+  </li>
+  <li>
+    <p><strong>Dynamic and Temporal Graphs</strong><br>
+Extending to <strong>dynamic graph generation</strong>, where both node features and edges evolve over time, would benefit applications such as <strong>interaction networks</strong>, <strong>financial systems</strong>, and <strong>physical simulations</strong></p>
+  </li>
+  <li>
+    <p><strong>Latent Diffusion for Graphs</strong><br>
+Considering latent diffusion models such as Stable Diffusion<d-cite key="rombach2022highresolutionimagesynthesislatent"></d-cite>, I think that exploring <strong>generating graphs in a learned latent space</strong> could be another exiting research approach to improve efficiency without sacrificing fidelity.</p>
+  </li>
+  <li>
+    <p><strong>Multimodal Graph Generation</strong><br>
+Graphs often co-occur with other modalities in scientific or social domain, in forms such as text and images. Designing joint diffusion frameworks for <strong>cross-modal graph generation</strong> could be another possible research direction.</p>
+  </li>
+</ul>
+
+<!-- **GDSS** presents a huge contribution to graph generation by unifying node and edge modeling through a system of **stochastic differential equations (SDEs)**.
+
+One of the most impressive aspects of the work is the precise modeling of **node–edge dependency** via partial scores, which significantly improves both generation quality and training efficiency. The introduction of the **S4 solver** further enhances the practicality of score-based generative models by reducing computational cost without sacrificing performance. -->
+<!-- 
+On top of this work, there are several possible future directions:
+- **Scalability:** While GDSS handles medium-sized graphs effectively, extending it to massive graphs or dynamic graphs, such as knowledge graphs or temporal graphs, could be impactful.
+- **Robustness to noise schedules:** Like many diffusion-based methods, GDSS relies on fixed diffusion coefficients. I believe that an adaptive or learned noise schedules may improve flexibility and robustness.
+- **Conditional generation:** Extending GDSS to conditionally generate graphs based on properties or textual prompts, such as molecule with target properties, could greatly increase its applicability. -->
+
+<!-- ** This work involved some use of ChatGPT<d-cite key="chatgpt2025"></d-cite> for grammar correction and sentence polishing; all content was originally created by Jina Kim. -->
+
+<h2 id="extending-gdss-latent-diffusion-for-graphs">Extending GDSS: Latent Diffusion for Graphs</h2>
+
+<p>In this section, I outline a potential extension of GDSS, inspired by recent advances in latent diffusion models such as Stable Diffusion <d-cite key="rombach2022highresolutionimagesynthesislatent"></d-cite>.</p>
+
+<p>One promising direction for scaling GDSS is to adapt its reverse-time SDE framework to operate in a <strong>latent space</strong>, rather than directly on full-resolution graphs. This could be a valid approach since the latent formulation has been effective in other domains for reducing computational cost while preserving high generative fidelity.</p>
+
+<p>We can design the latent diffusion framework for graphs with the following components:</p>
+
+<ol>
+  <li>
+    <p><strong>Graph Encoder</strong><br>
+A permutation-invariant encoder, such as a GNN with hierarchical pooling, maps each graph \(G = (X, A)\) to a compact latent vector \(z \in \mathbb{R}^d,\) capturing both topological and semantic information.</p>
+  </li>
+  <li>
+    <p><strong>Latent Diffusion Process</strong><br>
+A continuous-time SDE is applied in the latent space. The model learns a score function \(s_{\psi,t}(z)\) to reverse the noising process and generate new latent vectors by simulating reverse-time dynamics.</p>
+  </li>
+  <li>
+    <p><strong>Graph Decoder</strong><br>
+A decoder reconstructs graph structures from latent representations, possibly using a graph-based VAE, graph transformer, or autoregressive generator conditioned on \(z.\)</p>
+  </li>
+</ol>
+
+<p>This latent-GDSS architecture offers several advantages:</p>
+<ul>
+  <li>
+<strong>Efficiency</strong>: Operating in the latent space reduces the dimensionality of the generative modeling problem, lowering training and sampling cost.</li>
+  <li>
+<strong>Regularization</strong>: The encoder-decoder structure encourages a more structured, semantically meaningful manifold, improving generalization.</li>
+  <li>
+<strong>Modality Compatibility</strong>: A shared latent space can enable multimodal extensions, such as text-to-graph generation or property-conditioned synthesis.</li>
+</ul>
+
+<p>However, a core challenge is ensuring that the latent space remains <strong>sufficiently smooth and expressive</strong> to support stable diffusion modeling. This could be addressed through contrastive pretraining, joint training with score-based regularization, or denoising objectives that align with the graph decoder.</p>
+
+<!-- To sum up, extending GDSS to a latent diffusion setting could enable **scalable and flexible** graph generation, better suited for real-world tasks involving complex molecular, biological, or social structures. -->
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+      <d-bibliography src="/assets/bibliography/2025-04-28-paper-1.bib"></d-bibliography>
+</div>
+
+    <!-- Footer -->    
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        © Copyright 2025 Jina  Kim. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.
+Last updated: August 24, 2025.
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NYJ88YK0VS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-NYJ88YK0VS');
+  </script>
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": navbarHeight });
+    $("progress-container").css({ "padding-top": navbarHeight });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  
+</body>
+</html>

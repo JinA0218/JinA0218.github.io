@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html --><html>
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+    <!-- Website verification -->
+    <meta name="google-site-verification" content="MARJu3erA7Z6jybcmR5fgSNRNtCNYMAYkk0jidGGr8A">
+<!-- Avoid warning on Google Chrome
+        Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
+        see https://stackoverflow.com/a/75119417
+    -->
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Exploring Chemical Space with Score-based Out-of-distribution Generation | Jina  Kim</title>
+    <meta name="author" content="Jina  Kim">
+    <meta name="description" content="Score-based generative models have shown promise in molecule generation, but often struggle to create truly novel candidates beyond the training distribution. MOOD (Molecular Out-Of-distribution Diffusion) is a score-based diffusion framework that enables controllable exploration of out-of-distribution chemical space without incurring additional computational costs. By integrating a property prediction network into the reverse-time SDE, MOOD effectively guides the generation toward molecules with desired novel traits such as high binding affinity, drug-likeness, and synthesizability.">
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Bootstrap Table -->
+    <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+
+    
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="/assets/img/cook.png">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://jina0218.github.io/blog/2025/paper-2/">
+
+    <!-- Dark Mode -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+    
+
+
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    <script src="/assets/js/distillpub/overrides.js"></script>
+    
+  </head>
+
+  <body>
+<d-front-matter>
+    <script async type="text/json">{
+      "title": "Exploring Chemical Space with Score-based Out-of-distribution Generation",
+      "description": "Score-based generative models have shown promise in molecule generation, but often struggle to create truly novel candidates beyond the training distribution. MOOD (Molecular Out-Of-distribution Diffusion) is a score-based diffusion framework that enables controllable exploration of out-of-distribution chemical space without incurring additional computational costs. By integrating a property prediction network into the reverse-time SDE, MOOD effectively guides the generation toward molecules with desired novel traits such as high binding affinity, drug-likeness, and synthesizability.",
+      "published": "June 1, 2025",
+      "authors": [
+        {
+          "author": "Jina Kim",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST, South Korea",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Jina </span>Kim</a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">about</a>
+              </li>
+              
+              <!-- Blog -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/blog/">blog<span class="sr-only">(current)</span></a>
+              </li>
+
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/publications/">publications</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/cv/">cv</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/teaching/">teaching</a>
+              </li>
+
+              <!-- Toogle theme mode -->
+              <li class="toggle-container">
+                <button id="light-toggle" title="Change theme">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Scrolling Progress Bar -->
+      <progress id="progress" value="0">
+        <div class="progress-container">
+          <span class="progress-bar"></span>
+        </div>
+      </progress>
+    </header>
+
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1>Exploring Chemical Space with Score-based Out-of-distribution Generation</h1>
+        <p>Score-based generative models have shown promise in molecule generation, but often struggle to create truly novel candidates beyond the training distribution. MOOD (Molecular Out-Of-distribution Diffusion) is a score-based diffusion framework that enables controllable exploration of out-of-distribution chemical space without incurring additional computational costs. By integrating a property prediction network into the reverse-time SDE, MOOD effectively guides the generation toward molecules with desired novel traits such as high binding affinity, drug-likeness, and synthesizability.</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h2 id="introduction-the-challenge-of-novel-molecule-generation">Introduction: The Challenge of Novel Molecule Generation</h2>
+
+<p>In de novo drug discovery, deep generative models have emerged as powerful tools for automating the design of novel molecules. However, the generated molecules tend to closely resemble those in the training distribution, restricting their usefulness in discovering truly novel compounds with superior therapeutic potential. This is especially problematic when aiming to avoid patented scaffolds or explore uncharted regions of the chemical space. Moreover, real-world drug design often requires satisfying multiple complex property constraints, such as high binding affinity, drug-likeness, and synthesizability. Most existing models optimize simplistic proxy scores, which often result in trivial or unrealistic structures. This blog introduces <strong>MOOD</strong> (Molecular Out-Of-distribution Diffusion), a novel score-based generative framework that addresses these limitations by enabling controlled exploration beyond the training data, while optimizing for multiple drug-relevant properties.</p>
+
+<h2 id="limitations-of-existing-models">Limitations of Existing Models</h2>
+
+<p>Prior works for molecular generation, such as VAE <d-cite key="G_mez_Bombarelli_2018"></d-cite>, GANs <d-cite key="decao2022molganimplicitgenerativemodel"></d-cite>, and reinforcement learning-based models <d-cite key="olivecrona2017molecularnovodesigndeep"></d-cite>, primarily rely on learning distributions from existing molecular datasets. As a result, they exhibit a strong inductive bias toward the training distribution. For example, the molecules generated by GENTRL<d-cite key="zhavoronkov2019deep"></d-cite> frequently exhibit strong resemblance to known active compounds. Some works attempt to explore novelty through fragment-based RL or prioritized replay<d-cite key="yang2021hit"></d-cite>, but these methods are still constrained by the fragments derived from known molecules and incur high computational costs. Even recent diffusion models like GDSS<d-cite key="jo2022score"></d-cite>, while capable of generating high-quality molecular graphs, lack the mechanism to explicitly control the deviation from training data. Furthermore, these models often optimize over simplified properties (e.g., penalized logP, QED) that do not necessarily correlate with real-world drug efficacy<d-cite key="luo2021graphdf"></d-cite>.</p>
+
+<h2 id="mood-a-new-paradigm-for-out-of-distribution-generation">MOOD: A New Paradigm for Out-of-Distribution Generation</h2>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-2/fig1-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-2/fig1-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-2/fig1-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-2/fig1.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2206.07632" target="_blank" rel="external nofollow noopener">Figure 1: Concept Figure of MOOD.</a>
+</div>
+<p>MOOD introduces a new framework for molecule generation that targets two fundamental challenges: (1) generating molecules that are <strong>truly novel and out-of-distribution (OOD)</strong>, and (2) ensuring that these molecules <strong>satisfy real-world drug-like properties</strong>. For this, MOOD combines a novel OOD-controlled reverse-time diffusion process with gradient-based guidance from a property predictor. The OOD control mechanism allows fine-grained tuning of how far the generative process can deviate from the data distribution using a simple hyperparameter $\lambda$, while the property predictor guides the sampling toward regions in chemical space where molecules exhibit desired characteristics. Importantly, MOOD achieves this without relying on reinforcement learning or fragment vocabularies, and without incurring additional training or inference costs.</p>
+
+<h3 id="score-based-generative-modeling-with-sdes">Score-based Generative Modeling with SDEs</h3>
+
+<p>In order to model the complex dependency between the nodes and edges, MOOD builds upon GDSS<d-cite key="jo2022score"></d-cite>, a framework that models the diffusion process of molecular graphs via a system of stochastic differential equations (More details can be found in Blog Post “Score-based Generative Modeling of Graphs via the System of Stochastic Differential Equations”).</p>
+
+<p>Therefore, the forward diffusion process is described by:</p>
+
+\[dG_t = f_t(G_t)\,dt + g_t\,d\omega\]
+
+<p>where $G_t = (X_t, A_t)$ is the molecular graph at time $t$, $f_t$ is the drift coefficient, $g_t$ is the scalar diffusion coefficient, and $\omega$ is a standard Wiener process.</p>
+
+<p>The reverse-time diffusion process is given by:</p>
+
+\[\begin{aligned}
+dX_t &amp;= \left[ f_{1,t}(X_t) - g_{1,t}^2 \nabla_{X_t} \log p_t(X_t, A_t) \right]dt + g_{1,t} d\bar{\omega}_1, \\\\
+dA_t &amp;= \left[ f_{2,t}(A_t) - g_{2,t}^2 \nabla_{A_t} \log p_t(X_t, A_t) \right]dt + g_{2,t} d\bar{\omega}_2,
+\end{aligned}\]
+
+<p>where $s_{\theta_1,t}$ and $s_{\theta_2,t}$ are score networks trained to approximate $\nabla_{X_t} \log p_t(X_t, A_t)$ and $\nabla_{A_t} \log p_t(X_t, A_t)$, respectively. The reverse-time SDEs are guided by learned score networks that approximate the gradient of the data distribution.</p>
+
+<h3 id="from-gdss-to-mood-modeling-graphs-via-joint-sdes">From GDSS to MOOD: Modeling Graphs via Joint SDEs</h3>
+
+<p>To enable OOD generation, MOOD modifies the reverse-time SDE with an additional drift term derived from the assumption that low-likelihood samples are more likely to be OOD<d-cite key="du2019implicit"></d-cite><d-cite key="grathwohl2019your"></d-cite>. This is done by reweighting the generative distribution to emphasize lower-density areas, so MOOD defines the conditional distribution as follows:</p>
+
+\[p_t(G_t \mid y_o = \lambda) \propto p_t(G_t)^{1 - \sqrt{\lambda}},\]
+
+<p>where $y_0 = \lambda$ is a control variable indicating the degree of OOD-ness and $\lambda \in [0, 1)$. As shown in the equation, higher $\lambda$ encourages sampling from low-likelihood regions, which indicates more novel regions of the chemical space.</p>
+
+<p>Therefore, the resulting OOD-controlled reverse-time SDE is given as:</p>
+
+\[dG_t = \left[ f_t(G_t) - (1 - \sqrt{\lambda}) g_t^2 \nabla_{G_t} \log p_t(G_t) \right] dt + g_t d\bar{\omega},\]
+
+<p>where \(f_t(G_t)\) is the drift, \(g_t\) is the diffusion scale, and \(d\bar{\omega}\) is the reverse-time Wiener process. When \(\lambda=0\) , this reduces to the standard score-based SDE. Further analysis regarding the effect of $\lambda$ is shown in Figure 2.</p>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-2/fig2-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-2/fig2-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-2/fig2-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-2/fig2.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2206.07632" target="_blank" rel="external nofollow noopener">Figure 2: A toy experiment on the OOD-controlled diffusion.</a>
+</div>
+
+<h3 id="conditional-generation-for-property-optimization">Conditional Generation for Property Optimization</h3>
+
+<p>MOOD further refines generation to favor molecules with desirable chemical properties using conditional generation. Here, the objective is to sample from the joint conditional distribution:</p>
+
+\[p_t(G_t \mid y_o = \lambda, y_p),\]
+
+<p>where $y_p$ represents a property condition such as high binding affinity, drug-likeness. This is decomposed using Bayes’ rule:</p>
+
+\[p_t(G_t \mid y_o = \lambda, y_p) \propto p_t(G_t) \, p_t(y_o = \lambda \mid G_t) \, p_t(y_p \mid G_t, y_o = \lambda).\]
+
+<p>The property term \(p_t(y_p \mid G_t, y_o = \lambda)\) is modeled with a Boltzmann distribution:</p>
+
+\[p_t(y_p \mid G_t, y_o = \lambda) = \frac{1}{Z_t} \exp\left( \alpha_t P_\phi(G_t, \lambda) \right),\]
+
+<p>where $P_\phi$ is a learned property prediction function and $\alpha_t$ is a scaling parameter. Substituting this into the reverse-time SDE gives:</p>
+
+\[dG_t = \left[ f_t(G_t) - (1 - \sqrt{\lambda}) g_t^2 \nabla_{G_t} \log p_t(G_t) - \alpha_t g_t^2 \nabla_{G_t} P_\phi(G_t, \lambda) \right] dt + g_t d\bar{\omega},\]
+
+<p>where the last term encourages sampling toward regions with higher predicted property values.</p>
+
+<p>Therefore, following the form of GDSS<d-cite key="jo2022score"></d-cite>, this can be seperated into node features $X_t$ and adjacency matrix $A_t$ as below:</p>
+
+\[\begin{aligned}
+dX_t &amp;= \left[ f_{1,t}(X_t) - (1 - \sqrt{\lambda}) g_{1,t}^2 s_{\theta_1,t}(X_t, A_t) - \alpha_{1,t} g_{1,t}^2 \nabla_{X_t} P_\phi(X_t, A_t, \lambda) \right] dt + g_{1,t} d\bar{\omega}_1, \\
+dA_t &amp;= \left[ f_{2,t}(A_t) - (1 - \sqrt{\lambda}) g_{2,t}^2 s_{\theta_2,t}(X_t, A_t) - \alpha_{2,t} g_{2,t}^2 \nabla_{A_t} P_\phi(X_t, A_t, \lambda) \right] dt + g_{2,t} d\bar{\omega}_2,
+\end{aligned}\]
+
+<p>where $s_{\theta_1,t}$ and $s_{\theta_2,t}$ are score networks approximating the partial derivatives of the log data density with respect to $X_t$ and $A_t$, respectively.</p>
+
+<p>To balance the influence of the score and property gradients, MOOD dynamically adjusts the weighting coefficients:</p>
+
+\[\alpha_{1,t} = \frac{r_{1,t} \| s_{\theta_1,t}(G_t) \|}{\| \nabla_{X_t} P_\phi(G_t, \lambda) \|}, \quad \alpha_{2,t} = \frac{r_{2,t} \| s_{\theta_2,t}(G_t) \|}{\| \nabla_{A_t} P_\phi(G_t, \lambda) \|},\]
+
+<p>where $r_{1,t}$ and $r_{2,t}$ are manually defined scaling ratios. This ensures that the property optimization does not overpower or vanish relative to the diffusion guidance.</p>
+
+<p>As a result, by focusing on OOD generation and property optimization, MOOD enables both controlled exploration and the generation of chemically meaningful molecules.</p>
+
+<h2 id="experimental-results">Experimental Results</h2>
+
+<h3 id="novel-molecule-generation">Novel Molecule Generation</h3>
+
+<p>To evaluate MOOD’s ability to generate truly novel molecules, expriment was conducted in unconstrained OOD generation task, so generating molecules without explicitly optimizing for chemical properties. The goal is to validate whether MOOD’s $\lambda$-controlled diffusion process can produce molecules that systematically deviate from the training data distribution. Trained on ZINC250k dataset, MOOD generates 3000 molecules using different values of $\lambda$, with the property optimized term $P_\phi$ removed. The following metrics are used to evaluate the novelty and diversity of the generated molecules:</p>
+
+<ul>
+  <li>
+    <p><strong>Fréchet ChemNet Distance (FCD)</strong>: Measures distributional shift in learned chemical representations between training and generated sets<d-cite key="preuer2018frechetchemnetdistancemetric"></d-cite>.</p>
+  </li>
+  <li>
+    <p><strong>NSPDK MMD</strong>: Measures structural differences based on graph kernel statistics<d-cite key="costa2010fast"></d-cite>.</p>
+  </li>
+  <li>
+    <p><strong>Novelty Score</strong>: The fraction of valid molecules that have a Tanimoto similarity less than 0.4 to their closest neighbor in the training data<d-cite key="jin2020multi"></d-cite><d-cite key="xie2021mars"></d-cite>.</p>
+
+\[\text{Novelty} = \frac{\text{# of valid molecules with } \text{Tanimoto}(m, m') &lt; 0.4}{\text{Total # of valid generated molecules}}\]
+  </li>
+</ul>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-2/fig3-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-2/fig3-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-2/fig3-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-2/fig3.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2206.07632" target="_blank" rel="external nofollow noopener">Figure 3: (Left) UMAP visualization of the ZINC250k dataset and the generated molecules by the proposed OOD-controlled diffusion
+process. (Right) Evaluation results of the molecules
+generated by the OOD-controlled diffusion.</a>
+</div>
+
+<p>As shown in Figure 3 (a)-(d), increasing λ causes the samples to diverge farther from the training data in the latent space. This visually confirms that MOOD’s OOD-controlled diffusion process offers smooth and tunable control over novelty.</p>
+
+<p>Moreover, in the right side of Figure 3, both FCD and NSPDK MMD increase monotonically with λ, suggesting greater divergence in biochemical features and molecular graph structures. The novelty also increases, meaning the generated molecules are not only different in distribution but also chemically unique at the molecular level.</p>
+
+<p>Therefore, these results demonstrate that MOOD can generate molecules in a controlled and data-driven manner that generalizes beyond the training distribution—opening doors to the exploration of novel chemical space.</p>
+
+<h3 id="property-optimization">Property Optimization</h3>
+
+<p>To evaluate whether MOOD can discover compounds that are not only out-of-distribution (OOD) but also biochemically optimal, such as high binding affinity, strong drug-likeness, and good synthetic accessibility, experiment regarding practical demands of real-world de novo drug discovery has been conducted.</p>
+
+<p>To reflect multi-objective optimization, the following commposite property function has been defined:</p>
+
+\[P_{\text{obj}}(G_t) = \text{DS'}(G_t) \times \text{QED}(G_t) \times \text{SA'}(G_t)\]
+
+<p>where</p>
+
+<ul>
+  <li>
+<strong>DS’</strong> is the normalized docking score (lower is better)</li>
+  <li>
+<strong>QED</strong> quantifies drug-likeness</li>
+  <li>
+<strong>SA’</strong> measures normalized synthetic accessibility (lower means easier synthesis)</li>
+</ul>
+
+<p>A neural property predictor $P_\phi$ is trained on molecules from the ZINC250k dataset to learn $P_{\text{obj}}$. To evaluate performance, joint measures of novelty and property optimization have been conducted as follows:</p>
+
+<ul>
+  <li>
+    <p><strong>Novel Hit Ratio (%)</strong>:<br>
+Fraction of unique hit molecules (with DS &lt; known active median, QED &gt; 0.5, SA &lt; 5) that are structurally novel (Tanimoto similarity &lt; 0.4 with training data).</p>
+  </li>
+  <li>
+    <p><strong>Novel Top-5% DS</strong>:<br>
+Average docking score of the top 5% unique and novel molecules, ensuring property quality alongside novelty.</p>
+  </li>
+</ul>
+
+<p>To test the generality, the evaluations are performed across five protein targets, <code class="language-plaintext highlighter-rouge">parp1</code>, <code class="language-plaintext highlighter-rouge">fa7</code>, <code class="language-plaintext highlighter-rouge">5ht1b</code>, <code class="language-plaintext highlighter-rouge">braf</code>, and <code class="language-plaintext highlighter-rouge">jak2</code>, with OOD control strength is fixed at $\lambda = 0.04$.</p>
+
+<!-- MOOD is compared against a diverse set of strong baselines:
+
+- **REINVENT** — RL with SMILES prior
+- **MORLD** — RL with hierarchical rewards
+- **HierVAE** — VAE with active learning
+- **FREED** and **FREED-QS** — Fragment-based RL, with and without MOOD’s reward design
+- **GDSS** — Baseline diffusion without OOD or property conditioning
+- **MOOD-w/o OOD control** — Removes $\lambda$
+- **MOOD-w/o property predictor** — Removes gradient guidance. -->
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-2/table1-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-2/table1-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-2/table1-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-2/table1.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2206.07632" target="_blank" rel="external nofollow noopener">Table 1: Novel hit ratio (%) results.</a>
+</div>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-2/table2-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-2/table2-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-2/table2-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-2/table2.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2206.07632" target="_blank" rel="external nofollow noopener">Table 2: Novel top 5% docking score (kcal/mol) results.</a>
+</div>
+
+<p>As shown in <strong>Tables 1, 2</strong>, <strong>MOOD achieves state-of-the-art performance</strong> across almost all protein targets.</p>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-2/table3-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-2/table3-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-2/table3-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-2/table3.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2206.07632" target="_blank" rel="external nofollow noopener">Table 3: Novel hit ratio (%) results with the similarity condition of 0.3.</a>
+</div>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-2/table4-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-2/table4-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-2/table4-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-2/table4.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2206.07632" target="_blank" rel="external nofollow noopener">Table 4: Novel top 5% docking score (kcal/mol) results with the similarity condition of 0.3.</a>
+</div>
+
+<p>Moreover, it outperforms all baselines in <strong>novel hit ratio</strong> and <strong>top-5% docking scores</strong>, especially under stricter novelty thresholds (Tables 3, 4).</p>
+
+<p>Especially, MOOD consistently beats <strong>MOOD-w/o OOD control</strong>, which proves that $\lambda$-based exploration improves discovery. But <strong>MOOD-w/o property predictor</strong> still outperforms GDSS, showing that the OOD mechanism alone adds significant value.</p>
+
+<p>Further results in the Appendix (Table 9-13) of the paper<d-cite key="mood"></d-cite> shows that MOOD also maintains <strong>high uniqueness</strong>, <strong>broad structural diversity</strong>, and <strong>robust hit rates</strong>.</p>
+
+<p>These findings suggest that MOOD’s <strong>balanced guidance</strong> allows it to find <strong>chemically diverse</strong> and <strong>viable compounds</strong> that elude conventional methods.</p>
+
+<h3 id="explorability-visualization">Explorability Visualization</h3>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-2/fig4-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-2/fig4-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-2/fig4-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-2/fig4.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2206.07632" target="_blank" rel="external nofollow noopener">Figure 4: (Left) UMAP visualization of the molecules from ZINC250k and the generated samples with parp1 as the target protein. (Right) Distributional distances of the generated molecules measured by FCD and
+NSPDK MMD with respect to ZINC250k. </a>
+</div>
+<p>UMAP visualization (Figure 4, Left) shows that <strong>MOOD explores chemical space more broadly</strong> than competitors like REINVENT and FREED-QS, whose outputs cluster near the training data.<br>
+MOOD’s samples visibly shift into new, unexplored regions, showing the role of the <strong>OOD term</strong>.</p>
+
+<p>Metrics such as <strong>FCD</strong> and <strong>NSPDK MMD</strong> (Figure 4, Right) further demonstrates this <strong>distributional divergence</strong>.</p>
+
+<h3 id="generated-molecules-and-visual-inspection">Generated Molecules and Visual Inspection</h3>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-2/fig5-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-2/fig5-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-2/fig5-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-2/fig5.png" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2206.07632" target="_blank" rel="external nofollow noopener">Figure 5: Generated hit molecules with parp1 as the target protein and the corresponding ZINC250k molecules of the highest similarity. </a>
+</div>
+
+<p>Figures 5 compares the actual molecules produced by each method, and this shows that the baseline models tend to reproduce redundant motifs or slight variations of training data. On the other hand, <strong>MOOD’s molecules</strong> reveal <strong>low similarity</strong> to ZINC250k yet <strong>high binding affinity</strong>, demonstrating the <strong>novelty</strong> and <strong>utility</strong>.</p>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-2/fig6-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-2/fig6-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-2/fig6-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-2/fig6.png" width="50%" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2206.07632" target="_blank" rel="external nofollow noopener">Figure 6: Novel hit molecules
+found by MOOD against parp1 and the top 0.01% ZINC250k molecules. </a>
+</div>
+
+<p>Furthermore, Figure 6 highlights MOOD’s hits that <strong>outperform the top 0.01%</strong> of ZINC250k molecules in docking score while remaining dissimilar, underscoring MOOD’s <strong>effectiveness in discovering novel chemical optima</strong>.</p>
+
+<h3 id="comparison-to-3d-generation-models">Comparison to 3D Generation Models</h3>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-2/table5-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-2/table5-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-2/table5-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-2/table5.png" width="50%" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2206.07632" target="_blank" rel="external nofollow noopener">Table 5: Novel hit ratio (%) and novel top 5% docking score (kcal/mol) results with 3D molecule generation baselines and GDSS with respect to the target protein glmu. </a>
+</div>
+<p>MOOD is also benchmarked against modern 3D molecule generation models, such as Luo et al.<d-cite key="luo20213d"></d-cite>
+and Pocket2Mol<d-cite key="peng2022pocket2mol"></d-cite>, which leverages spatial binding site data. The result in Table 5 shows that MOOD outperforms both, even though it <strong>does not use any 3D information</strong>, emphasizing its <strong>practicality</strong> and <strong>generalization strength</strong>.</p>
+
+<h2 id="ablation-studies">Ablation Studies</h2>
+
+<p>To isolate the contributions of each core component in <strong>MOOD</strong>, the authors perform a comprehensive ablation study. This analysis investigates how both the <strong>OOD control mechanism</strong> and the <strong>property-guided gradient</strong> contribute to the quality and novelty of generated molecules.</p>
+
+<h3 id="effects-of-ood-control-and-property-gradient">Effects of OOD Control and Property Gradient</h3>
+
+<p>To understand the effect of each module, the following variants are compared: (1) <strong>MOOD-w/o Property Predictor</strong>, which disables property conditioning, keeping OOD guidance only (2) <strong>MOOD-w/o OOD Control</strong>, which disables $\lambda$-based novelty control, using only the property gradient (3) <strong>GDSS</strong>: baseline diffusion model without OOD or property guidance (4) <strong>Full MOOD</strong>, which combines both OOD control and property optimization.</p>
+
+<p>As shown in <strong>Tables 1–3</strong>, both OOD control and property optimization are necessary for achieving the best chemical optima, and this can be explained as:</p>
+
+<ul>
+  <li>
+    <p><strong>MOOD &gt; MOOD-w/o Property Predictor</strong>: Conditioning on biochemical properties boosts optimization.</p>
+  </li>
+  <li>
+    <p><strong>MOOD-w/o Property Predictor &gt; GDSS</strong>: Demonstrates the standalone power of OOD exploration.</p>
+  </li>
+  <li>
+    <p><strong>MOOD &gt; MOOD-w/o OOD Control</strong>: Confirms that novelty control further enhances exploration.</p>
+  </li>
+  <li>
+    <p><strong>MOOD-w/o OOD Control &gt; GDSS</strong>: Even without property gradients, OOD-controlled diffusion finds more promising areas of chemical space.
+<!--
+These results validate the **complementary roles** of OOD-guided exploration and property-aware generation in MOOD. --></p>
+  </li>
+</ul>
+
+<h3 id="training-on-low-property-subsets-can-mood-discover-what-it-never-saw">Training on Low-Property Subsets: Can MOOD Discover What It Never Saw?</h3>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-04-28-paper-2/fig7-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-04-28-paper-2/fig7-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-04-28-paper-2/fig7-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-04-28-paper-2/fig7.png" width="50%" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+    <a href="https://arxiv.org/abs/2206.07632" target="_blank" rel="external nofollow noopener">Figure 7: Top 5% docking score
+distribution of the molecules with respect to the target protein parp1.  </a>
+</div>
+
+<p>To test MOOD’s ability to generalize beyond biased training data, the following model variants are trained on a <strong>low-quality subset</strong> of the ZINC250k dataset (bottom 50% ranked by $P_{\text{obj}}$): (1) <strong>L-MOOD-w/o OOD Control</strong>, which is trained only with property guidance (2) <strong>L-MOOD</strong>, which is trained with both OOD control and property guidance. The <strong>top 5% docking scores (DS)</strong> is evaluated for generated molecules that satisfy <strong>QED &gt; 0.5</strong> and <strong>SA &lt; 5</strong>. As shown in Figure 7, both <strong>L-MOOD</strong> and <strong>L-MOOD-w/o OOD Control</strong> outperform their low-quality training data, proving the effectiveness of <strong>property-based diffusion</strong>. Only <strong>L-MOOD</strong> surpasses the <strong>full ZINC250k dataset</strong> in top-5% DS, despite never seeing high-quality molecules during training. This shows that <strong>OOD-controlled diffusion</strong> not only fosters <strong>novelty</strong> but can also find <strong>superior optima in property space</strong>, effectively <strong>extrapolating beyond the limits of training data</strong>.</p>
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p><strong>MOOD</strong> addresses the core limitation of <strong>molecular graph generation</strong> with the ability to explore <strong>novel chemical spaces</strong> while optimizing for <strong>real-world drug-like properties</strong>.</p>
+
+<p>By integrating <strong>OOD-controlled reverse-time diffusion</strong> with <strong>property-guided gradient optimization</strong>, MOOD creates a <strong>principled and controllable</strong> pathway for discovering molecules that are both <strong>chemically novel</strong> and <strong>pharmacologically relevant</strong>.</p>
+
+<h3 id="key-takeaways">Key Takeaways</h3>
+
+<ul>
+  <li>
+    <p><strong>Controlled Novelty through OOD-guided Diffusion</strong>:<br>
+MOOD introduces a framework to bias sampling toward <strong>low-likelihood regions</strong> using a tunable $\lambda$ parameter. It is especially impressive that it only adds slight modification to the equation and does not require any further training, while leading to effective <strong>chemical diversity</strong> and <strong>exploration</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Multi-objective Property Optimization</strong>:<br>
+Rather than optimizing a single property, MOOD uses a <strong>composite objective</strong>:</p>
+
+\[P_{\text{obj}}(G_t) = \text{DS'}(G_t) \times \text{QED}(G_t) \times \text{SA'}(G_t)\]
+
+    <p>These are modeled through a <strong>learnable property predictor</strong> $P_\phi$, which provides gradient signals to steer generation.</p>
+  </li>
+  <li>
+    <p><strong>Complementarity of OOD and Property Guidance</strong>:<br>
+Ablation studies show that both components, OOD control and property gradients, are <strong>individually beneficial</strong> but <strong>synergistic when combined</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Generalization Beyond Training Distribution</strong>:<br>
+Even when trained on <strong>low-quality subsets</strong> of the data, MOOD discovers <strong>superior molecules</strong> not seen during training, highlighting its <strong>extrapolative power</strong>.</p>
+  </li>
+</ul>
+
+<h3 id="further-research-directions">Further Research Directions</h3>
+
+<p>Based on the proposed method, I believe that below approaches could be a possible further research direction.</p>
+
+<ul>
+  <li>
+    <p><strong>Incorporation of 3D Structural Information</strong><br>
+Currently MOOD is limited to 2D graphs, so it could be extended to integrate <strong>3D binding pocket data</strong>, similar to approaches like <strong>Pocket2Mol</strong>. This could be able to enhance structure-based drug design.</p>
+  </li>
+  <li>
+    <p><strong>End-to-End Differentiable Docking</strong><br>
+Replacing $P_\phi$ with <strong>differentiable or learned docking simulators</strong> could bridge the gap between molecule generation and biochemical evaluation.</p>
+  </li>
+  <li>
+    <p><strong>Multi-agent or Population-based Exploration</strong><br>
+Inspired by evolutionary strategies, MOOD could be extended with <strong>population-based agents</strong> exploring different regions of chemical space in parallel.</p>
+  </li>
+  <li>
+    <p><strong>Generalization to Other Modalities</strong><br>
+The MOOD framework could be potentially adapted to other structured domains like <strong>protein design</strong>, <strong>material discovery</strong>, or <strong>neural architecture search</strong>, where <strong>goal-conditioned and diverse generation</strong> is essential.</p>
+  </li>
+</ul>
+
+<!-- - **Toxicity, Selectivity, and Pharmacokinetics**
+  Future work could integrate predictors for **toxicity**, **ADME (absorption, distribution, metabolism, excretion)**, and **selectivity**, improving safety and clinical viability. -->
+
+<!-- - **Synthesis Route Prediction and Cost Modeling**
+  Going beyond SA score, MOOD could benefit from integrating **retrosynthesis planning** or **synthesis cost estimators** for more **lab-feasible molecules**. -->
+
+<!-- - **Interactivity and Human-in-the-Loop Design**
+  Incorporating **expert feedback** could enable **interactive generation**, allowing chemists to guide the tradeoff between **novelty**, **efficacy**, and **constraints**. -->
+
+<h2 id="extending-mood-incorporating-3d-structural-information">Extending MOOD: Incorporating 3D Structural Information</h2>
+
+<p>In this section, I propose a potential extension of MOOD by integrating <strong>3D structural information</strong> of target proteins into the generative process. While MOOD currently operates only in the 2D topological space of molecules, <strong>ligand–protein interactions are fundamentally 3D</strong>, and incorporating spatial constraints from protein binding pockets can improve biological relevance.</p>
+
+<p>The 3D-aware MOOD framework could be designed as follows:</p>
+
+<ol>
+  <li>
+    <p><strong>Protein Pocket Encoder</strong><br>
+A neural encoder processes the 3D structure of a protein binding site, represented as a voxel grid, surface mesh, or point cloud, to produce a latent descriptor \(p \in \mathbb{R}^d,\)
+capturing shape and electrochemical features relevant for binding.</p>
+  </li>
+  <li>
+    <p><strong>Conditioned Property Predictor</strong><br>
+The property prediction network \(P_\phi(G_t, \lambda)\) is augmented to incorporate protein context as \(P\_\phi(G_t, \lambda, p),\)
+allowing MOOD to optimize molecules for both chemical properties and spatial compatibility with the target site.</p>
+  </li>
+  <li>
+    <p><strong>Modified Reverse-Time SDE</strong><br>
+The conditional diffusion process is updated to guide generation with both OOD control and protein-specific gradients:</p>
+
+\[dG_t = \left[ f_t(G_t) - (1 - \sqrt{\lambda}) g_t^2 \nabla_{G_t} \log p_t(G_t) - \alpha_t g_t^2 \nabla_{G_t} P_\phi(G_t, \lambda, p) \right] dt + g_t d\bar{\omega}.\]
+  </li>
+</ol>
+
+<p>This protein-aware extension of MOOD offers several advantages:</p>
+
+<ul>
+  <li>
+<strong>Target-specific Design</strong>: Molecules are generated to be spatially compatible with specific protein pockets, improving hit rates in structure-based drug discovery.</li>
+  <li>
+<strong>End-to-End Learning</strong>: Gradients from the property predictor can be backpropagated through the binding site encoder, enabling joint optimization of ligands and binding-site representations.</li>
+  <li>
+<strong>Flexible Integration</strong>: This formulation can incorporate various protein representations, including pretrained geometric encoders or differentiable docking modules.</li>
+</ul>
+
+<p>Possible issues such as the <strong>limited availability of aligned protein–ligand datasets</strong> and the increased complexity of modeling in 3D can be mitigated using transfer learning from structural databases such as PDBbind, or by leveraging pretrained protein encoders like those used in AlphaFold2 or EquiBind.</p>
+
+<!-- With these designs, incorporating 3D structural information into MOOD would bring it closer to the **structure-based drug design paradigm**, bridging the gap between generative models and biophysical realism. -->
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+      <d-bibliography src="/assets/bibliography/2025-04-28-paper-2.bib"></d-bibliography>
+</div>
+
+    <!-- Footer -->    
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        © Copyright 2025 Jina  Kim. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.
+Last updated: August 24, 2025.
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NYJ88YK0VS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-NYJ88YK0VS');
+  </script>
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": navbarHeight });
+    $("progress-container").css({ "padding-top": navbarHeight });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  
+</body>
+</html>
