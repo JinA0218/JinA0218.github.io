@@ -34,7 +34,7 @@ The estimator is modeled in either linear or quadratic form, allowing attributio
 
 ---
 
-## Motivation
+### Motivation
 In reinforcement learning, agents often struggle when **state representations are incomplete** or **reward signals are sparse/delayed**.  
 
 For example, in the **Taxi-v3** environment:  
@@ -55,7 +55,7 @@ For example, in the **Taxi-v3** environment:
 
 ---
 
-## Key Features
+### Key Features
 - **Bi-level Optimization**:  
   - **RL Stage**: Learns policies with shaped rewards.  
   - **DL Stage**: Fits an interpretable value function from state features (linear or quadratic).  
@@ -66,7 +66,7 @@ For example, in the **Taxi-v3** environment:
 
 ---
 
-## Method Overview
+### Method Overview
 VRAIL alternates between two stages:
 
 1. **RL Stage**  
@@ -87,7 +87,7 @@ This forms a **closed-loop bi-level optimization** between RL and DL stages.
 
 ---
 
-## Experiments
+### Experiments
 - **Environment**: [Taxi-v3 (Gymnasium)](https://gymnasium.farama.org/environments/toy_text/taxi/)  
 - **Baselines**: Compared against vanilla DQN.  
 - **Results**:
@@ -101,12 +101,12 @@ This forms a **closed-loop bi-level optimization** between RL and DL stages.
 
 ---
 
-## Results
+### Results
 - **Linear VRAIL**: Most stable (converged in all runs), but slightly slower.  
 - **Quadratic VRAIL**: Faster convergence and highly robust, though not as perfectly stable as Linear.  
 
 
-### Training Stability Comparison Across Models
+#### 1. Training Stability Comparison Across Models
 - VRAIL improves convergence robustness compared to DQN:  
   - DQN: 8/10 runs  
   - Linear VRAIL: 10/10 runs  
@@ -121,7 +121,7 @@ This forms a **closed-loop bi-level optimization** between RL and DL stages.
     <strong>Training stability comparison across models.</strong> Total reward per episode over 2,000 training epochs. VRAIL variants (b, c) show improved convergence stability over the DQN baseline.
 </div>
 
-### Average epochs to reach reward thresholds (10 seeds, excluding top/bottom 2 outliers)
+#### 2. Average epochs to reach reward thresholds (10 seeds, excluding top/bottom 2 outliers)
 
 | Reward Threshold | DQN | Linear VRAIL | Quadratic VRAIL |
 |------------------|-----|--------------|-----------------|
@@ -130,9 +130,7 @@ This forms a **closed-loop bi-level optimization** between RL and DL stages.
 | 0                | 648.17 | 652.50 | **594.33** |
 | +5               | 717.67 | 735.83 | **660.17** |
 
----
-
-### Effect of Reward Shaping Using a Pretrained Linear VRAIL Model
+#### 3. Effect of Reward Shaping Using a Pretrained Linear VRAIL Model
 A pretrained Linear VRAIL shaping function, when transferred to DQN, improves stability and eliminates non-converging runs.  
 
 <div class="row">
@@ -161,7 +159,7 @@ A pretrained Linear VRAIL shaping function, when transferred to DQN, improves st
 
 ---
 
-## Team Contributions
+### Team Contributions
 All team members actively contributed to every stage of the project, including project concretization,
 trials for method improvement, slides, and report writing. Further individual contributions are detailed
 below.
@@ -172,7 +170,7 @@ diagrams).
 - Jeongjin Han : Interpretation of learned parameters of DL stage, effect of shaped reward experiment
 (Fig 4), α-scheduling trials, environment variants trials.
 
-## Citation
+### Citation
 
 ```BibTeX
 @misc{kim2025vrailvectorizedrewardbasedattribution,
