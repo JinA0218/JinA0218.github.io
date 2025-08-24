@@ -1,10 +1,10 @@
 ---
 layout: page
 title: CS.93000
-description: Sustainability - Environmental Justice for Sihwa Lake
-img: assets/img/project/sihwa_lake.png
-redirect: https://docs.google.com/presentation/d/1vi5yJKSxd8RHt5nZdR9IsWac-uCuu9JVS19MY1S1F1E/edit?slide=id.g34a959ad04e_0_5#slide=id.g34a959ad04e_0_5
-importance: 2
+description: Generative AI for Society - Familiarity-based Personalized Navigation System for Older Adults
+img: assets/img/project/genai.png
+redirect: https://docs.google.com/presentation/d/1kgOvN5ItB7fPVgamzFVtObfGog-1o7ZbJdeVb1uGrj0/edit?slide=id.g28b551466a7_1_183#slide=id.g28b551466a7_1_183
+importance: 1
 category: Presentation
 ---
 

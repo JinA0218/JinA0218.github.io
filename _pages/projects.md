@@ -5,7 +5,7 @@ permalink: /projects/
 description: Coursework, Hackathons, and Beyond.
 nav: true
 nav_order: 2
-display_categories: [coursework, hackathon]
+display_categories: [coursework, hackathon, presentation]
 horizontal: false
 ---
 
