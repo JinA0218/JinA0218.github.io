@@ -1,7 +1,7 @@
 ---
 layout: page
 title: BCS.50041
-description: Neuroscience-inspired AI: Brain-Inspired Replay for Continual Learning
+description: Neuroscience inspired AI - Brain Inspired Replay for Continual Learning
 img: assets/img/project/bcs541.png
 importance: 2
 category: coursework
