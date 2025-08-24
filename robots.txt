@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://daviddmc.github.io/sitemap.xml
+Sitemap: https://JinA0218.github.io/sitemap.xml
