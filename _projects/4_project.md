@@ -2,9 +2,10 @@
 layout: page
 title: project 4
 description: another without an image
-img:
-importance: 3
-category: hackathon
+img: assets/img/project/busan_fullcourse.png
+redirect: https://unsplash.com
+importance: 4
+category: coursework
 ---
 
 Every project has a beautiful feature showcase page.
