@@ -1,6 +1,6 @@
 ---
 layout: page
-title: projects
+title: selected projects
 permalink: /projects/
 description: Coursework, Hackathons, and Beyond.
 nav: true
