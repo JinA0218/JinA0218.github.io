@@ -2,7 +2,7 @@
 layout: page
 title: BCS.50041
 description: Neuroscience-inspired AI
-img: assets/img/bcs541.png
+img: assets/img/project/bcs541.png
 importance: 2
 category: coursework
 ---
