@@ -15,19 +15,31 @@ profile:
   #   <p>Cambridge, MA 02139</p>
 
 news: true  # includes a list of news items
-latest_posts: false  # includes a list of the newest posts
+latest_posts: true  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hi! I am currently a fifth-year Ph.D. student at MIT majoring in Electrical Engineering and Computer Science.
-My research focuses on machine learning and developing robust and efficient algorithms driven by clinical problems.
-Applications include motion-robust 3D rendering of the human brain, real-time quality assessment in MR scans as well as pose estimation and motion characterization of fetuses.
-I am advised by Prof. [Elfar Adalsteinsson](https://www.rle.mit.edu/people/directory/elfar-adalsteinsson/) and collaborate closely with Prof. [Polina Golland](https://people.csail.mit.edu/polina/) and Prof. [P. Ellen Grant](https://scholar.google.com/citations?user=W4dqZ7EAAAAJ).
+Hi!👋
+I'm a senior undergraduate student at KAIST, majoring [Computer Science](https://cs.kaist.ac.kr/). I was born in US(New York), raised in Hong Kong, South Korea(Seoul, Daejeon) and I love building connections with people from diverse backgrounds. Happy to [connect](https://x.com/jk020218) 😊!
 
-I also did summer internships at Google and Meta, working on automated Ads bidding and large-scale video recommendation systems respectively.
+I was incredibly fortunate to spend 3 years under the supervision of [Prof. Sung Ju Hwang](http://www.sungjuhwang.com/) at the [KAIST MLAI](https://www.mlai-kaist.com/), who inspired my passion and commitment to research. This autumn, I’m excited to join the [University of Washington](https://www.washington.edu/) as an exchange student and visiting researcher in the [Paul G. Allen School of Computer Science & Engineering](https://www.cs.washington.edu/)! I am sincerely thankful to my collaborators and advisors, whose support, mentorship, and shared wisdom have been vital to my growth and learning journey as a researcher.
 
-Prior to MIT, I received my Bachelor's degree from Tsinghua University in 2018. I also spent a summer as a research assistant at Stanford, where I was advised by Prof. [John Pauly](https://web.stanford.edu/~pauly/) and Prof. [Greg Zaharchuk](https://profiles.stanford.edu/greg-zaharchuk).
+
+My research interest lies in
+
+- AI for Science (drug discovery, molecular design, protein modeling)
+- Core ML methods (efficient attention, robust generalization)
+- Interpretable AI
+
+After my 2nd year, I was recognized as a [KAIST Honor Student](https://herald.kaist.ac.kr/news/articleView.html?idxno=510), earning eligibility for doctoral-level courses and pursuing interdisciplinary studies across departments:
+- **[AI](https://gsai.kaist.ac.kr/) (Doctoral Level)**: Geometric Deep Learning(A+), Bayesian Machine Learning(A0)
+- **CS** : Introduction to Deep Learning(A+), Introduction to Reinforcement Learning(A0), Generative AI for society(A+), Discrete Mathematics(A0), Immersion Camp: Intensive Programming and Startup
+- **Mathematics**: Analysis I(Score: 83.66/100, Class average: 62.87/100; Absolutely Graded), Calculus I(A+), Calculus II(A0), Intro to Linear Algebra(A0), Probability and Statistics(A+)
+- **Cognitive Neuroscience**: How AI and Brain work(A+), Neuroscience-inspired AI(A0), System Neuroscience(A+)
+- **Chemistry & Physics**: General Chemistry I(A+), General Chemistry Experiement I(A+), General Physics Lab I(A+)
+- **Seminar**: Medicine and Society, Bio & Brain Engineering Seminar, Brain Cognitive Science Seminar, Beyond Games & Into Technologies Seminar
+- **HSS**: Innovation and Entrepreneurship(A0), Human & Environment-Sustainable Socio-ecological System(A0), Intro to Sociology(A+), Intro to Economics(A0), English Short Stories(A+)
 
 <!--
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.test
