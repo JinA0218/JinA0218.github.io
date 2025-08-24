@@ -81,16 +81,16 @@ This project therefore extends Van de Ven et al.’s framework by going beyond p
 
 ## Methodology
 
-### Models
+#### Models
 We evaluate the following variants:
 - **BIR (Brain-Inspired Replay)** with and without Internal Replay  
 - **BIR + SI (Brain-Inspired Replay + Synaptic Intelligence)** with and without Internal Replay  
 
-### Dataset
+#### Dataset
 - **CIFAR-100** in **Class-Incremental Learning (Class-IL)** setup  
 - Sequentially trained on **10 tasks** (10 classes each)  
 
-### Metrics
+#### Metrics
 - **Accuracy**: Initial, final, retention ratio, forgetting score  
 - **Log-Likelihood & Reconstruction Error**: Measures representational fidelity  
 - **Silhouette Score & UMAP**: Evaluates latent space separability  
