@@ -20,7 +20,7 @@ category: coursework
     </div>
 </div>
 <div class="caption">
-    Bi-level optimization framework of VRAIL. The DL stage learns reward parameters from state-value estimates, and the RL stage uses them to shape rewards and train the agent’s policy.
+    **Bi-level optimization framework of VRAIL.** The DL stage learns reward parameters from state-value estimates, and the RL stage uses them to shape rewards and train the agent’s policy.
 </div>
 
 We propose **VRAIL (Vectorized Reward-based Attribution for Interpretable Learning)**, a **bi-level framework for value-based reinforcement learning (RL)** that learns **interpretable weight representations** from state features.  
