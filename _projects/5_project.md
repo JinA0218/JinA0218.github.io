@@ -3,7 +3,7 @@ layout: page
 title: CS.93000
 description: GroupGroceries App
 img: assets/img/project/GroupGroceries.png
-redirect: https://github.com/9Gong9
+redirect: https://github.com/9Gong9/9Gong9_Android
 importance: 5
 category: coursework
 ---
