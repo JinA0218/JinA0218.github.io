@@ -54,8 +54,6 @@ In particular, **Van de Ven et al. (2020)** introduced a *Brain-Inspired Replay 
 - **Internal replay**: replays latent representations rather than raw inputs, closer to how the brain replays experiences.  
 - **Distillation**: uses soft targets to stabilize learning when generated samples are imperfect.  
 
-![internal_replay](img/internal_replay.png)
-
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/project/internal_replay.png" title="concept figure" class="img-fluid rounded z-depth-1" %}
