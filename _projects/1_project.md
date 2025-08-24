@@ -2,7 +2,7 @@
 layout: page
 title: CS.30707 Intro to Reinforcement Learning
 description: VRAIL:Vectorized Reward-based Attribution for Interpretable Learning
-img: ./assets/img/project/cs377.png
+img: assets/img/project/cs377.png
 importance: 1
 category: coursework
 ---
