@@ -5,10 +5,10 @@
 title: blank # the website title (if blank, full name will be used instead)
 first_name: Jina
 middle_name: 
-last_name: Xu
-chinese_last_name: 徐
-chinese_first_name: 俊燊
-email: junshen@mit.edu
+last_name: Kim
+chinese_last_name: 
+chinese_first_name: 
+email: jinakim@kaist.ac.kr
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >
@@ -76,7 +76,7 @@ github_username: daviddmc # your GitHub user name
 gitlab_username: # your GitLab user name
 twitter_username: # your Twitter handle
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
-linkedin_username: junshen-xu-30444b129 # your LinkedIn user name
+linkedin_username: Jina-xu-30444b129 # your LinkedIn user name
 telegram_username: # your Telegram user name
 scholar_userid: qNk6tgcAAAAJ # your Google Scholar ID
 semanticscholar_id: # your Semantic Scholar ID
@@ -272,7 +272,7 @@ jekyll-archives:
 scholar:
 
   last_name: [Xu]
-  first_name: [Junshen]
+  first_name: [Jina]
 
   style: apa
   locale: en

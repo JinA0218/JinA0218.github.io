@@ -2,11 +2,11 @@
   type: map
   contents:
     - name: Full Name
-      value: Junshen Xu
+      value: Jina Kim
     #- name: Date of Birth
     #  value: 14th March 1879
     - name: Email
-      value: junshen [at] mit [dot] edu
+      value: Jina [at] mit [dot] edu
     - name: Languages
       value: English, Chinese
 

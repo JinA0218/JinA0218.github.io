@@ -31,7 +31,7 @@ table {
   }
 
   th {
-    // font-weight: bold; // Junshen
+    // font-weight: bold; // Jina
   }
 }
 
@@ -581,7 +581,7 @@ footer.sticky-bottom {
 
       .preview {
         width: 100%;
-        text-align: center; // Junshen
+        text-align: center; // Jina
 
         .preview {
           min-width: 80px;
@@ -592,7 +592,7 @@ footer.sticky-bottom {
       .abbr {
         height: 2rem;
         margin-bottom: 0.5rem;
-        text-align: center; // Junshen
+        text-align: center; // Jina
 
         abbr {
           display: inline-block;
@@ -617,25 +617,25 @@ footer.sticky-bottom {
 
       .title {
         font-weight: bolder;
-        max-width: 550px; // Junshen
+        max-width: 550px; // Jina
         font-size: 1.125rem;
       }
 
       .periodical {
-        font-size: 0.875rem; // Junshen
+        font-size: 0.875rem; // Jina
       }
 
       .author {
-        font-size: 0.875rem; // Junshen
+        font-size: 0.875rem; // Jina
 
         a {
-          border-bottom: 1px dashed var(--global-text-color); // Junshen
-          color: var(--global-text-color); // Junshen
+          border-bottom: 1px dashed var(--global-text-color); // Jina
+          color: var(--global-text-color); // Jina
 
           &:hover {
             border-bottom-style: solid;
             text-decoration: none;
-            color: var(--global-text-color); // Junshen
+            color: var(--global-text-color); // Jina
           }
         }
 
