@@ -137,6 +137,8 @@
   <li>affiliations: KAIST, South Korea</li>
 </ul>
 
+<hr>
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
@@ -158,8 +160,7 @@
     </div>
 </div>
 <div class="caption">
-    Bi-level optimization framework of VRAIL. The DL stage learns reward parameters
-from state-value estimates, and the RL stage uses them to shape rewards and train the agent’s policy.
+    Bi-level optimization framework of VRAIL. The DL stage learns reward parameters from state-value estimates, and the RL stage uses them to shape rewards and train the agent’s policy.
 </div>
 
 <p>We propose <strong>VRAIL (Vectorized Reward-based Attribution for Interpretable Learning)</strong>, a <strong>bi-level framework for value-based reinforcement learning (RL)</strong> that learns <strong>interpretable weight representations</strong> from state features.<br>
@@ -185,8 +186,29 @@ VRAIL consists of two stages:</p>
 
 <p><strong>VRAIL addresses this challenge</strong> by learning <strong>feature-based reward shaping functions</strong> that uncover latent subgoals (e.g., “passenger is in taxi”), stabilizing training <strong>without modifying the environment</strong>.</p>
 
-<p><img src="./assets/img/project/wall_info.png" alt="Effect of Wall Information"><br>
-<em>Figure: Effect of wall information on DQN convergence. Without wall info, DQN fails in some runs; VRAIL achieves stability without modifying the environment.</em></p>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/project/wall_info-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/project/wall_info-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/project/wall_info-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/project/wall_info.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="Effect of Wall Information" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Effect of wall information on DQN convergence. Without wall info, DQN fails in some runs; VRAIL achieves stability without modifying the environment.
+</div>
 
 <hr>
 
@@ -293,7 +315,29 @@ Learns interpretable value functions:</p>
   </li>
 </ul>
 
-<p><img src="./assets/img/project/training_stability.png" alt="Training Stability"></p>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/project/training_stability-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/project/training_stability-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/project/training_stability-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/project/training_stability.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="Effect of Wall Information" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Training stability comparison across models. Total reward per episode over 2,000 training epochs. VRAIL variants (b, c) show improved convergence stability over the DQN baseline.
+</div>
 
 <h3 id="average-epochs-to-reach-reward-thresholds-10-seeds-excluding-topbottom-2-outliers">Average epochs to reach reward thresholds (10 seeds, excluding top/bottom 2 outliers)</h3>
 
@@ -339,7 +383,29 @@ Learns interpretable value functions:</p>
 <h3 id="effect-of-reward-shaping-using-a-pretrained-linear-vrail-model">Effect of Reward Shaping Using a Pretrained Linear VRAIL Model</h3>
 <p>A pretrained Linear VRAIL shaping function, when transferred to DQN, improves stability and eliminates non-converging runs.</p>
 
-<p><img src="./assets/img/project/reward_shaping.png" alt="Reward Shaping"></p>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/project/reward_shaping-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/project/reward_shaping-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/project/reward_shaping-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/project/reward_shaping.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="Effect of Wall Information" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Effect of reward shaping using a pretrained Linear VRAIL model on DQN training. Standard DQN fails to converge in 1 out of 5 seeds, while DQN trained with the reward function learned by Linear VRAIL converges in all 5 runs.
+</div>
 
 <hr>
 
@@ -351,7 +417,29 @@ Learns interpretable value functions:</p>
 <strong>Quadratic VRAIL</strong>: Heatmap of pairwise feature interactions shows strong coupling between <strong>passenger and destination features</strong>.</li>
 </ul>
 
-<p><img src="./assets/img/project/learned_params.png" alt="Learned Parameters"></p>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/project/learned_params-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/project/learned_params-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/project/learned_params-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/project/learned_params.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="Effect of Wall Information" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Visualization of learned parameters of DL stage. (a) Linear VRAIL contains the importance of each feature, (b) while Quadratic VRAIL contain the pairwise feature importance.
+</div>
 
 <hr>
 
