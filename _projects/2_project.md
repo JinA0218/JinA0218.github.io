@@ -6,9 +6,7 @@ img: assets/img/project/bcs541.png
 importance: 2
 category: coursework
 ---
-# Teaching AI to Remember: Brain-Inspired Replay for Continual Learning
-
-Official implementation of **_Teaching AI to Remember: Brain-Inspired Replay for Continual Learning_ [[pdf]](https://drive.google.com/file/d/1HcYfSXhaHh8bmBdXqJt7Jze87Srz868s/view?usp=sharing) [[slide]](https://drive.google.com/file/d/1HjMsyh-m6IaZrDFm8RsmBsWk8zU29QGa/view?usp=sharing)**.
+#### **Teaching AI to Remember: Brain-Inspired Replay for Continual Learning [[pdf]](https://drive.google.com/file/d/1HcYfSXhaHh8bmBdXqJt7Jze87Srz868s/view?usp=sharing) [[slide]](https://drive.google.com/file/d/1HjMsyh-m6IaZrDFm8RsmBsWk8zU29QGa/view?usp=sharing)**
 
 ## Overview
 
