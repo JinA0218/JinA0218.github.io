@@ -93,10 +93,7 @@
                 <a class="nav-link" href="/publications/">publications<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="/cv/">cv</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="/teaching/">teaching</a>
+                <a class="nav-link" href="/projects/">projects</a>
               </li>
 
               <!-- Toogle theme mode -->
@@ -139,23 +136,221 @@
 <p>An up-to-date list is available on <a href="https://scholar.google.com/citations?user=R2pIbY8AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>.</p>
 
 <div class="publications">
-  <h2 class="year">2023</h2>
-  <ol class="bibliography"></ol>
+  <h2 class="year">2025</h2>
+  <ol class="bibliography">
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div class="col-sm-2 preview">
+<img id="robust_oodpng" class="preview z-depth-1 rounded myImg" src="/assets/img/publication_preview/robust_ood.png"><div id="robust_oodpng-modal" class="modal2">
+      <span class="closeimg" onclick="document.getElementById('robust_oodpng-modal').style.display='none'">×</span>
+      <div class="myCaption"></div>
+      <img class="modal-content2" id="robust_oodpng-modal-img">
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("robust_oodpng-modal");
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById('robust_oodpng');
+      var modalImg = document.getElementById("robust_oodpng-modal-img");
+      var captionText = modal.getElementsByTagName('div')[0];
+      img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "";
+      }
+      // Get the <span> element that closes the modal
+      var span = modal.getElementsByTagName('span')[0];
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+      modal.onclick = function () {
+        modal.style.display = "none";
+      }
+    </script>
+</div>
 
-  <h2 class="year">2022</h2>
-  <ol class="bibliography"></ol>
+  <!-- Entry bib key -->
+  <div id="kim2025robustmolecularpropertyprediction" class="col-sm-8 col-md-9">
+    <!-- Title -->
+    <div class="title">Robust Molecular Property Prediction via Densifying Scarce Labeled Data</div>
+    <!-- Author -->
+    <div class="author">
+      
 
-  <h2 class="year">2021</h2>
-  <ol class="bibliography"></ol>
+      <em>Jina Kim*</em>, Jeffrey Willette*, Bruno Andreis*, and Sung Ju Hwang</div>
 
-  <h2 class="year">2020</h2>
-  <ol class="bibliography"></ol>
+    <!-- Journal/Book title and date -->
+    
+    
+    <div class="periodical">
+      2025
+    </div>
+    <div class="periodical">
+      
+    </div>
 
-  <h2 class="year">2019</h2>
-  <ol class="bibliography"></ol>
+    <!-- Links/Buttons -->
+    <div class="links">
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+      <a href="https://arxiv.org/abs/2506.11877" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a>
+      <a href="https://github.com/JinA0218/drugood-densify" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+    </div>
+    
+    <div class="badges">
+    </div>
 
-  <h2 class="year">2017</h2>
-  <ol class="bibliography"></ol>
+    <!-- Hidden abstract block -->
+    <div class="abstract hidden">
+      <p>A widely recognized limitation of molecular prediction models is their reliance on structures observed in the training data, resulting in poor generalization to out-of-distribution compounds. Yet in drug discovery, the compounds most critical for advancing research often lie beyond the training set, making the bias toward the training data particularly problematic. This mismatch introduces substantial covariate shift, under which standard deep learning models produce unstable and inaccurate predictions. Furthermore, the scarcity of labeled data, stemming from the onerous and costly nature of experimental validation, further exacerbates the difficulty of achieving reliable generalization. To address these limitations, we propose a novel meta-learning-based approach that leverages unlabeled data to interpolate between in-distribution (ID) and out-of-distribution (OOD) data, enabling the model to meta-learn how to generalize beyond the training distribution. We demonstrate significant performance gains on challenging real-world datasets with substantial covariate shift, supported by t-SNE visualizations highlighting our interpolation method.</p>
+    </div>
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div class="col-sm-2 preview">
+<img id="hippng" class="preview z-depth-1 rounded myImg" src="/assets/img/publication_preview/hip.png"><div id="hippng-modal" class="modal2">
+      <span class="closeimg" onclick="document.getElementById('hippng-modal').style.display='none'">×</span>
+      <div class="myCaption"></div>
+      <img class="modal-content2" id="hippng-modal-img">
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("hippng-modal");
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById('hippng');
+      var modalImg = document.getElementById("hippng-modal-img");
+      var captionText = modal.getElementsByTagName('div')[0];
+      img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "";
+      }
+      // Get the <span> element that closes the modal
+      var span = modal.getElementsByTagName('span')[0];
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+      modal.onclick = function () {
+        modal.style.display = "none";
+      }
+    </script>
+</div>
+
+  <!-- Entry bib key -->
+  <div id="lee2025trainingfreesubquadraticcosttransformer" class="col-sm-8 col-md-9">
+    <!-- Title -->
+    <div class="title">A Training-free Sub-quadratic Cost Transformer Model Serving Framework With Hierarchically Pruned Attention</div>
+    <!-- Author -->
+    <div class="author">
+      
+
+      Heejun Lee*, Geon Park*, Youngwan Lee*, Jaduk Suh*, <em>Jina Kim</em>, Wonyoung Jeong, Bumsik Kim, Hyemin Lee, Myeongjae Jeon, and Sung Ju Hwang</div>
+
+    <!-- Journal/Book title and date -->
+    
+    
+    <div class="periodical">
+      2025
+    </div>
+    <div class="periodical">
+      
+    </div>
+
+    <!-- Links/Buttons -->
+    <div class="links">
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+      <a href="https://arxiv.org/abs/2406.09827" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a>
+      <a href="https://github.com/DeepAuto-AI/hip-attention" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+    </div>
+    
+    <div class="badges">
+    </div>
+
+    <!-- Hidden abstract block -->
+    <div class="abstract hidden">
+      <p>In modern large language models (LLMs), increasing the context length is crucial for improving comprehension and coherence in long-context, multi-modal, and retrieval-augmented language generation. While many recent transformer models attempt to extend their context length over a million tokens, they remain impractical due to the quadratic time and space complexities. Although recent works on linear and sparse attention mechanisms can achieve this goal, their real-world applicability is often limited by the need to re-train from scratch and significantly worse performance. In response, we propose a novel approach, Hierarchically Pruned Attention (HiP), which reduces the time complexity of the attention mechanism to O(T \log T) and the space complexity to O(T), where T is the sequence length. We notice a pattern in the attention scores of pretrained LLMs where tokens close together tend to have similar scores, which we call “attention locality”. Based on this observation, we utilize a novel tree-search-like algorithm that estimates the top-k key tokens for a given query on the fly, which is mathematically guaranteed to have better performance than random attention pruning. In addition to improving the time complexity of the attention mechanism, we further optimize GPU memory usage by implementing KV cache offloading, which stores only O(\log T) tokens on the GPU while maintaining similar decoding throughput. Experiments on benchmarks show that HiP, with its training-free nature, significantly reduces both prefill and decoding latencies, as well as memory usage, while maintaining high-quality generation with minimal degradation. HiP enables pretrained LLMs to scale up to millions of tokens on commodity GPUs, potentially unlocking long-context LLM applications previously deemed infeasible.</p>
+    </div>
+  </div>
+</div>
+</li>
+</ol>
+
+  <h2 class="year">2024</h2>
+  <ol class="bibliography"><li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div class="col-sm-2 preview">
+<img id="seapng" class="preview z-depth-1 rounded myImg" src="/assets/img/publication_preview/sea.png"><div id="seapng-modal" class="modal2">
+      <span class="closeimg" onclick="document.getElementById('seapng-modal').style.display='none'">×</span>
+      <div class="myCaption"></div>
+      <img class="modal-content2" id="seapng-modal-img">
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("seapng-modal");
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById('seapng');
+      var modalImg = document.getElementById("seapng-modal-img");
+      var captionText = modal.getElementsByTagName('div')[0];
+      img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "";
+      }
+      // Get the <span> element that closes the modal
+      var span = modal.getElementsByTagName('span')[0];
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+      modal.onclick = function () {
+        modal.style.display = "none";
+      }
+    </script>
+</div>
+
+  <!-- Entry bib key -->
+  <div id="lee2024seasparselinearattention" class="col-sm-8 col-md-9">
+    <!-- Title -->
+    <div class="title">SEA: Sparse Linear Attention with Estimated Attention Mask</div>
+    <!-- Author -->
+    <div class="author">
+      
+
+      Heejun Lee, <em>Jina Kim</em>, Jeffrey Willette, and Sung Ju Hwang</div>
+
+    <!-- Journal/Book title and date -->
+    
+    
+    <div class="periodical">
+      2024
+    </div>
+    <div class="periodical">
+      
+    </div>
+
+    <!-- Links/Buttons -->
+    <div class="links">
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+      <a href="https://arxiv.org/abs/2310.01777" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a>
+      <a href="https://github.com/gmlwns2000/sea-attention" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+    </div>
+    
+    <div class="badges">
+    </div>
+
+    <!-- Hidden abstract block -->
+    <div class="abstract hidden">
+      <p>The transformer architecture has driven breakthroughs in recent years on tasks which require modeling pairwise relationships between sequential elements, as is the case in natural language understanding. However, long seqeuences pose a problem due to the quadratic complexity of the attention operation. Previous research has aimed to lower the complexity by sparsifying or linearly approximating the attention matrix. Yet, these approaches cannot straightforwardly distill knowledge from a teacher’s attention matrix and often require complete retraining from scratch. Furthermore, previous sparse and linear approaches lose interpretability if they cannot produce full attention matrices. To address these challenges, we propose SEA: Sparse linear attention with an Estimated Attention mask. SEA estimates the attention matrix with linear complexity via kernel-based linear attention, then subsequently creates a sparse attention matrix with a top-k selection to perform a sparse attention operation. For language modeling tasks (Wikitext2), previous linear and sparse attention methods show roughly two-fold worse perplexity scores over the quadratic OPT-1.3B baseline, while SEA achieves better perplexity than OPT-1.3B, using roughly half the memory of OPT-1.3B, providing interpretable attention matrix. We believe that our work will have a large practical impact, as it opens the possibility of running large transformers on resource-limited devices with less memory.</p>
+    </div>
+  </div>
+</div>
+</li></ol>
 
 
 </div>
