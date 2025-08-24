@@ -1,10 +1,11 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
-img: assets/img/1.jpg
-importance: 3
-category: fun
+title: CS.93000
+description: Immersion Camp: Intensive Programming & Startup - GroupGroceries
+img: assets/img/project/GroupGroceries.jpg
+redirect: https://github.com/9Gong9
+importance: 35
+category: coursework
 ---
 
 Every project has a beautiful feature showcase page.

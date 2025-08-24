@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CS.93000
-description: Immersion Camp: Intensive Programming & Startup (1)
+description: Immersion Camp: Intensive Programming & Startup - Busan Full Course App
 img: assets/img/project/busan_fullcourse.png
 redirect: https://github.com/JinA0218/Busan-Full-Course-App
 importance: 4
