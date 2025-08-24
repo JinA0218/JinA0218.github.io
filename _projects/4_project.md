@@ -1,7 +1,7 @@
 ---
 layout: page
-title: project 4
-description: another without an image
+title: CS.93000
+description: Immersion Camp: Intensive Programming & Startup (1)
 img: assets/img/project/busan_fullcourse.png
 redirect: https://unsplash.com
 importance: 4
