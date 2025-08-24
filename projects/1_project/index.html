@@ -137,7 +137,30 @@
   <li>affiliations: KAIST, South Korea</li>
 </ul>
 
-<p><img src="./assets/img/project/cs377.png" alt="Concept Figure"></p>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/project/cs377-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/project/cs377-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/project/cs377-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/project/cs377.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="concept figure" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Bi-level optimization framework of VRAIL. The DL stage learns reward parameters
+from state-value estimates, and the RL stage uses them to shape rewards and train the agent’s policy.
+</div>
 
 <p>We propose <strong>VRAIL (Vectorized Reward-based Attribution for Interpretable Learning)</strong>, a <strong>bi-level framework for value-based reinforcement learning (RL)</strong> that learns <strong>interpretable weight representations</strong> from state features.<br>
 VRAIL consists of two stages:</p>
