@@ -5,7 +5,7 @@ description: Generative AI for Society - Familiarity-based Personalized Navigati
 img: assets/img/project/genai.png
 redirect: https://docs.google.com/presentation/d/1kgOvN5ItB7fPVgamzFVtObfGog-1o7ZbJdeVb1uGrj0/edit?slide=id.g28b551466a7_1_76#slide=id.g28b551466a7_1_76
 importance: 1
-category: presentation
+category: Presentation
 ---
 
 Every project has a beautiful feature showcase page.
