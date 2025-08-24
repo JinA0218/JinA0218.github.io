@@ -1,9 +1,9 @@
 ---
 layout: page
-title: CS.30706
-description: Machine Learning
+title: project 3
+description: a project that redirects to another website
 img: assets/img/7.jpg
-redirect: https://colab.research.google.com/drive/1d5rhkIgoWN5Qh6cPfcQ6yuEqGDx5SFxI#scrollTo=vJAGweDcIr9f
+redirect: https://unsplash.com
 importance: 3
 category: coursework
 ---
