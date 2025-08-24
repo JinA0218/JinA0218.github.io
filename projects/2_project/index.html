@@ -17,9 +17,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>project 2 | Jina  Kim</title>
+    <title>BCS.50041 | Jina  Kim</title>
     <meta name="author" content="Jina  Kim">
-    <meta name="description" content="a project with a background image">
+    <meta name="description" content="Neuroscience-inspired AI">
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
 
 
@@ -124,24 +124,16 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">project 2</h1>
-            <p class="post-description">a project with a background image</p>
+            <h1 class="post-title">BCS.50041</h1>
+            <p class="post-description">Neuroscience-inspired AI</p>
           </header>
 
           <article>
-            <p>Every project has a beautiful feature showcase page.
-It’s easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.</p>
+            <h1 id="teaching-ai-to-remember-brain-inspired-replay-for-continual-learning">Teaching AI to Remember: Brain-Inspired Replay for Continual Learning</h1>
 
-<p>To give your project a background in the portfolio page, just add the img tag to the front matter like so:</p>
+<p>Official implementation of <strong><em>Teaching AI to Remember: Brain-Inspired Replay for Continual Learning</em> <a href="https://drive.google.com/file/d/1HcYfSXhaHh8bmBdXqJt7Jze87Srz868s/view?usp=sharing" rel="external nofollow noopener" target="_blank">[pdf]</a> <a href="https://drive.google.com/file/d/1HjMsyh-m6IaZrDFm8RsmBsWk8zU29QGa/view?usp=sharing" rel="external nofollow noopener" target="_blank">[slide]</a></strong>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
-layout: page
-title: project
-description: a project with a background image
-img: /assets/img/12.jpg
----
-</code></pre></div></div>
+<h2 id="overview">Overview</h2>
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -149,49 +141,13 @@ img: /assets/img/12.jpg
 
   <picture>
     
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/1-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/1-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/1-1400.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/project/catastrophic_forgetting-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/project/catastrophic_forgetting-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/project/catastrophic_forgetting-1400.webp"></source>
     
 
     <!-- Fallback to the original file -->
-    <img src="/assets/img/1.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/3-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/3-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/3-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/3.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/5-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/5-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/5-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/5.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="/assets/img/project/catastrophic_forgetting.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="concept figure" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
 
   </picture>
 
@@ -200,21 +156,30 @@ img: /assets/img/12.jpg
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    <strong>Catastrophic Forgetting in AI during Continual Learning.</strong>
 </div>
+
+<p>Artificial neural networks (ANNs) excel at learning from large datasets but still suffer from <strong>catastrophic forgetting</strong>—the loss of previously learned knowledge when adapting to new tasks. Inspired by the <strong>memory replay mechanisms</strong> in the human brain, this project investigates the effectiveness of <strong>internal replay</strong> for <strong>long-term memory in AI</strong>.</p>
+
+<p>Using <strong>CIFAR-100</strong> in a <strong>class-incremental learning (class-IL)</strong> setting, we provide an in-depth analysis of internal replay, both as a standalone mechanism and in combination with <strong>Synaptic Intelligence (SI)</strong>. Our findings highlight the <strong>trade-off between memory stability and learning plasticity</strong>, while also revealing limitations of current brain-inspired approaches.</p>
+
+<hr>
+
+<h2 id="motivation">Motivation</h2>
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
 
   <picture>
     
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/5-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/5-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/5-1400.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/project/brain-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/project/brain-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/project/brain-1400.webp"></source>
     
 
     <!-- Fallback to the original file -->
-    <img src="/assets/img/5.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="/assets/img/project/brain.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="concept figure" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
 
   </picture>
 
@@ -223,44 +188,24 @@ img: /assets/img/12.jpg
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    <strong>Memory replay in Human Brain.</strong>
 </div>
 
-<p>You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, <em>bled</em> for your project, and then… you reveal its glory in the next row of images.</p>
+<p>Humans preserve long-term memories through <strong>neural replay</strong>, where patterns of past experiences are reactivated during learning and consolidation. Inspired by this, recent works (e.g., Van de Ven et al. 2020) proposed <strong>brain-inspired replay mechanisms</strong> to improve AI’s continual learning ability.</p>
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
         <figure>
 
   <picture>
     
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/6-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/6-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/6-1400.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/project/brain_inspired_continual_learning-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/project/brain_inspired_continual_learning-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/project/brain_inspired_continual_learning-1400.webp"></source>
     
 
     <!-- Fallback to the original file -->
-    <img src="/assets/img/6.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/11-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/11-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/11-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/11.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="/assets/img/project/brain_inspired_continual_learning.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="concept figure" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
 
   </picture>
 
@@ -269,24 +214,255 @@ You describe how you toiled, sweated, <em>bled</em> for your project, and then�
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    <strong>Key components of "Brain-inspired replay for continual learning with artificial neural networks".</strong>
 </div>
 
-<p>The code is simple.
-Just wrap your images with <code class="language-plaintext highlighter-rouge">&lt;div class="col-sm"&gt;</code> and place them inside <code class="language-plaintext highlighter-rouge">&lt;div class="row"&gt;</code> (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/" rel="external nofollow noopener" target="_blank">Bootstrap Grid</a> system).
-To make images responsive, add <code class="language-plaintext highlighter-rouge">img-fluid</code> class to each; for rounded corners and shadows use <code class="language-plaintext highlighter-rouge">rounded</code> and <code class="language-plaintext highlighter-rouge">z-depth-1</code> classes.
-Here’s the code for the last row of images above:</p>
+<p>In particular, <strong>Van de Ven et al. (2020)</strong> introduced a <em>Brain-Inspired Replay (BIR)</em> framework, which extends generative replay by incorporating several biologically motivated components:</p>
+<ul>
+  <li>
+<strong>Replay through feedback</strong>: integrates hippocampal-like generators with cortical-like main models.</li>
+  <li>
+<strong>Conditional replay</strong>: allows selective reactivation of specific classes through latent mixture modeling.</li>
+  <li>
+<strong>Context-based gating</strong>: mimics task-dependent neural reactivation.</li>
+  <li>
+<strong>Internal replay</strong>: replays latent representations rather than raw inputs, closer to how the brain replays experiences.</li>
+  <li>
+<strong>Distillation</strong>: uses soft targets to stabilize learning when generated samples are imperfect.</li>
+</ul>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row justify-content-sm-center"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-8 mt-3 mt-md-0"</span><span class="nt">&gt;</span>
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-4 mt-3 mt-md-0"</span><span class="nt">&gt;</span>
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
+<p><img src="img/internal_replay.png" alt="internal_replay"></p>
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/project/internal_replay-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/project/internal_replay-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/project/internal_replay-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/project/internal_replay.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="concept figure" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    <strong>Internal replay as the most important component.</strong>
+</div>
+
+<p>Their analysis highlighted <strong>internal replay</strong> as the <em>most influential</em> factor in mitigating catastrophic forgetting, but also showed that the overall model suffered from low absolute performance and poor scalability.</p>
+
+<p><strong>Our work builds directly on this foundation</strong>:</p>
+<ul>
+  <li>We isolate and study the contribution of <strong>internal replay</strong> in detail.</li>
+  <li>We evaluate its interaction with <strong>Synaptic Intelligence (SI)</strong>, a complementary parameter-constraining method.</li>
+  <li>We provide in-depth analyses (accuracy curves, reconstruction error, UMAP embeddings) to reveal not only its strengths in retention but also its limitations in representational overlap.</li>
+</ul>
+
+<p>This project therefore extends Van de Ven et al.’s framework by going beyond performance metrics to analyze <strong>how and why internal replay affects learning dynamics</strong>, aiming to inform the design of more effective brain-inspired continual learning systems.</p>
+
+<hr>
+
+<h2 id="methodology">Methodology</h2>
+
+<h3 id="models">Models</h3>
+<p>We evaluate the following variants:</p>
+<ul>
+  <li>
+<strong>BIR (Brain-Inspired Replay)</strong> with and without Internal Replay</li>
+  <li>
+<strong>BIR + SI (Brain-Inspired Replay + Synaptic Intelligence)</strong> with and without Internal Replay</li>
+</ul>
+
+<h3 id="dataset">Dataset</h3>
+<ul>
+  <li>
+<strong>CIFAR-100</strong> in <strong>Class-Incremental Learning (Class-IL)</strong> setup</li>
+  <li>Sequentially trained on <strong>10 tasks</strong> (10 classes each)</li>
+</ul>
+
+<h3 id="metrics">Metrics</h3>
+<ul>
+  <li>
+<strong>Accuracy</strong>: Initial, final, retention ratio, forgetting score</li>
+  <li>
+<strong>Log-Likelihood &amp; Reconstruction Error</strong>: Measures representational fidelity</li>
+  <li>
+<strong>Silhouette Score &amp; UMAP</strong>: Evaluates latent space separability</li>
+</ul>
+
+<hr>
+
+<h2 id="key-results">Key Results</h2>
+
+<ol>
+  <li><strong>Retention vs Forgetting</strong></li>
+</ol>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/project/reten_forgetting-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/project/reten_forgetting-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/project/reten_forgetting-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/project/reten_forgetting.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="concept figure" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    <strong>Retention Ratio and Forgetting Score per task.</strong> Retention ratio comparison (left) and forgetting score comparison (right) between BIR(w/ IR), BIR(w/o IR), BIR+SI(w/ IR), BIR+SI(w/o IR) for all tasks. Dashed lines refer to as the average test accuracy throughout all the tasks for each model.
+</div>
+
+<ul>
+  <li>Internal replay (IR) improves <strong>retention ratio</strong> and reduces <strong>forgetting score</strong>, especially when combined with SI.</li>
+</ul>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/project/acc-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/project/acc-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/project/acc-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/project/acc.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="concept figure" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    <strong>Initial accuracy and Final accuracy per task.</strong> Initial test accuracy comparison (left) and final test accuracy comparison (right) between BIR(w/ IR), BIR(w/o IR), BIR + SI(w/ IR), BIR + SI(w/o IR) for all tasks. Dashed lines refer to the average test accuracy throughout all the tasks for each model.
+</div>
+
+<ul>
+  <li>However, IR also reduces <strong>initial accuracy</strong>, indicating a stability–plasticity trade-off.</li>
+</ul>
+
+<ol>
+  <li><strong>Representation Quality</strong></li>
+</ol>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/project/log_like-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/project/log_like-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/project/log_like-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/project/log_like.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="concept figure" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    <strong>Log likelihood distribution and Reconstruction error distribution.</strong> Comparison of log likelihood distribution (left) and reconstruction error distribution (right) between model with internal replay (BIR(w/ IR)) and model without internal replay (BIR(w/o IR)).
+</div>
+
+<ul>
+  <li>IR models fit the data better (higher log-likelihood, lower reconstruction error).</li>
+</ul>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/project/umap-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/project/umap-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/project/umap-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/project/umap.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="concept figure" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    <strong>Silhouette score andUMAPvisualization of embeddings on layer fcE.fcLayer2.linear.</strong> (a)Comparisonof silhouette score between model with internal replay (BIR(w/IR)) and model without internal replay (BIR(w/oIR)). UMAP visualization of embeddings on task7 for (b) BIR (w/IR), (c) BIR+SI (w/IR), (d) BIR (w/oIR), (e) BIR+SI (w/oIR). The experiments are held on layer fcE.fcLayer2.linear.
+</div>
+
+<ul>
+  <li>But hidden layer embeddings remain <strong>poorly separated</strong>, with <strong>high representational overlap</strong> across tasks.</li>
+</ul>
+
+<ol>
+  <li><strong>Trade-Off Observed</strong></li>
+</ol>
+
+<ul>
+  <li>
+<strong>BIR + SI (w/ IR)</strong> achieves the best long-term stability.</li>
+  <li>
+<strong>BIR (w/o IR)</strong> achieves the best short-term plasticity.</li>
+</ul>
+
+<hr>
+
+<h2 id="analysis--insights">Analysis &amp; Insights</h2>
+<ul>
+  <li>
+<strong>Internal Replay</strong> helps mitigate catastrophic forgetting but lowers task-level learning capacity.</li>
+  <li>
+<strong>Synaptic Intelligence (SI)</strong> provides stability by protecting critical parameters, but slows adaptation.</li>
+  <li>
+<strong>Open Problem</strong>: How to retain strong initial performance while preventing forgetting.</li>
+</ul>
+
+<hr>
+<h2 id="future-directions">Future Directions</h2>
+<ul>
+  <li>Investigate <strong>sparsity of context-gating masks</strong>
+</li>
+  <li>Explore <strong>layer-wise replay placement</strong>
+</li>
+  <li>Extend analysis with <strong>hippocampus-inspired mechanisms</strong> (e.g., conditional replay, spatial memory)</li>
+  <li>Align AI replay models with <strong>neuroscience theories</strong> of memory consolidation</li>
+</ul>
+
+<h2 id="references">References</h2>
+<ul>
+  <li>Van de Ven et al., Brain-inspired replay for continual learning with artificial neural networks. Nature Communications (2020)</li>
+  <li>Zenke et al., Continual Learning through Synaptic Intelligence. ICML (2017)</li>
+  <li>Bear et al., Neuroscience: Exploring the Brain. Jones &amp; Bartlett (2020)</li>
+  <li>Millichamp &amp; Chen (2021), Ran et al. (2024), and other works on brain-inspired continual learning</li>
+</ul>
 
           </article>
 
