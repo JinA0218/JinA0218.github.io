@@ -94,7 +94,7 @@ We evaluate the following variants:
 
 ## Key Results
 
-1. **Retention vs Forgetting**
+- **Retention vs Forgetting**: 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -105,7 +105,7 @@ We evaluate the following variants:
     <strong>Retention Ratio and Forgetting Score per task.</strong> Retention ratio comparison (left) and forgetting score comparison (right) between BIR(w/ IR), BIR(w/o IR), BIR+SI(w/ IR), BIR+SI(w/o IR) for all tasks. Dashed lines refer to as the average test accuracy throughout all the tasks for each model.
 </div>
 
-   - Internal replay (IR) improves **retention ratio** and reduces **forgetting score**, especially when combined with SI. 
+Internal replay (IR) improves **retention ratio** and reduces **forgetting score**, especially when combined with SI. 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -116,9 +116,9 @@ We evaluate the following variants:
     <strong>Initial accuracy and Final accuracy per task.</strong> Initial test accuracy comparison (left) and final test accuracy comparison (right) between BIR(w/ IR), BIR(w/o IR), BIR + SI(w/ IR), BIR + SI(w/o IR) for all tasks. Dashed lines refer to the average test accuracy throughout all the tasks for each model.
 </div>
 
-   - However, IR also reduces **initial accuracy**, indicating a stability–plasticity trade-off.  
+However, IR also reduces **initial accuracy**, indicating a stability–plasticity trade-off.  
 
-2. **Representation Quality**
+- **Representation Quality**
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -129,7 +129,7 @@ We evaluate the following variants:
     <strong>Log likelihood distribution and Reconstruction error distribution.</strong> Comparison of log likelihood distribution (left) and reconstruction error distribution (right) between model with internal replay (BIR(w/ IR)) and model without internal replay (BIR(w/o IR)).
 </div>
 
-   - IR models fit the data better (higher log-likelihood, lower reconstruction error).
+IR models fit the data better (higher log-likelihood, lower reconstruction error).
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -140,12 +140,12 @@ We evaluate the following variants:
     <strong>Silhouette score andUMAPvisualization of embeddings on layer fcE.fcLayer2.linear.</strong> (a)Comparisonof silhouette score between model with internal replay (BIR(w/IR)) and model without internal replay (BIR(w/oIR)). UMAP visualization of embeddings on task7 for (b) BIR (w/IR), (c) BIR+SI (w/IR), (d) BIR (w/oIR), (e) BIR+SI (w/oIR). The experiments are held on layer fcE.fcLayer2.linear.
 </div>
 
-   - But hidden layer embeddings remain **poorly separated**, with **high representational overlap** across tasks.  
+But hidden layer embeddings remain **poorly separated**, with **high representational overlap** across tasks.  
 
-4. **Trade-Off Observed**
+- **Trade-Off Observed**
 
-- **BIR + SI (w/ IR)** achieves the best long-term stability.  
-- **BIR (w/o IR)** achieves the best short-term plasticity.  
+**BIR + SI (w/ IR)** achieves the best long-term stability.  
+**BIR (w/o IR)** achieves the best short-term plasticity.  
 
 ---
 
