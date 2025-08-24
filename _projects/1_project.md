@@ -1,80 +1,151 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
-img: assets/img/12.jpg
+title: CS.30707 Intro to Reinforcement Learning
+description: VRAIL:Vectorized Reward-based Attribution for Interpretable Learning
+img: ./assets/img/project/cs377.png
 importance: 1
 category: coursework
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+#### **[[arXiv]](https://arxiv.org/abs/2506.16014) [[code]](https://github.com/JinA0218/CS377_Project) [[slide]](https://drive.google.com/file/d/1th0FzY0WbpATT7SdJMwVqOIlV8qA40Kv/view?usp=sharing)**.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+- authors: Jina Kim, Youjin Jang, Jeongjin Han (equal contribution)
+- affiliations: KAIST, South Korea
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+![Concept Figure](./assets/img/project/cs377.png)
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+We propose **VRAIL (Vectorized Reward-based Attribution for Interpretable Learning)**, a **bi-level framework for value-based reinforcement learning (RL)** that learns **interpretable weight representations** from state features.  
+VRAIL consists of two stages:  
+- a **deep learning (DL) stage** that fits an estimated value function using state features, and  
+- an **RL stage** that uses this to shape learning via **potential-based reward transformations**.  
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
+The estimator is modeled in either linear or quadratic form, allowing attribution of importance to individual features and their interactions. Empirical results on the **Taxi-v3 environment** demonstrate that VRAIL improves **training stability** and **convergence** compared to standard DQN, without requiring environment modifications. Further analysis shows that VRAIL uncovers semantically meaningful subgoals (such as passenger possession), highlighting its ability to produce **human-interpretable behavior**. Our findings suggest that VRAIL serves as a **general, model-agnostic framework** for reward shaping that enhances both learning and interpretability.
 
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+
+---
+
+## Motivation
+In reinforcement learning, agents often struggle when **state representations are incomplete** or **reward signals are sparse/delayed**.  
+
+For example, in the **Taxi-v3** environment:  
+- The default state space lacks **wall information**, which is crucial for successful navigation.  
+- A vanilla DQN baseline sometimes fails to converge (2 out of 10 runs).  
+- When wall information is manually added, DQN converges consistently — but such interventions are impractical in real-world settings.  
+
+**VRAIL addresses this challenge** by learning **feature-based reward shaping functions** that uncover latent subgoals (e.g., “passenger is in taxi”), stabilizing training **without modifying the environment**.
+
+![Effect of Wall Information](./assets/img/project/wall_info.png)  
+*Figure: Effect of wall information on DQN convergence. Without wall info, DQN fails in some runs; VRAIL achieves stability without modifying the environment.*
+
+---
+
+## Key Features
+- **Bi-level Optimization**:  
+  - **RL Stage**: Learns policies with shaped rewards.  
+  - **DL Stage**: Fits an interpretable value function from state features (linear or quadratic).  
+- **Interpretability**: Produces **weight vectors** and **feature interactions** that highlight important factors in decision-making.  
+- **Training Stability**: More robust convergence compared to vanilla DQN.  
+- **Model-Agnostic**: Can be applied to value-based RL methods (DQN, SARSA, Q-learning, etc.).  
+- **Generalizable Reward Shaping**: Learned shaping functions can be transferred to other agents.
+
+---
+
+## Method Overview
+VRAIL alternates between two stages:
+
+1. **RL Stage**  
+   Reward shaping with a potential function:
+   `R'(s, a, s') = R(s, a, s') + γ V̂(x_{s'}; θ) − V̂(x_s; θ)`
+
+   - Uses any value-based RL algorithm (e.g., DQN).  
+   - Encourages intermediate progress toward the final goal.  
+
+2. **DL Stage**  
+   Learns interpretable value functions:  
+   - **Linear VRAIL**:  `V̂(x_s; w) = wᵀ x_s`
+   - **Quadratic VRAIL**:  `V̂(x_s; W) = x_sᵀ W x_s`
+
+   - Attributes importance to features and feature interactions.  
+
+This forms a **closed-loop bi-level optimization** between RL and DL stages.
+
+---
+
+## Experiments
+- **Environment**: [Taxi-v3 (Gymnasium)](https://gymnasium.farama.org/environments/toy_text/taxi/)  
+- **Baselines**: Compared against vanilla DQN.  
+- **Results**:
+  - **Linear VRAIL**: Highest robustness (converged in 10/10 seeds).  
+  - **Quadratic VRAIL**: Fastest convergence speed.  
+  - **Transferability**: Pretrained VRAIL reward functions improve vanilla DQN convergence.  
+
+**Example Findings**:
+- Linear VRAIL learns that **"Passenger in Taxi"** is the most important subgoal.  
+- Quadratic VRAIL highlights **feature interactions** between location, passenger, and destination.  
+
+---
+
+## Results
+- **Linear VRAIL**: Most stable (converged in all runs), but slightly slower.  
+- **Quadratic VRAIL**: Faster convergence and highly robust, though not as perfectly stable as Linear.  
 
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+### Training Stability Comparison Across Models
+- VRAIL improves convergence robustness compared to DQN:  
+  - DQN: 8/10 runs  
+  - Linear VRAIL: 10/10 runs  
+  - Quadratic VRAIL: 9/10 runs  
 
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
+![Training Stability](./assets/img/project/training_stability.png)
+
+### Average epochs to reach reward thresholds (10 seeds, excluding top/bottom 2 outliers)
+
+| Reward Threshold | DQN | Linear VRAIL | Quadratic VRAIL |
+|------------------|-----|--------------|-----------------|
+| -10              | 600.00 | 614.17 | **538.17** |
+| -5               | 612.17 | 643.17 | **562.83** |
+| 0                | 648.17 | 652.50 | **594.33** |
+| +5               | 717.67 | 735.83 | **660.17** |
+
+---
+
+### Effect of Reward Shaping Using a Pretrained Linear VRAIL Model
+A pretrained Linear VRAIL shaping function, when transferred to DQN, improves stability and eliminates non-converging runs.  
+
+![Reward Shaping](./assets/img/project/reward_shaping.png)
+
+---
+
+### Visualization of Learned Parameters of DL Stage
+- **Linear VRAIL**: Feature weights highlight **passenger possession** as the most important subgoal.  
+- **Quadratic VRAIL**: Heatmap of pairwise feature interactions shows strong coupling between **passenger and destination features**.  
+
+![Learned Parameters](./assets/img/project/learned_params.png)
+
+---
+
+## Team Contributions
+All team members actively contributed to every stage of the project, including project concretization,
+trials for method improvement, slides, and report writing. Further individual contributions are detailed
+below.
+- Jina Kim : Backbone model implementation (Linear VRAIL), DQN toy experiment (Fig 1),
+self-attention based model trials.
+- Youjin Jang : Idea proposal (vectorized rewards), presentation, quiz creation, visualization (graphs,
+diagrams).
+- Jeongjin Han : Interpretation of learned parameters of DL stage, effect of shaped reward experiment
+(Fig 4), α-scheduling trials, environment variants trials.
+
+## Citation
+
+```BibTeX
+@misc{kim2025vrailvectorizedrewardbasedattribution,
+      title={VRAIL: Vectorized Reward-based Attribution for Interpretable Learning}, 
+      author={Jina Kim and Youjin Jang and Jeongjin Han},
+      year={2025},
+      eprint={2506.16014},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2506.16014}, 
+}
 ```
-{% endraw %}
