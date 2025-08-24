@@ -174,7 +174,7 @@ VRAIL consists of two stages:</p>
 
 <hr>
 
-<h2 id="motivation">Motivation</h2>
+<h3 id="motivation">Motivation</h3>
 <p>In reinforcement learning, agents often struggle when <strong>state representations are incomplete</strong> or <strong>reward signals are sparse/delayed</strong>.</p>
 
 <p>For example, in the <strong>Taxi-v3</strong> environment:</p>
@@ -212,7 +212,7 @@ VRAIL consists of two stages:</p>
 
 <hr>
 
-<h2 id="key-features">Key Features</h2>
+<h3 id="key-features">Key Features</h3>
 <ul>
   <li>
 <strong>Bi-level Optimization</strong>:
@@ -235,7 +235,7 @@ VRAIL consists of two stages:</p>
 
 <hr>
 
-<h2 id="method-overview">Method Overview</h2>
+<h3 id="method-overview">Method Overview</h3>
 <p>VRAIL alternates between two stages:</p>
 
 <ol>
@@ -268,7 +268,7 @@ Learns interpretable value functions:</p>
 
 <hr>
 
-<h2 id="experiments">Experiments</h2>
+<h3 id="experiments">Experiments</h3>
 <ul>
   <li>
 <strong>Environment</strong>: <a href="https://gymnasium.farama.org/environments/toy_text/taxi/" rel="external nofollow noopener" target="_blank">Taxi-v3 (Gymnasium)</a>
@@ -296,7 +296,7 @@ Learns interpretable value functions:</p>
 
 <hr>
 
-<h2 id="results">Results</h2>
+<h3 id="results">Results</h3>
 <ul>
   <li>
 <strong>Linear VRAIL</strong>: Most stable (converged in all runs), but slightly slower.</li>
@@ -304,7 +304,7 @@ Learns interpretable value functions:</p>
 <strong>Quadratic VRAIL</strong>: Faster convergence and highly robust, though not as perfectly stable as Linear.</li>
 </ul>
 
-<h3 id="training-stability-comparison-across-models">Training Stability Comparison Across Models</h3>
+<h4 id="1-training-stability-comparison-across-models">1. Training Stability Comparison Across Models</h4>
 <ul>
   <li>VRAIL improves convergence robustness compared to DQN:
     <ul>
@@ -339,7 +339,7 @@ Learns interpretable value functions:</p>
     <strong>Training stability comparison across models.</strong> Total reward per episode over 2,000 training epochs. VRAIL variants (b, c) show improved convergence stability over the DQN baseline.
 </div>
 
-<h3 id="average-epochs-to-reach-reward-thresholds-10-seeds-excluding-topbottom-2-outliers">Average epochs to reach reward thresholds (10 seeds, excluding top/bottom 2 outliers)</h3>
+<h4 id="2-average-epochs-to-reach-reward-thresholds-10-seeds-excluding-topbottom-2-outliers">2. Average epochs to reach reward thresholds (10 seeds, excluding top/bottom 2 outliers)</h4>
 
 <table>
   <thead>
@@ -378,9 +378,7 @@ Learns interpretable value functions:</p>
   </tbody>
 </table>
 
-<hr>
-
-<h3 id="effect-of-reward-shaping-using-a-pretrained-linear-vrail-model">Effect of Reward Shaping Using a Pretrained Linear VRAIL Model</h3>
+<h4 id="3-effect-of-reward-shaping-using-a-pretrained-linear-vrail-model">3. Effect of Reward Shaping Using a Pretrained Linear VRAIL Model</h4>
 <p>A pretrained Linear VRAIL shaping function, when transferred to DQN, improves stability and eliminates non-converging runs.</p>
 
 <div class="row">
@@ -443,7 +441,7 @@ Learns interpretable value functions:</p>
 
 <hr>
 
-<h2 id="team-contributions">Team Contributions</h2>
+<h3 id="team-contributions">Team Contributions</h3>
 <p>All team members actively contributed to every stage of the project, including project concretization,
 trials for method improvement, slides, and report writing. Further individual contributions are detailed
 below.</p>
@@ -456,7 +454,7 @@ diagrams).</li>
 (Fig 4), α-scheduling trials, environment variants trials.</li>
 </ul>
 
-<h2 id="citation">Citation</h2>
+<h3 id="citation">Citation</h3>
 
 <pre><code class="language-BibTeX">@misc{kim2025vrailvectorizedrewardbasedattribution,
       title={VRAIL: Vectorized Reward-based Attribution for Interpretable Learning}, 
