@@ -2,7 +2,7 @@
 layout: page
 title: CS.30706
 description: Machine Learning
-img: assets/img/7.jpg
+img: assets/img/project/cs30706.png
 redirect: https://colab.research.google.com/drive/1d5rhkIgoWN5Qh6cPfcQ6yuEqGDx5SFxI#scrollTo=vJAGweDcIr9f
 importance: 3
 category: coursework
