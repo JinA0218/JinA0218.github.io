@@ -20,7 +20,7 @@ category: coursework
     </div>
 </div>
 <div class="caption">
-    **Bi-level optimization framework of VRAIL.** The DL stage learns reward parameters from state-value estimates, and the RL stage uses them to shape rewards and train the agent’s policy.
+    <strong>Bi-level optimization framework of VRAIL.</strong> The DL stage learns reward parameters from state-value estimates, and the RL stage uses them to shape rewards and train the agent’s policy.
 </div>
 
 We propose **VRAIL (Vectorized Reward-based Attribution for Interpretable Learning)**, a **bi-level framework for value-based reinforcement learning (RL)** that learns **interpretable weight representations** from state features.  
@@ -50,7 +50,7 @@ For example, in the **Taxi-v3** environment:
     </div>
 </div>
 <div class="caption">
-    Effect of wall information on DQN convergence. Without wall info, DQN fails in some runs; VRAIL achieves stability without modifying the environment.
+    <strong>Effect of wall information on DQN convergence.</strong> Without wall info, DQN fails in some runs; VRAIL achieves stability without modifying the environment.
 </div>
 
 ---
@@ -118,7 +118,7 @@ This forms a **closed-loop bi-level optimization** between RL and DL stages.
     </div>
 </div>
 <div class="caption">
-    Training stability comparison across models. Total reward per episode over 2,000 training epochs. VRAIL variants (b, c) show improved convergence stability over the DQN baseline.
+    <strong>Training stability comparison across models.</strong> Total reward per episode over 2,000 training epochs. VRAIL variants (b, c) show improved convergence stability over the DQN baseline.
 </div>
 
 ### Average epochs to reach reward thresholds (10 seeds, excluding top/bottom 2 outliers)
@@ -141,7 +141,7 @@ A pretrained Linear VRAIL shaping function, when transferred to DQN, improves st
     </div>
 </div>
 <div class="caption">
-    Effect of reward shaping using a pretrained Linear VRAIL model on DQN training. Standard DQN fails to converge in 1 out of 5 seeds, while DQN trained with the reward function learned by Linear VRAIL converges in all 5 runs.
+    <strong>Effect of reward shaping using a pretrained Linear VRAIL model on DQN training.</strong> Standard DQN fails to converge in 1 out of 5 seeds, while DQN trained with the reward function learned by Linear VRAIL converges in all 5 runs.
 </div>
 
 ---
@@ -156,7 +156,7 @@ A pretrained Linear VRAIL shaping function, when transferred to DQN, improves st
     </div>
 </div>
 <div class="caption">
-    Visualization of learned parameters of DL stage. (a) Linear VRAIL contains the importance of each feature, (b) while Quadratic VRAIL contain the pairwise feature importance.
+    <strong>Visualization of learned parameters of DL stage.</strong> (a) Linear VRAIL contains the importance of each feature, (b) while Quadratic VRAIL contain the pairwise feature importance.
 </div>
 
 ---
