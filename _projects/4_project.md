@@ -3,7 +3,7 @@ layout: page
 title: CS.93000
 description: Immersion Camp: Intensive Programming & Startup (1)
 img: assets/img/project/busan_fullcourse.png
-redirect: https://unsplash.com
+redirect: https://github.com/JinA0218/Busan-Full-Course-App
 importance: 4
 category: coursework
 ---
