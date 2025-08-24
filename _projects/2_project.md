@@ -161,8 +161,8 @@ But hidden layer embeddings remain **poorly separated**, with **high representat
 - Extend analysis with **hippocampus-inspired mechanisms** (e.g., conditional replay, spatial memory)
 - Align AI replay models with **neuroscience theories** of memory consolidation
 
-## References
-- Van de Ven et al., Brain-inspired replay for continual learning with artificial neural networks. Nature Communications (2020)
-- Zenke et al., Continual Learning through Synaptic Intelligence. ICML (2017)
-- Bear et al., Neuroscience: Exploring the Brain. Jones & Bartlett (2020)
-- Millichamp & Chen (2021), Ran et al. (2024), and other works on brain-inspired continual learning
+## Key References
+- van de Ven, G.M., Siegelmann, H.T. & Tolias, A.S. Brain-inspired replay for continual learning with artificial neural networks. Nat Commun 11, 4069 (2020).
+- Zenke, F., Poole, B., & Ganguli, S. (2017, July). Continual learning through synaptic intelligence. In International conference on machine learning (pp. 3987-3995). PMLR.
+- Bear, M., Connors, B., & Paradiso, M. A. (2020). Neuroscience: Exploring the brain, enhanced edition: Exploring the brain. Jones & Bartlett Learning.
+- More can be found in [[pdf]](https://drive.google.com/file/d/1HcYfSXhaHh8bmBdXqJt7Jze87Srz868s/view?usp=sharing)
