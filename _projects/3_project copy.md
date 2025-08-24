@@ -1,9 +1,9 @@
 ---
 layout: page
-title: project 3
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: Seoul Science Park Hackathon
+description: Real-Time Passenger Counting System for School Bus Child Safety
+img: assets/img/project/hack.png
+redirect: https://sites.google.com/view/for-a-better-world/6?authuser=0
 importance: 1
 category: hackathon
 ---

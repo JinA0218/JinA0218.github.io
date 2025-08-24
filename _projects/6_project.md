@@ -1,7 +1,7 @@
 ---
 layout: page
-title: project 6
-description: Immersion Camp: Intensive Programming & Startup - Collaborative Music Composition Website
+title: CS.93000
+description: Collaborative Music Composition Website
 img: assets/img/project/music.png
 redirect: https://github.com/JinA0218/Mad-Music-Maker
 importance: 6
