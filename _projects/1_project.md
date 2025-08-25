@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CS.30707
-description:  Intro to Reinforcement Learning - Vectorized Reward-based Attribution for Interpretable Learning [senior spring]
+description: <Senior Spring> Intro to Reinforcement Learning - Vectorized Reward-based Attribution for Interpretable Learning
 img: assets/img/project/cs377.png
 importance: 1
 category: coursework
