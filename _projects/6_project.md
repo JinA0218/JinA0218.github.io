@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CS.93000
-description: <Freshman Spring> Immersion Camp - Collaborative Music Composition Website
+description: (Freshman Spring) Immersion Camp - Collaborative Music Composition Website
 img: assets/img/project/music.png
 redirect: https://github.com/JinA0218/Mad-Music-Maker
 importance: 6
