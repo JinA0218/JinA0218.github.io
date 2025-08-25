@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CS.93000
-description: (1st Semester) Immersion Camp - Busan Full Course App
+description: (1st Year Summer) Immersion Camp - Busan Full Course App
 img: assets/img/project/busan_full_course.png
 redirect: https://github.com/JinA0218/Busan-Full-Course-App
 importance: 4
