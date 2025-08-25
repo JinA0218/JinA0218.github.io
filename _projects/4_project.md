@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CS.93000
-description: Immersion Camp - Busan Full Course App **[freshman spring]**
+description: Immersion Camp - Busan Full Course App [freshman spring]
 img: assets/img/project/busan_full_course.png
 redirect: https://github.com/JinA0218/Busan-Full-Course-App
 importance: 4
