@@ -1,10 +1,10 @@
 ---
 layout: page
-title: CS.49900
-description: (4th Semester) Generative AI for Society - (Idea Proposal) A Familiarity-based Personalized Navigation System for Older Adults
-img: assets/img/project/genai.png
-redirect: https://docs.google.com/presentation/d/1fHpblH8QewN5rqsaKii6ekeARq0TiQWOFlpczvf2bkQ/edit?usp=sharing
-importance: 4
+title: Lab Seminar @KAIST MLAI
+description: (2024.12.22) Model Merging Idea Proposal@KAIST MLAI
+img: assets/img/project/model_merging_idea.png
+redirect: https://docs.google.com/presentation/d/1FxcD1WE9_DqbQFioaJEXzWM8iUNEH2g2XM9yQcXPllw/edit?slide=id.g378c63bb8eb_0_10#slide=id.g378c63bb8eb_0_10
+importance: 2
 category: presentation
 ---
 
