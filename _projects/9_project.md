@@ -1,10 +1,10 @@
 ---
 layout: page
 title: CS.49900
-description: (4th Semester) Generative AI for Society - A Familiarity-based Personalized Navigation System for Older Adults Idea Proposal
+description: Lab Seminar @KAIST MLAI - What matters for Model Merging at Scale?
 img: assets/img/project/genai.png
-redirect: https://docs.google.com/presentation/d/1fHpblH8QewN5rqsaKii6ekeARq0TiQWOFlpczvf2bkQ/edit?usp=sharing
-importance: 2
+redirect: https://docs.google.com/presentation/d/1D9fMN0JqPgJPCM_lwvFG9oAXBEhdjMxmR7bQq-GvS3U/edit?usp=sharing
+importance: 1
 category: presentation
 ---
 
