@@ -1,10 +1,10 @@
 ---
 layout: page
 title: HSS.20029
-description: Sustainability - Environmental Justice for Sihwa Lake
+description: (4th Semester) Sustainability - Environmental Justice for Sihwa Lake
 img: assets/img/project/sihwa_lake.png
-redirect: https://docs.google.com/presentation/d/1vi5yJKSxd8RHt5nZdR9IsWac-uCuu9JVS19MY1S1F1E/edit?slide=id.g34a959ad04e_0_5#slide=id.g34a959ad04e_0_5
-importance: 2
+redirect: https://docs.google.com/presentation/d/18A9n2j9JjaeXEuYjCOMBL8kcc8BHKeJJcY04XBuNM6Q/edit?usp=sharing
+importance: 3
 category: presentation
 ---
 
