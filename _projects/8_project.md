@@ -1,11 +1,11 @@
 ---
 layout: page
 title: CS.49900
-description: Generative AI for Society - Familiarity-based Personalized Navigation System for Older Adults
+description: (4th Semester) Generative AI for Society - A Familiarity-based Personalized Navigation System for Older Adults Idea Proposal
 img: assets/img/project/genai.png
-redirect: https://docs.google.com/presentation/d/1kgOvN5ItB7fPVgamzFVtObfGog-1o7ZbJdeVb1uGrj0/edit?slide=id.g28b551466a7_1_76#slide=id.g28b551466a7_1_76
+redirect: https://docs.google.com/presentation/d/1fHpblH8QewN5rqsaKii6ekeARq0TiQWOFlpczvf2bkQ/edit?usp=sharing
 importance: 1
-category: Presentation
+category: presentation
 ---
 
 Every project has a beautiful feature showcase page.
