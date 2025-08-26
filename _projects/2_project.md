@@ -26,7 +26,7 @@ category: coursework
 
 Artificial neural networks (ANNs) excel at learning from large datasets but still suffer from **catastrophic forgetting**—the loss of previously learned knowledge when adapting to new tasks. Inspired by the **memory replay mechanisms** in the human brain, this project investigates the effectiveness of **internal replay** for **long-term memory in AI**.  
 
-Using **CIFAR-100** in a **class-incremental learning (class-IL)** setting, we provide an in-depth analysis of internal replay, both as a standalone mechanism and in combination with **Synaptic Intelligence (SI)**. Our findings highlight the **trade-off between memory stability and learning plasticity**, while also revealing limitations of current brain-inspired approaches.  
+Using **CIFAR-100** in a **class-incremental learning (class-IL)** setting, we provide an in-depth analysis of internal replay, both as a standalone mechanism and in combination with **Synaptic Intelligence (SI)**. The findings highlight the **trade-off between memory stability and learning plasticity**, while also revealing limitations of current brain-inspired approaches.  
 
 ---
 
@@ -70,7 +70,7 @@ In particular, **Van de Ven et al. (2020)** introduced a *Brain-Inspired Replay 
 
 Their analysis highlighted **internal replay** as the *most influential* factor in mitigating catastrophic forgetting, but also showed that the overall model suffered from low absolute performance and poor scalability.  
 
-**Our work builds directly on this foundation**:  
+**This work builds directly on this foundation**:  
 - We isolate and study the contribution of **internal replay** in detail.  
 - We evaluate its interaction with **Synaptic Intelligence (SI)**, a complementary parameter-constraining method.  
 - We provide in-depth analyses (accuracy curves, reconstruction error, UMAP embeddings) to reveal not only its strengths in retention but also its limitations in representational overlap.  
