@@ -25,9 +25,9 @@ I was incredibly fortunate to spend 3 years under the supervision of [Prof. Sung
 
 My research interest lies in
 
-- AI for Science (drug discovery, molecular design, protein modeling)
-- Core ML methods (efficient attention, robust generalization)
-- Interpretable AI
+- **AI for Science** (drug discovery, molecular design, protein modeling)
+- **Core ML methods** (efficient attention, robust generalization)
+- **Interpretable AI**
 
 I have also been exploring **Model Merging** for efficient and improved generalization (see [1] [selected project>presentation>model merging idea proposal](https://docs.google.com/presentation/d/1FxcD1WE9_DqbQFioaJEXzWM8iUNEH2g2XM9yQcXPllw/edit?slide=id.g378c63bb8eb_0_10#slide=id.g378c63bb8eb_0_10), [2] [selected project>presentation>lab seminar](https://docs.google.com/presentation/d/1D9fMN0JqPgJPCM_lwvFG9oAXBEhdjMxmR7bQq-GvS3U/edit))and **Continual Learning** with a focus on mitigating catastrophic forgetting (see [selected project>coursework>bcs.50041](https://jina0218.github.io/projects/2_project/)).
 
