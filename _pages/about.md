@@ -36,7 +36,7 @@ After my 2nd year, I was recognized as a [KAIST Honor Student](https://herald.ka
 - **Cognitive Neuroscience**: How AI and Brain work(A+), Neuroscience-inspired AI(A0), System Neuroscience(A+)
 - **Chemistry & Physics**: General Chemistry I(A+), General Chemistry Experiement I(A+), General Physics Lab I(A+)
 - **Seminar**: Medicine and Society, Bio & Brain Engineering Seminar, Brain Cognitive Science Seminar, Beyond Games & Into Technologies Seminar
-- **HSS**: Innovation and Entrepreneurship(A0), Human & Environment-Sustainable Socio-ecological System(A0), Intro to Sociology(A+), Intro to Economics(A0), English Short Stories(A+)
+- **HSS**: Human & Environment-Sustainable Socio-ecological System(A0), Innovation and Entrepreneurship(A0), Management of Everything(A+), Intro to Sociology(A+), Intro to Economics(A0), English Short Stories(A+)
 
 <!--
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.test
