@@ -37,7 +37,7 @@ After my 2nd year, I was recognized as a [KAIST Honor Student](https://herald.ka
 - **Mathematics**: Analysis I(Score: 83.66/100, Class average: 62.87/100; Absolutely Graded), Calculus I(A+), Calculus II(A0), Intro to Linear Algebra(A0), Probability and Statistics(A+)
 - **Cognitive Neuroscience**: How AI and Brain work(A+), Neuroscience-inspired AI(A0), System Neuroscience(A+)
 - **Chemistry & Physics**: General Chemistry I(A+), General Chemistry Experiement I(A+), General Physics Lab I(A+)
-- **Seminar**: Medicine and Society, Bio & Brain Engineering Seminar, Brain Cognitive Science Seminar, Beyond Games & Into Technologies Seminar
+- **Seminar**: Medicine and Society, CS for all, Bio & Brain Engineering Seminar, Brain Cognitive Science Seminar, Beyond Games & Into Technologies Seminar
 - **HSS**: Human & Environment-Sustainable Socio-ecological System(A0), Innovation and Entrepreneurship(A0), Management of Everything(A+), Intro to Sociology(A+), Intro to Economics(A0), English Short Stories(A+)
 
 <!--
