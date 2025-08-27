@@ -1,7 +1,7 @@
 ---
 layout: page
 title: HSS.20029
-description: (4th Semester) Human & Environment-Sustainable Socio-ecological System - Environmental Justice for Sihwa Lake
+description: (2023F, 4th Semester) Human & Environment-Sustainable Socio-ecological System - Environmental Justice for Sihwa Lake
 img: assets/img/project/sihwa_lake.png
 redirect: https://docs.google.com/presentation/d/18A9n2j9JjaeXEuYjCOMBL8kcc8BHKeJJcY04XBuNM6Q/edit?usp=sharing
 importance: 5
