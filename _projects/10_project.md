@@ -13,7 +13,7 @@ category: presentation
     </div>
 </div>
 <div class="caption">
-    <strong>For access to the slides, please contact via jinakim@kaist.ac.kr.
+    For access to the slides, please contact jinakim@kaist.ac.kr.
 </div>
 
 Please free to reach out if you're interested in discussing my ideas or potential collaboration! 😊
