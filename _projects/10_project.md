@@ -16,4 +16,4 @@ category: presentation
     For access to the slides, please contact jinakim@kaist.ac.kr
 </div>
 
-Please free to reach out if you're interested in discussing my ideas or potential collaboration! 😊
+Please free to reach out if you're interested in discussing ideas or potential collaboration! 😊
