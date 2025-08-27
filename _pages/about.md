@@ -29,7 +29,7 @@ My research interest lies in
 - **Core ML methods** (efficient attention, robust generalization)
 - **Interpretable AI**
 
-I have also been exploring **Model Merging** for efficient and improved generalization (see [selected projects>presentation>lab seminar](https://docs.google.com/presentation/d/1D9fMN0JqPgJPCM_lwvFG9oAXBEhdjMxmR7bQq-GvS3U/edit) and please feel free to reach out if you’d like to hear more about my ideas) and **Continual Learning** with a focus on mitigating catastrophic forgetting (see [selected project>coursework>bcs.50041](https://jina0218.github.io/projects/2_project/)), both of which are pivotal for advancing scientific discovery.
+I have also been exploring **Model Merging** for efficient and improved generalization (see [selected projects>presentation>lab seminar](https://docs.google.com/presentation/d/1D9fMN0JqPgJPCM_lwvFG9oAXBEhdjMxmR7bQq-GvS3U/edit) and please feel free to reach out if you’d like to hear more about my ideas!) and **Continual Learning** with a focus on mitigating catastrophic forgetting (see [selected project>coursework>bcs.50041](https://jina0218.github.io/projects/2_project/)), both of which are pivotal for advancing scientific discovery.
 
 After my 2nd year, I was recognized as a [KAIST Honor Student](https://herald.kaist.ac.kr/news/articleView.html?idxno=510), earning eligibility for doctoral-level courses and pursuing interdisciplinary studies across departments including:
 - **[AI (Doctoral Level)](https://gsai.kaist.ac.kr/)**: Geometric Deep Learning(A+), Bayesian Machine Learning(A0)
