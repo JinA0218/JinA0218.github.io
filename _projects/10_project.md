@@ -5,7 +5,7 @@ description: (2024.12.22) Two Research Idea Proposals for Model Merging
 img: assets/img/project/model_merging_idea.png
 redirect: https://docs.google.com/presentation/d/1FxcD1WE9_DqbQFioaJEXzWM8iUNEH2g2XM9yQcXPllw/edit?slide=id.g378c63bb8eb_0_10#slide=id.g378c63bb8eb_0_10
 importance: 2
-category: presentation
+category: Presentation
 ---
 
 Every project has a beautiful feature showcase page.
