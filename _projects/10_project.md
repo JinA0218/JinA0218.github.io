@@ -12,5 +12,8 @@ category: presentation
         {% include figure.html path="assets/img/project/model_merging_idea3.png" title="concept figure" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
+<div class="caption">
+    <strong>For access to the slides, please contact via jinakim@kaist.ac.kr.
+</div>
 
 Please free to reach out if you're interested in discussing my ideas or potential collaboration! 😊
