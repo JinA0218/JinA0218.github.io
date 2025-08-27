@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Lab Seminar @KAIST MLAI
-description: (2025.01.08) What matters for Model Merging at Scale?
+description: (2025.01.08, Paper Review) What matters for Model Merging at Scale?
 img: assets/img/project/model_merging.png
 redirect: https://docs.google.com/presentation/d/1D9fMN0JqPgJPCM_lwvFG9oAXBEhdjMxmR7bQq-GvS3U/edit?usp=sharing
 importance: 3
