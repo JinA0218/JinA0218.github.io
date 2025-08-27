@@ -25,7 +25,7 @@ I was incredibly fortunate to spend 3 years under the supervision of [Prof. Sung
 
 My research interest lies in
 
-- **AI for Science** (drug discovery, molecular design, protein modeling)
+- **AI for Science** (drug discovery, protein modeling, sustainability)
 - **Core ML methods** (efficient attention, robust generalization)
 - **Interpretable AI**
 
