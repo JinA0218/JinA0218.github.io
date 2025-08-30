@@ -3,7 +3,7 @@ layout: page
 title: High School Hackathon @Seoul Science Park
 description: (2019, Role - Team Leader) Real-time passenger counting system to prevent children from being forgotten in school buses
 img: assets/img/project/hack.png
-redirect: https://sites.google.com/view/for-a-better-world/6?authuser=0
+redirect: https://sites.google.com/view/for-a-better-world/1
 importance: 1
 category: hackathon
 ---
