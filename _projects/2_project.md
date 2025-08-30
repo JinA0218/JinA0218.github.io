@@ -6,7 +6,7 @@ img: assets/img/project/bcs541.png
 importance: 2
 category: coursework
 ---
-#### **Teaching AI to Remember: Insights from Brain-Inspired Replay for Continual Learning [[pdf]](https://drive.google.com/file/d/1HcYfSXhaHh8bmBdXqJt7Jze87Srz868s/view?usp=sharing) [[code]](https://github.com/JinA0218/BCS.50041_Project)[[slide]](https://drive.google.com/file/d/1HjMsyh-m6IaZrDFm8RsmBsWk8zU29QGa/view?usp=sharing)**
+#### **Teaching AI to Remember: Insights from Brain-Inspired Replay for Continual Learning [[pdf]](https://drive.google.com/file/d/1HcYfSXhaHh8bmBdXqJt7Jze87Srz868s/view?usp=sharing) [[code]](https://github.com/JinA0218/BCS.50041_Project)[[slide]](https://docs.google.com/presentation/d/1sl2SXs_xhmzGwRadbRvvePVdoswfNPIz_ooSK9xSuAs/edit?slide=id.g36a29a0103a_0_0#slide=id.g36a29a0103a_0_0)**
 
 - authors: Jina Kim
 - affiliations: KAIST, South Korea
