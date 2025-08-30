@@ -3,79 +3,96 @@ layout: page
 title: CS.93000
 description: (2022, 1st Year Summer) Immersion Camp - Collaborative Music Composition Website
 img: assets/img/project/music.png
-redirect: https://github.com/JinA0218/Mad-Music-Maker
+# redirect: https://github.com/JinA0218/Mad-Music-Maker
 importance: 6
 category: coursework
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+# Collaborative Music Composition Website [[code]](https://github.com/JinA0218/Mad-Music-Maker) 
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## 1. Developers
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+- Huh Hoejun: Korea University, Computer Science (entered in 2017)  
+- Kim Sunghyuk: KAIST, Computer Science (entered in 2018)  
+- Jina Kim: KAIST, School of Freshman (entered in 2022)
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## 2. Development Environment
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
+**Client**  
+- React.js  
 
+**Server**  
+- Built with Node.js and Rust  
+- Database: MySQL  
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+## 3. Application Overview
 
+This is a simple web application that allows users to compose and upload music collaboratively.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+### 1) Website Structure
 
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-```
-{% endraw %}
+- **Sign Up / Log In**  
+
+  ![1](https://user-images.githubusercontent.com/80519883/185916951-1823044d-0ab1-404a-99bb-36c47babdb48.png)
+
+- **SongMaker / My Music**  
+
+  ![2](https://user-images.githubusercontent.com/80519883/185917015-56cf3f06-22d0-4b7e-9efd-fc8db6149592.png)
+
+  - Clicking **SongMaker** opens a new composition window.  
+  - Clicking **My Music** shows a list of all previously composed tracks.  
+
+    ![3](https://user-images.githubusercontent.com/80519883/185917287-32781798-e7ef-4583-b216-780c5ea3ca51.png)  
+
+    Each track includes the assigned **Name** and a **WAV file download link**. Users can click the link to play the composed music.  
+
+---
+
+### 2) SongMaker
+
+#### (1) Main Screen
+
+![6](https://user-images.githubusercontent.com/80519883/185917271-83b3af5e-9104-498c-8853-4a42335ce33a.png)
+
+Users can set **Name (title), Tempo, and Rhythm**.  
+
+Available buttons:  
+- **+ Button**: Opens the composition window. Each + corresponds to an instrument, and additional instruments can be added.  
+- **Play Test**: Generates and downloads a WAV file that plays the composed track.  
+- **Upload**: Uploads the WAV file to **My Page**.  
+- **My Page**: Displays the list of previously composed music.  
+
+#### (2) Composition Screen
+
+![4](https://user-images.githubusercontent.com/80519883/185917201-19a18d9a-489e-4f58-93d4-e90a080e645d.png)
+
+1. **Basic Settings**  
+   - **Note Length**: Defines note duration (number of vertical grid cells). Default = 1.  
+   - **Note Type**: Instrument type. Available options: `sine, square, triangle, saw, synth1, synth2, kick, snare` (8 total).  
+
+2. **Piano Roll**  
+   - Horizontal axis = time, vertical axis = pitch.  
+   - Default size: 32 cells (2 measures).  
+   - Range: C4 (middle C) to C6.  
+   - Clicking a cell places a note of the chosen length; clicking again removes it.  
+
+3. **Score (Notation)**  
+   - Generates sheet music using **ABC notation** (A–G representation).  
+
+4. **Controls**  
+   - **← Button**: Returns to the previous screen and adds the score to the workspace.  
+   - **+ Button (top-right)**: Extends piano roll length by 16 cells, allowing longer compositions.  
+
+By repeating these steps, users can complete a composition and view the score by instrument:  
+
+![5](https://user-images.githubusercontent.com/80519883/185917313-3715dd34-e0f4-461f-8e4e-25aa072a1eb6.png)
+
+---
+
+### 3) Audio Generation
+
+The server converts score data into audio files.  
+
+1. Generates a **WAV file** and writes header information.  
+2. Processes each note based on pitch and selected instrument, using appropriate waveform functions.  
+3. Combines and outputs the final WAV file back to the client.  

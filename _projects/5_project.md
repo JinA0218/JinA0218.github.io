@@ -3,79 +3,100 @@ layout: page
 title: CS.93000
 description: (2022, 1st Year Summer) Immersion Camp - GroupGroceries App
 img: assets/img/project/GroupGroceries.png
-redirect: https://github.com/9Gong9/9Gong9_Android
+# redirect: https://github.com/9Gong9/9Gong9_Android
 importance: 5
 category: coursework
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+# GroupGroceries App [[code]](https://github.com/9Gong9/9Gong9_Android/tree/master) 
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+> Team 3  
+>  
+> An Android-based group-buying application for groceries, designed for students and single residents.  
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+---
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## A. Team Members
+- **Yena Park** – Sookmyung Women’s University, Software Convergence  
+- **Jongeun Park** – KAIST, School of Electrical Engineering  
+- **Jina Kim** – KAIST, School of Freshman  
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
+---
 
+## B. Development Environment
+- **OS** : Android (minSdk: 21, targetSdk: 31)  
+- **Language** : Kotlin, NestJS  
+- **IDE** : Android Studio  
+- **Target Device** : Samsung Galaxy S10  
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+---
 
+## C. Application Overview
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+### 1. Sign Up & Login
 
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-```
-{% endraw %}
+![3](https://user-images.githubusercontent.com/76472415/184139124-cbc4609e-f66a-48c5-b039-8aa822b52315.PNG)
+
+**Main Features**
+- **Sign Up**  
+  - Register via **email & password** with the “SIGN UP” button.  
+- **Login**  
+  - Access with **email & password** using the “LOGIN” button.  
+  - Supports **Kakao social login**.  
+  - Automatic login if the user has previously logged in.  
+
+---
+
+### 2. Product List
+
+![4](https://user-images.githubusercontent.com/76472415/184139183-eeb65784-5125-4c7a-89cc-2724f827451b.PNG)
+
+**Main Features**
+- **Regional Filtering**  
+  - Filter products by selecting **city/district/neighborhood**.  
+- **Category Filtering**  
+  - Filter products by category type.  
+- **Search Bar**  
+  - Search for specific products by name.  
+  - Provides **autocomplete suggestions** when searching.  
+
+---
+
+### 3. Product Details
+
+![5](https://user-images.githubusercontent.com/76472415/184139236-e9abc6c6-e55c-47b1-ae61-a638bf6888ef.PNG)
+
+**Main Features**
+- **Save to Favorites**  
+  - Add products to favorites with the **heart button**.  
+  - Toggle again to remove from favorites.  
+  - View saved items in the **Favorites list**.  
+- **Join Group Purchase**  
+  - Join a group-buy via the “공구 참여하기” (Join Group Purchase) button and proceed with payment.  
+  - When the **minimum number of participants** is reached, the group resets and a new round begins.  
+  - View ongoing group-buys in the **Active Participation list**.  
+
+---
+
+### 4. User Information
+
+![6](https://user-images.githubusercontent.com/76472415/184139259-64778529-42e6-4441-91fe-7f8ede65fc78.PNG)
+
+**Main Features**
+- **User Profile**  
+  - Display profile picture.  
+- **Balance**  
+  - Check current **point balance**.  
+- **Recharge**  
+  - Add funds via the **Recharge button**.  
+- **Purchase History**  
+  - View previously joined group-buys that have already been delivered.  
+
+---
+
+## Installation
+
+1. Initialize the database by sending the following request **once**:  
+   ```bash
+   GET "http://domain/item/itemCrawl"
+2. This request triggers the server to web scrape sample products from the Emart online mall, process them, and store them in the database in a format compatible with this service.
