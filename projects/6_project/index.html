@@ -3,8 +3,7 @@
 
   <!-- Head -->
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="refresh" content="3; url=/">    <!-- Metadata, OpenGraph and Schema.org -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
     
     <!-- Website verification -->
     <meta name="google-site-verification" content="MARJu3erA7Z6jybcmR5fgSNRNtCNYMAYkk0jidGGr8A">
@@ -130,164 +129,137 @@
           </header>
 
           <article>
-            <p>Every project has a beautiful feature showcase page.
-It’s easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.</p>
+            <h1 id="collaborative-music-composition-website-code">Collaborative Music Composition Website <a href="https://github.com/JinA0218/Mad-Music-Maker" rel="external nofollow noopener" target="_blank">[code]</a>
+</h1>
 
-<p>To give your project a background in the portfolio page, just add the img tag to the front matter like so:</p>
+<h2 id="1-developers">1. Developers</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
-layout: page
-title: project
-description: a project with a background image
-img: /assets/img/12.jpg
----
-</code></pre></div></div>
+<ul>
+  <li>Huh Hoejun: Korea University, Computer Science (entered in 2017)</li>
+  <li>Kim Sunghyuk: KAIST, Computer Science (entered in 2018)</li>
+  <li>Jina Kim: KAIST, School of Freshman (entered in 2022)</li>
+</ul>
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
+<h2 id="2-development-environment">2. Development Environment</h2>
 
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/1-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/1-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/1-1400.webp"></source>
-    
+<p><strong>Client</strong></p>
+<ul>
+  <li>React.js</li>
+</ul>
 
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/1.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+<p><strong>Server</strong></p>
+<ul>
+  <li>Built with Node.js and Rust</li>
+  <li>Database: MySQL</li>
+</ul>
 
-  </picture>
+<h2 id="3-application-overview">3. Application Overview</h2>
 
-</figure>
+<p>This is a simple web application that allows users to compose and upload music collaboratively.</p>
 
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
+<h3 id="1-website-structure">1) Website Structure</h3>
 
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/3-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/3-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/3-1400.webp"></source>
-    
+<ul>
+  <li>
+    <p><strong>Sign Up / Log In</strong></p>
 
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/3.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <p><img src="https://user-images.githubusercontent.com/80519883/185916951-1823044d-0ab1-404a-99bb-36c47babdb48.png" alt="1"></p>
+  </li>
+  <li>
+    <p><strong>SongMaker / My Music</strong></p>
 
-  </picture>
+    <p><img src="https://user-images.githubusercontent.com/80519883/185917015-56cf3f06-22d0-4b7e-9efd-fc8db6149592.png" alt="2"></p>
 
-</figure>
+    <ul>
+      <li>Clicking <strong>SongMaker</strong> opens a new composition window.</li>
+      <li>
+        <p>Clicking <strong>My Music</strong> shows a list of all previously composed tracks.</p>
 
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
+        <p><img src="https://user-images.githubusercontent.com/80519883/185917287-32781798-e7ef-4583-b216-780c5ea3ca51.png" alt="3"></p>
 
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/5-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/5-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/5-1400.webp"></source>
-    
+        <p>Each track includes the assigned <strong>Name</strong> and a <strong>WAV file download link</strong>. Users can click the link to play the composed music.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/5.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+<hr>
 
-  </picture>
+<h3 id="2-songmaker">2) SongMaker</h3>
 
-</figure>
+<h4 id="1-main-screen">(1) Main Screen</h4>
 
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
+<p><img src="https://user-images.githubusercontent.com/80519883/185917271-83b3af5e-9104-498c-8853-4a42335ce33a.png" alt="6"></p>
 
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/5-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/5-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/5-1400.webp"></source>
-    
+<p>Users can set <strong>Name (title), Tempo, and Rhythm</strong>.</p>
 
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/5.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+<p>Available buttons:</p>
+<ul>
+  <li>
+<strong>+ Button</strong>: Opens the composition window. Each + corresponds to an instrument, and additional instruments can be added.</li>
+  <li>
+<strong>Play Test</strong>: Generates and downloads a WAV file that plays the composed track.</li>
+  <li>
+<strong>Upload</strong>: Uploads the WAV file to <strong>My Page</strong>.</li>
+  <li>
+<strong>My Page</strong>: Displays the list of previously composed music.</li>
+</ul>
 
-  </picture>
+<h4 id="2-composition-screen">(2) Composition Screen</h4>
 
-</figure>
+<p><img src="https://user-images.githubusercontent.com/80519883/185917201-19a18d9a-489e-4f58-93d4-e90a080e645d.png" alt="4"></p>
 
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+<ol>
+  <li>
+<strong>Basic Settings</strong>
+    <ul>
+      <li>
+<strong>Note Length</strong>: Defines note duration (number of vertical grid cells). Default = 1.</li>
+      <li>
+<strong>Note Type</strong>: Instrument type. Available options: <code class="language-plaintext highlighter-rouge">sine, square, triangle, saw, synth1, synth2, kick, snare</code> (8 total).</li>
+    </ul>
+  </li>
+  <li>
+<strong>Piano Roll</strong>
+    <ul>
+      <li>Horizontal axis = time, vertical axis = pitch.</li>
+      <li>Default size: 32 cells (2 measures).</li>
+      <li>Range: C4 (middle C) to C6.</li>
+      <li>Clicking a cell places a note of the chosen length; clicking again removes it.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Score (Notation)</strong>
+    <ul>
+      <li>Generates sheet music using <strong>ABC notation</strong> (A–G representation).</li>
+    </ul>
+  </li>
+  <li>
+<strong>Controls</strong>
+    <ul>
+      <li>
+<strong>← Button</strong>: Returns to the previous screen and adds the score to the workspace.</li>
+      <li>
+<strong>+ Button (top-right)</strong>: Extends piano roll length by 16 cells, allowing longer compositions.</li>
+    </ul>
+  </li>
+</ol>
 
-<p>You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, <em>bled</em> for your project, and then… you reveal its glory in the next row of images.</p>
+<p>By repeating these steps, users can complete a composition and view the score by instrument:</p>
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        <figure>
+<p><img src="https://user-images.githubusercontent.com/80519883/185917313-3715dd34-e0f4-461f-8e4e-25aa072a1eb6.png" alt="5"></p>
 
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/6-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/6-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/6-1400.webp"></source>
-    
+<hr>
 
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/6.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+<h3 id="3-audio-generation">3) Audio Generation</h3>
 
-  </picture>
+<p>The server converts score data into audio files.</p>
 
-</figure>
-
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/11-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/11-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/11-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/11.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-<p>The code is simple.
-Just wrap your images with <code class="language-plaintext highlighter-rouge">&lt;div class="col-sm"&gt;</code> and place them inside <code class="language-plaintext highlighter-rouge">&lt;div class="row"&gt;</code> (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/" rel="external nofollow noopener" target="_blank">Bootstrap Grid</a> system).
-To make images responsive, add <code class="language-plaintext highlighter-rouge">img-fluid</code> class to each; for rounded corners and shadows use <code class="language-plaintext highlighter-rouge">rounded</code> and <code class="language-plaintext highlighter-rouge">z-depth-1</code> classes.
-Here’s the code for the last row of images above:</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row justify-content-sm-center"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-8 mt-3 mt-md-0"</span><span class="nt">&gt;</span>
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-4 mt-3 mt-md-0"</span><span class="nt">&gt;</span>
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-
+<ol>
+  <li>Generates a <strong>WAV file</strong> and writes header information.</li>
+  <li>Processes each note based on pitch and selected instrument, using appropriate waveform functions.</li>
+  <li>Combines and outputs the final WAV file back to the client.</li>
+</ol>
 
           </article>
 

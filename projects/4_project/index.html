@@ -3,8 +3,7 @@
 
   <!-- Head -->
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="refresh" content="3; url=/">    <!-- Metadata, OpenGraph and Schema.org -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
     
     <!-- Website verification -->
     <meta name="google-site-verification" content="MARJu3erA7Z6jybcmR5fgSNRNtCNYMAYkk0jidGGr8A">
@@ -130,164 +129,447 @@
           </header>
 
           <article>
-            <p>Every project has a beautiful feature showcase page.
-It’s easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.</p>
+            <h1 id="-busan-complete-guide-app-code">
+<image src="./app/src/main/res/drawable/travel2.png" width="45"></image> Busan Complete Guide App <a href="https://github.com/JinA0218/Busan-Complete-Guide-App" rel="external nofollow noopener" target="_blank">[code]</a>
+</h1>
 
-<p>To give your project a background in the portfolio page, just add the img tag to the front matter like so:</p>
+<h2 id="development-team">Development Team</h2>
+<ul>
+  <li>
+<strong>Shin Jongmin</strong>, Pusan National University, Class of 2019</li>
+  <li>
+<strong>Jina Kim</strong>, KAIST, School of Freshmen</li>
+</ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
-layout: page
-title: project
-description: a project with a background image
-img: /assets/img/12.jpg
+<hr>
+
+<h2 id="development-environment">Development Environment</h2>
+<p>Client)</p>
+<ul>
+  <li>OS: Android (minSdk: 26, targetSdk: 32)</li>
+  <li>Language: Java</li>
+  <li>IDE: Android Studio</li>
+  <li>Target Device: Galaxy S7</li>
+</ul>
+
+<p>Server)</p>
+<ul>
+  <li>Stack: Nodejs</li>
+  <li>Language: javascript</li>
+  <li>Framework: Express</li>
+  <li>DataBase: Mysql</li>
+</ul>
+
+<hr>
+
+<h2 id="introduction">Introduction</h2>
+<image src="./app/src/main/res/drawable/s0.png" width="200"></image>
+
+<p>The <strong>“Busan Complete Guide”</strong> app provides recommendations for <strong>Busan restaurants, attractions, and festivals</strong>.</p>
+
+<p>Users can check all “liked” items from restaurants, attractions, and festivals in one place under the <strong>“함 봐라 (Check it out)”</strong> tab.</p>
+
+<hr>
+
+<h2 id="features">Features</h2>
+
+<h3 id="1-sign-up-login-profile-update">1. Sign Up, Login, Profile Update</h3>
+
+<div>
+
+<image src="./app/src/main/res/drawable/s1.png" width="200"></image>
+
+<image src="./app/src/main/res/drawable/s2.png" width="200"></image>
+
+<image src="./app/src/main/res/drawable/s3.png" width="200"></image>
+
+<image src="./app/src/main/res/drawable/s18.png" width="200"></image>
+
+</div>
+
+<ul>
+  <li>On first launch, the app displays a <strong>Splash screen</strong> and moves to the <strong>Login tab</strong>.</li>
+  <li>If the user has no account, they can proceed to the <strong>Sign Up tab</strong> to register.</li>
+  <li>After login, the user is directed to the <strong>FirstPage</strong>, which displays:
+    <ul>
+      <li>Greeting message: <code class="language-plaintext highlighter-rouge">username + "어서온나!"</code> (Welcome!)</li>
+      <li>Current Busan weather</li>
+      <li>Buttons for <strong>Restaurants, Attractions, Festivals</strong>
+</li>
+    </ul>
+  </li>
+  <li>The <strong>top-right button</strong> allows the user to update profile information.</li>
+</ul>
+
+<hr>
+
+<div>
+
+<image src="./app/src/main/res/drawable/s4.png" width="200"></image>
+
+</div>
+
+<h3 id="2-뭐-물래what-do-you-want-to-eat--restaurant-recommendation">2. “뭐 물래?”(What do you want to eat?) : Restaurant Recommendation</h3>
+
+<div>
+
+<image src="./app/src/main/res/drawable/s5.png" width="200"></image>
+<image src="./app/src/main/res/drawable/s6.png" width="200"></image>
+<image src="./app/src/main/res/drawable/s7.png" width="200"></image>
+<image src="./app/src/main/res/drawable/s8.png" width="200"></image>
+<image src="./app/src/main/res/drawable/s81.png" width="200"></image>
+
+- Clicking the **뭐 물래?** button moves to **BusanFoodStep1**.  
+- Users select **1–3 keywords**, and the app returns restaurant information via a **ListView**.  
+
+**Tag Function**  
+- When a tag is clicked, the app calls the `addTag` method, sending selected tags as JSON to the DB.  
+- The server returns matching restaurant data as JSON, which is displayed in a ListView.  
+
+**Example API:**  
+
+    ```sql
+    app.post('/getFoodByTags', (req, res) =&gt; {
+        console.log("getFoodByTags 요청 시작 !!!!");
+        console.log(req.body);
+        var jsonArraylist = new Array();
+        var jsonArray = {
+            body: ''
+        };
+        var sql = `select * from food_mst where tag1 like ` + connection.escape('%' + req.body.tag1 + '%');
+        if (req.body.count == 0) {
+            console.log("태그 0개");
+            var sql = `select * from food_mst where id = 0;`;
+        } else if (req.body.count == 1) {
+            console.log("태그 1개");
+            var sql = `select * from food_mst where tag1 like ` + connection.escape('%' + req.body.tag1 + '%') + `;`;
+        }
+        else if (req.body.count == 2) {
+            console.log("태그 2개");
+            var sql = `select * from food_mst where tag1 like ` + connection.escape('%' + req.body.tag1 + '%') + ` and tag1 like ` + connection.escape('%' + req.body.tag2 + '%') + `;`;
+        }
+        else if (req.body.count == 3) {
+            console.log("태그 3개");
+            var sql = `select * from food_mst where tag1 like ` + connection.escape('%' + req.body.tag1 + '%') + ` and tag1 like ` + connection.escape('%' + req.body.tag2 + '%') + ` and tag1 like ` + connection.escape('%' + req.body.tag3 + '%') + `;`;
+        }
+    
+        //var sql = ;
+        var values = [req.body.tag1, req.body.tag2, req.body.tag3];
+        connection.query(sql, values, (error, rows) =&gt; {
+            if (error) {
+                throw error;
+    
+            }
+            console.log('select 성공 !!!!!!!!');
+            if (rows.length == 0) {
+                console.log('Json object : ', json_object_send);
+                res.send(json_object_send);
+                return;
+            }
+            console.log("가져온거 갯수" + rows.length);
+            for (let i = 0; i &lt; rows.length; i++) {
+                console.log(rows[i]["tel"]);
+                var json_object_send = {
+                    id: rows[i]["id"],
+                    mainTitle: rows[i]["main_title"],
+                    place: rows[i]["place"],
+                    subTitle: rows[i]["sub_title"],
+                    img: rows[i]["img"],
+                    context: rows[i]["context"],
+                    tag1: rows[i]["tag1"],
+                    latitude: rows[i]["latitude"],
+                    longitude: rows[i]["longitude"],
+                    tag2: '',
+                    tag3: '',
+                    tel: rows[i]["tel"]
+                };
+                jsonArraylist.push(json_object_send);
+            }
+    
+            setTimeout(() =&gt; {
+                var strJson = JSON.stringify(jsonArraylist);
+                jsonArray.body = strJson;
+                res.send(jsonArray);
+            }, 200);
+    
+        });
+    });
+    ```
+    
+    - **태그** 3개로 음식 정보 받아오기
+    
+    ```sql
+    app.post('/likeFestivalList', (req, res) =&gt; {
+        console.log("likeFestivalList 요청 시작 !!!!");
+        console.log(req.body);
+        var likeList = new Array();
+        var jsonArraylist = new Array();
+        var jsonArray = {
+            body: ''
+        };
+        var sql = `select festival from festival_like_mst where user_id = ?`;
+        var values = [req.body.userId];
+        connection.query(sql, values, (error, rows) =&gt; {
+            if (error) {
+                throw error;
+    
+            }
+            console.log('select 성공 !!!!!!!!');
+            for (let i = 0; i &lt; rows.length; i++) {
+                var jsontemp = {
+                    festival_id: rows[i]["festival"] + ""
+                }
+    
+                likeList.push(jsontemp);
+                console.log(rows[i]["festival"]);
+            }
+    
+        });
+        setTimeout(() =&gt; {
+            var strJson = JSON.stringify(likeList);
+            jsonArray.body = strJson;
+            console.log(jsonArray);
+            res.send(jsonArray);
+        }, 200);
+    });
+    ```
+
+**Restaurant Details**
+
+- Selecting an item from the list moves to FoodFullImage, where the following are displayed:
+    - Title, Subtitle, Place, Image, Context, Tags, Latitude, Longitude, Telephone
+    - **BusanFoodDto**
+    
+    ```jsx
+    package com.example.whatmain;
+    
+    import java.io.Serializable;
+    
+    public class BusanFoodDto implements Serializable {
+        int id;
+        String mainTitle ;
+        String place;
+        String subTitle;
+        String img;
+        String context;
+        String tag1;
+        String tag2;
+        String tag3;
+        double latitude;
+        double longitude;
+        //전화 string 추가
+        String call;
+        public int getId() {
+            return id;
+        }
+    
+        public void setId(int id) {
+            this.id = id;
+        }
+    
+        public String getMainTitle() {
+            return mainTitle;
+        }
+        public void setMainTitle(String mainTitle) {
+            this.mainTitle = mainTitle;
+        }
+        public String getPlace() {
+            return place;
+        }
+        public void setPlace(String place) {
+            this.place = place;
+        }
+        public String getSubTitle() {
+            return subTitle;
+        }
+        public void setSubTitle(String subTitle) {
+            this.subTitle = subTitle;
+        }
+        public String getImg() {
+            return img;
+        }
+        public void setImg(String img) {
+            this.img = img;
+        }
+        public String getContext() {
+            return context;
+        }
+        public void setContext(String context) {
+            this.context = context;
+        }
+        public String getTag1() {
+            return tag1;
+        }
+        public void setTag1(String tag1) {
+            this.tag1 = tag1;
+        }
+        public String getTag2() {
+            return tag2;
+        }
+        public void setTag2(String tag2) {
+            this.tag2 = tag2;
+        }
+        public String getTag3() {
+            return tag3;
+        }
+        public void setTag3(String tag3) {
+            this.tag3 = tag3;
+        }
+        public double getLongitude() {
+            return longitude;
+        }
+        public void setLongitude(double longitude) {
+            this.longitude = longitude;
+        }
+        public double getLatitude() {
+            return latitude;
+        }
+        public void setLatitude(double latitude) {
+            this.latitude = latitude;
+        }
+    
+        //call 추가
+        public String getCall(){return call;}
+        public void setCall(String call){this.call=call;}
+    
+    }
+    ```
+
+**Buttons Available in FoodFullImage:**
+- Like button → add/remove from favorites list
+
+- Call button → call the restaurant directly
+
+- Share button → share Naver search link with friends
+
+- Google Maps integration using latitude &amp; longitude
+
+**API Examples:**
+
+- Add Like:
+        
+        ```js
+        app.post('/likeFestivalHeart', (req, res) =&gt; {
+            console.log("likeFestivalHeart 요청 시작 !!!!");
+            console.log(req.body);
+            var json_object_send = {
+                code: ''
+            };
+        
+            var sql = `insert into festival_like_mst values(?,?);`;
+            var values = [req.body.userId, req.body.festivalId];
+            console.log(req.body.userId);
+            connection.query(sql, values, (error, rows) =&gt; {
+                if (error) {
+                    json_object_send.code = '0';
+                    throw (error);
+                }
+                json_object_send.code = '1';
+            });
+            json_object_send.code = '1';
+            console.log('Json object : ', json_object_send);
+            res.send(json_object_send);
+        });
+        ```
+        
+        - Remove Like
+        
+        ```sql
+        app.post('/dislikeFestivalHeart', (req, res) =&gt; {
+            console.log("dislikeFestivalHeart 요청 시작 !!!!");
+            console.log(req.body);
+            var json_object_send = {
+                code: ''
+            };
+            var sql = `delete from festival_like_mst where user_id = ? and festival = ?;`;
+            var values = [req.body.userId, req.body.festivalId];
+            console.log(req.body.userId);
+            connection.query(sql, values, (error, rows) =&gt; {
+                if (error) {
+                    json_object_send.code = 0;
+                    throw (error);
+                }
+                json_object_send.code = 1;
+            });
+            json_object_send.code = 1;
+            console.log('Json object : ', json_object_send);
+            res.send(json_object_send);
+        });
+        ```
+        
+- **Call button** → directly places a call to the restaurant.  
+- **Share button** → shares the Naver search link of the restaurant with friends.  
+- **Google Maps integration** → uses latitude and longitude values to display the restaurant’s location on the map.  
+- **See More button** → redirects back to `BusanFoodStep1`, allowing the user to reload and view the list of places again. 
+
+<br>
+
+<br>
+
+### 3. “어디 갈래?”(Where do you want to go?) : Attraction Recommendation
+
+<div>
+
+<image src="./app/src/main/res/drawable/s9.png" width="200"></image>
+<image src="./app/src/main/res/drawable/s10.png" width="200"></image>
+<image src="./app/src/main/res/drawable/s11.png" width="200"></image>
+
+</div>
+
+- Same features as Restaurant Recommendation
+- Except without the telephone function.
+
+<br>
+
+<br>
+
+### “뭐 할래?”(What do you want to do?) : Festival Recommendation
+
+<div>
+
+<image src="./app/src/main/res/drawable/s12.png" width="200"></image>
+<image src="./app/src/main/res/drawable/s13.png" width="200"></image>
+
+</div>
+
+- Displays all Busan festival information in a ListView (no tags).
+
+- Each festival entry has a URL link to the official website.
+
+### 5.“함 봐라”(Check it out) : Liked List
+
+<div>
+
+<image src="./app/src/main/res/drawable/s14.png" width="200"></image>
+
+<image src="./app/src/main/res/drawable/s15.png" width="200"></image>
+<image src="./app/src/main/res/drawable/s16.png" width="200"></image>
+<image src="./app/src/main/res/drawable/s17.png" width="200"></image>
+
+</div>
+
+- Displays all liked items from:
+    - 뭐 물래? (Restaurants)
+    - 어디 갈래? (Attractions)
+    - 뭐 할래? (Festival)
+- Items are shown in a ListView.
+
+- Clicking an item opens the FullImage Activity.
+
+* * *
+### Public Data Usage
+- The app utilizes open public data to construct the following DTOs:
+
+    - BusanFoodDto
+
+    - BusanFestivalDto
+
+    - BusanTodoDto
+<image src="./app/src/main/res/drawable/sdata.png" width="200"></image>
+<image src="./app/src/main/res/drawable/sdata2.png" width="200"></image>
+
 ---
-</code></pre></div></div>
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/1-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/1-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/1-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/1.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/3-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/3-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/3-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/3.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/5-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/5-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/5-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/5.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
 </div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/5-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/5-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/5-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/5.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-<p>You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, <em>bled</em> for your project, and then… you reveal its glory in the next row of images.</p>
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/6-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/6-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/6-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/6.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/11-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/11-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/11-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/11.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-<p>The code is simple.
-Just wrap your images with <code class="language-plaintext highlighter-rouge">&lt;div class="col-sm"&gt;</code> and place them inside <code class="language-plaintext highlighter-rouge">&lt;div class="row"&gt;</code> (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/" rel="external nofollow noopener" target="_blank">Bootstrap Grid</a> system).
-To make images responsive, add <code class="language-plaintext highlighter-rouge">img-fluid</code> class to each; for rounded corners and shadows use <code class="language-plaintext highlighter-rouge">rounded</code> and <code class="language-plaintext highlighter-rouge">z-depth-1</code> classes.
-Here’s the code for the last row of images above:</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row justify-content-sm-center"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-8 mt-3 mt-md-0"</span><span class="nt">&gt;</span>
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-4 mt-3 mt-md-0"</span><span class="nt">&gt;</span>
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-
 
           </article>
 
