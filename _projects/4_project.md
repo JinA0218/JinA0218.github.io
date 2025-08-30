@@ -3,7 +3,7 @@ layout: page
 title: CS.93000
 description: (2022, 1st Year Summer) Immersion Camp - Busan Complete Guide App
 img: assets/img/project/busan_full_course.png 
-# redirect: https://github.com/JinA0218/Busan-Complete-Guide-App
+redirect: https://github.com/JinA0218/Busan-Complete-Guide-App
 importance: 4
 category: coursework
 ---
