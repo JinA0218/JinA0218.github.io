@@ -18,9 +18,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 Hi!👋
-I'm a senior undergraduate student at KAIST, majoring [Computer Science](https://cs.kaist.ac.kr/). I was born in US(New York), raised in Hong Kong, South Korea(Seoul, Daejeon) and I love building connections with people from diverse backgrounds. Happy to [connect](https://x.com/jk020218) 😊!
-
-I was incredibly fortunate to spend 3 years under the supervision of [Prof. Sung Ju Hwang](http://www.sungjuhwang.com/) at the [KAIST MLAI](https://www.mlai-kaist.com/), who inspired my passion and commitment to research. This autumn, I’m excited to join the [University of Washington](https://www.washington.edu/) as an exchange student and visiting researcher in the [Paul G. Allen School of Computer Science & Engineering](https://www.cs.washington.edu/)! I am sincerely thankful to my collaborators and advisors, whose support, mentorship, and shared wisdom have been vital to my growth and learning journey as a researcher.
+I'm a senior undergraduate student at KAIST, majoring [Computer Science](https://cs.kaist.ac.kr/). I was incredibly fortunate to spend 3 years under the supervision of [Prof. Sung Ju Hwang](http://www.sungjuhwang.com/) at the [KAIST MLAI](https://www.mlai-kaist.com/), who inspired my passion and commitment to research. This autumn, I’m excited to join the [University of Washington](https://www.washington.edu/) as an exchange student and visiting researcher in the [Paul G. Allen School of Computer Science & Engineering](https://www.cs.washington.edu/)! I am sincerely thankful to my collaborators and advisors, whose support, mentorship, and shared wisdom have been vital to my growth and learning journey as a researcher.
 
 
 My research interest lies in
@@ -39,6 +37,8 @@ After my 2nd year, I was recognized as a [KAIST Honor Student](https://herald.ka
 - **Chemistry & Physics**: General Chemistry I(A+), General Chemistry Experiement I(A+), General Physics Lab I(A+)
 - **Seminar**: Medicine and Society, CS for all, Bio & Brain Engineering Seminar, Brain Cognitive Science Seminar, Beyond Games & Into Technologies Seminar
 - **HSS**: Human & Environment-Sustainable Socio-ecological System(A0), Innovation and Entrepreneurship(A0), Management of Everything(A+), Intro to Sociology(A+), Intro to Economics(A0), English Short Stories(A+)
+
+I love discussing potential collaborations and building connections with people from diverse backgrounds. Happy to [connect](https://x.com/jk020218) 😊!
 
 <!--
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.test
