@@ -9,7 +9,7 @@ category: coursework
 
 #### **VRAIL: Vectorized Reward-based Attribution for Interpretable Learning [[arXiv]](https://arxiv.org/abs/2506.16014) [[code]](https://github.com/JinA0218/CS377_Project) [[slide]](https://docs.google.com/presentation/d/1qT_YXZA5pR_yM-_enMKchEruSqiEhtL07o1DFJ7UGtU/edit?slide=id.p#slide=id.p)**
 
-- coures instructor: [Prof. Sungjin Ahn](https://mlml.kaist.ac.kr/sungjinahn)
+- course instructor: [Prof. Sungjin Ahn](https://mlml.kaist.ac.kr/sungjinahn)
 - authors: Jina Kim, Youjin Jang, Jeongjin Han (equal contribution)
 - affiliations: KAIST, South Korea
 

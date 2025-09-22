@@ -8,7 +8,7 @@ category: coursework
 ---
 #### **Teaching AI to Remember: Insights from Brain-Inspired Replay for Continual Learning [[arXiv]](https://arxiv.org/abs/2509.00047) [[code]](https://github.com/JinA0218/BCS.50041_Project)[[slide]](https://docs.google.com/presentation/d/1sl2SXs_xhmzGwRadbRvvePVdoswfNPIz_ooSK9xSuAs/edit?slide=id.g36a29a0103a_0_0#slide=id.g36a29a0103a_0_0)**
 
-- coures instructor: [Prof. Sangwan Lee](https://aibrain.kaist.ac.kr/sang-wan-lee)
+- course instructor: [Prof. Sangwan Lee](https://aibrain.kaist.ac.kr/sang-wan-lee)
 - authors: Jina Kim
 - affiliations: KAIST, South Korea
 
