@@ -167,7 +167,7 @@ All team members actively contributed to every stage of the project, including p
 trials for method improvement, slides, and report writing. Further individual contributions are detailed
 below.
 - Jina Kim : Backbone model implementation (Linear VRAIL), DQN toy experiment (Fig 1),
-self-attention based model trials.
+self-attention based model trials, final refinement of the report.
 - Youjin Jang : Idea proposal (vectorized rewards), presentation, quiz creation, visualization (graphs,
 diagrams).
 - Jeongjin Han : Interpretation of learned parameters of DL stage, effect of shaped reward experiment
