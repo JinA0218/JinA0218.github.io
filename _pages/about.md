@@ -20,13 +20,13 @@ social: true  # includes social icons at the bottom of the page
 Hi!👋
 I'm a senior undergraduate student at KAIST, majoring [Computer Science](https://cs.kaist.ac.kr/). I was incredibly fortunate to spend 3 years under the supervision of [Prof. Sung Ju Hwang](http://www.sungjuhwang.com/) at the [KAIST MLAI](https://www.mlai-kaist.com/), who inspired my passion and commitment to research. This autumn, I’m excited to join the [University of Washington](https://www.washington.edu/) as an exchange student and visiting student in the [Paul G. Allen School of Computer Science & Engineering](https://www.cs.washington.edu/)! I am sincerely thankful to my collaborators and advisors, whose support, mentorship, and shared wisdom have been vital to my growth and learning journey as a researcher.
 
-My research interest lies in
+<!-- My research interest lies in
 
 - **AI for Science** (drug discovery, protein modeling, sustainability)
 - **Core ML methods** (efficient attention, robust generalization)
-- **Interpretable AI**
+- **Interpretable AI** -->
 
-I have also been exploring **Model Merging** for efficient and improved generalization (see [selected projects>presentation>lab seminar](https://docs.google.com/presentation/d/1D9fMN0JqPgJPCM_lwvFG9oAXBEhdjMxmR7bQq-GvS3U/edit) and please feel free to reach out if you’d like to hear more about [my ideas](https://jina0218.github.io/projects/10_project/)!) and **Continual Learning** with a focus on mitigating catastrophic forgetting (see [selected project>coursework>bcs.50041](https://jina0218.github.io/projects/2_project/)), both of which are pivotal for advancing scientific discovery.
+<!-- I have also been exploring **Model Merging** for efficient and improved generalization (see [selected projects>presentation>lab seminar](https://docs.google.com/presentation/d/1D9fMN0JqPgJPCM_lwvFG9oAXBEhdjMxmR7bQq-GvS3U/edit) and please feel free to reach out if you’d like to hear more about [my ideas](https://jina0218.github.io/projects/10_project/)!) and **Continual Learning** with a focus on mitigating catastrophic forgetting (see [selected project>coursework>bcs.50041](https://jina0218.github.io/projects/2_project/)), both of which are pivotal for advancing scientific discovery.
 
 After my 2nd year, I was recognized as a [KAIST Honor Student](https://herald.kaist.ac.kr/news/articleView.html?idxno=510), earning eligibility for doctoral-level courses and pursuing interdisciplinary studies across departments including:
 - **AI (Doctoral Level)**: Geometric Deep Learning(A+), Bayesian Machine Learning(A0)
@@ -37,7 +37,7 @@ After my 2nd year, I was recognized as a [KAIST Honor Student](https://herald.ka
 - **Seminar**: Medicine and Society, CS for all, Bio & Brain Engineering Seminar, Brain Cognitive Science Seminar, Beyond Games & Into Technologies Seminar
 - **HSS**: Human & Environment-Sustainable Socio-ecological System(A0), Innovation and Entrepreneurship(A0), Management of Everything(A+), Intro to Sociology(A+), Intro to Economics(A0), English Short Stories(A+)
 
-I love building connections with people from diverse backgrounds and discussing potential collaborations. Happy to [connect](https://x.com/jk020218) 😊!
+I love building connections with people from diverse backgrounds and discussing potential collaborations. Happy to [connect](https://x.com/jk020218) 😊! -->
 
 <!--
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.test
