@@ -22,6 +22,8 @@ I'm a senior undergraduate student at KAIST, majoring [Computer Science](https:/
 
 This autumn, I’m excited to join the [University of Washington](https://www.washington.edu/) as an exchange student and visiting student in the [Paul G. Allen School of Computer Science & Engineering](https://www.cs.washington.edu/)! I am sincerely thankful to my collaborators and advisors, whose support, mentorship, and shared wisdom have been vital to my growth and learning journey as a researcher.
 
+I love building connections with people from diverse backgrounds and discussing potential collaborations. Happy to [connect](https://x.com/jk020218) 😊!
+
 <!-- My research interest lies in
 
 - AI for Science
