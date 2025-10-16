@@ -22,9 +22,9 @@ I'm a senior undergraduate student at KAIST, majoring [Computer Science](https:/
 
 My research interest lies in
 
-- **AI for Science**
-- **Core ML methods**
-- **Interpretable AI**
+- AI for Science
+- Core ML methods
+- Interpretable AI
 
 <!-- My research interest lies in
 
