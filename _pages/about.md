@@ -18,7 +18,9 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 Hi!👋
-I'm a senior undergraduate student at KAIST, majoring [Computer Science](https://cs.kaist.ac.kr/). I was incredibly fortunate to spend 3 years under the supervision of [Prof. Sung Ju Hwang](http://www.sungjuhwang.com/) at the [KAIST MLAI](https://www.mlai-kaist.com/), who inspired my passion and commitment to research. This autumn, I’m excited to join the [University of Washington](https://www.washington.edu/) as an exchange student and visiting student in the [Paul G. Allen School of Computer Science & Engineering](https://www.cs.washington.edu/)! I am sincerely thankful to my collaborators and advisors, whose support, mentorship, and shared wisdom have been vital to my growth and learning journey as a researcher.
+I'm a senior undergraduate student at KAIST, majoring [Computer Science](https://cs.kaist.ac.kr/). I was incredibly fortunate to spend 3 years under the supervision of [Prof. Sung Ju Hwang](http://www.sungjuhwang.com/) at the [KAIST MLAI](https://www.mlai-kaist.com/), who inspired my passion and commitment to research. 
+
+This autumn, I’m excited to join the [University of Washington](https://www.washington.edu/) as an exchange student and visiting student in the [Paul G. Allen School of Computer Science & Engineering](https://www.cs.washington.edu/)! I am sincerely thankful to my collaborators and advisors, whose support, mentorship, and shared wisdom have been vital to my growth and learning journey as a researcher.
 
 <!-- My research interest lies in
 
