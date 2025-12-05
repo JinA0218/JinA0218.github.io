@@ -12,7 +12,7 @@ profile:
     <p>Email: jinakim@kaist.ac.kr</p>
 
 news: true  # includes a list of news items
-latest_posts: false  # includes a list of the newest posts
+latest_posts: true  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
@@ -20,7 +20,7 @@ social: true  # includes social icons at the bottom of the page
 Hi!👋
 I'm a senior undergraduate student at KAIST, majoring [Computer Science](https://cs.kaist.ac.kr/). I was incredibly fortunate to spend 3 years under the supervision of [Prof. Sung Ju Hwang](http://www.sungjuhwang.com/) at the [KAIST MLAI](https://www.mlai-kaist.com/), who inspired my passion and commitment to research. 
 
-This autumn, I’m excited to join the [University of Washington](https://www.washington.edu/) as an exchange student and visiting student in the [Paul G. Allen School of Computer Science & Engineering](https://www.cs.washington.edu/)! I am sincerely thankful to my collaborators and advisors, whose support, mentorship, and shared wisdom have been vital to my growth and learning journey as a researcher.
+This autumn, I’m excited to join the [University of Washington](https://www.washington.edu/) as an exchange student and visiting student in the [Paul G. Allen School of Computer Science & Engineering](https://www.cs.washington.edu/)! I am sincerely thankful to my collaborators and advisors for the supportive and stimulating exchanges that have informed and strengthened my research journey.
 
 I love building connections with people from diverse backgrounds and discussing potential collaborations. Happy to [connect](https://x.com/jk020218) 😊!
 
