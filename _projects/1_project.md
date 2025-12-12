@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CS.30707
-description: (2025S, 7th Semester) Intro to Reinforcement Learning - Vectorized Reward-based Attribution for Interpretable Learning
+description: (2025S, 7th Semester, KAIST) Intro to Reinforcement Learning - Vectorized Reward-based Attribution for Interpretable Learning
 img: assets/img/project/cs377.png
 importance: 1
 category: coursework

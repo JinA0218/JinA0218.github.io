@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CS.93000
-description: (2022, 1st Year Summer) Immersion Camp - Collaborative Music Composition Website
+description: (2022, 1st Year Summer, KAIST) Immersion Camp - Collaborative Music Composition Website
 img: assets/img/project/music.png
 redirect: https://github.com/JinA0218/Mad-Music-Maker
 importance: 6

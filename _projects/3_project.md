@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CS.30706
-description: (2023S, 3rd Semester) Machine Learning - Exploring Interpretable and Efficient Attention in Transformers
+description: (2023S, 3rd Semester, KAIST) Machine Learning - Exploring Interpretable and Efficient Attention in Transformers
 img: assets/img/project/cs30706.png
 redirect: https://colab.research.google.com/drive/1d5rhkIgoWN5Qh6cPfcQ6yuEqGDx5SFxI#scrollTo=vJAGweDcIr9f
 importance: 3

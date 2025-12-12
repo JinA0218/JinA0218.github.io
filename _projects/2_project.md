@@ -1,7 +1,7 @@
 ---
 layout: page
 title: BCS.50041
-description: (2024F, 6th Semester) Neuroscience inspired AI - Insights from Brain Inspired Replay for Continual Learning
+description: (2024F, 6th Semester, KAIST) Neuroscience inspired AI - Insights from Brain Inspired Replay for Continual Learning
 img: assets/img/project/bcs541.png
 importance: 2
 category: coursework

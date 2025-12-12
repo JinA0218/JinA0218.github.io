@@ -1,10 +1,10 @@
 ---
 layout: page
-title: CS.93000
-description: (2022, 1st Year Summer, KAIST) Immersion Camp - GroupGroceries App
-img: assets/img/project/GroupGroceries.png
-redirect: https://github.com/9Gong9/9Gong9_Android
-importance: 5
+title: CSE 442
+description: (2025F, 8th Semester, UW) Dimensionality Reduction Playground
+img: assets/img/project/dim_reduction.png
+redirect: https://dimensionality-reduction-playground-b943b8.pages.cs.washington.edu
+importance: -1
 category: coursework
 ---
 
