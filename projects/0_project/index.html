@@ -3,7 +3,8 @@
 
   <!-- Head -->
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="refresh" content="3; url=/">    <!-- Metadata, OpenGraph and Schema.org -->
     
     <!-- Website verification -->
     <meta name="google-site-verification" content="MARJu3erA7Z6jybcmR5fgSNRNtCNYMAYkk0jidGGr8A">
@@ -17,10 +18,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>submenus | Jina  Kim</title>
+    <title>CSE 442 | Jina  Kim</title>
     <meta name="author" content="Jina  Kim">
-    <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-">
+    <meta name="description" content="(2025F, 8th Semester, UW) Gene-Centric PubMed Publication and Citation Network Visualization">
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
 
 
@@ -46,7 +46,7 @@
     <link rel="shortcut icon" href="/assets/img/cook.png">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://jina0218.github.io/_pages/dropdown/">
+    <link rel="canonical" href="https://jina0218.github.io/projects/0_project/">
 
     <!-- Dark Mode -->
     
@@ -125,12 +125,171 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">submenus</h1>
-            <p class="post-description"></p>
+            <h1 class="post-title">CSE 442</h1>
+            <p class="post-description">(2025F, 8th Semester, UW) Gene-Centric PubMed Publication and Citation Network Visualization</p>
           </header>
 
           <article>
-            
+            <h1 id="groupgroceries-app-code">GroupGroceries App <a href="https://github.com/9Gong9/9Gong9_Android/tree/master" rel="external nofollow noopener" target="_blank">[code]</a>
+</h1>
+
+<blockquote>
+  <p>Team 3</p>
+
+  <p>An Android-based group-buying application for groceries, designed for students and single residents.</p>
+</blockquote>
+
+<hr>
+
+<h2 id="a-team-members">A. Team Members</h2>
+<ul>
+  <li>
+<strong>Yena Park</strong> – Sookmyung Women’s University, Software Convergence</li>
+  <li>
+<strong>Jongeun Park</strong> – KAIST, School of Electrical Engineering</li>
+  <li>
+<strong>Jina Kim</strong> – KAIST, School of Freshman</li>
+</ul>
+
+<hr>
+
+<h2 id="b-development-environment">B. Development Environment</h2>
+<ul>
+  <li>
+<strong>OS</strong> : Android (minSdk: 21, targetSdk: 31)</li>
+  <li>
+<strong>Language</strong> : Kotlin, NestJS</li>
+  <li>
+<strong>IDE</strong> : Android Studio</li>
+  <li>
+<strong>Target Device</strong> : Samsung Galaxy S10</li>
+</ul>
+
+<hr>
+
+<h2 id="c-application-overview">C. Application Overview</h2>
+
+<h3 id="1-sign-up--login">1. Sign Up &amp; Login</h3>
+
+<p><img src="https://user-images.githubusercontent.com/76472415/184139124-cbc4609e-f66a-48c5-b039-8aa822b52315.PNG" alt="3"></p>
+
+<p><strong>Main Features</strong></p>
+<ul>
+  <li>
+<strong>Sign Up</strong>
+    <ul>
+      <li>Register via <strong>email &amp; password</strong> with the “SIGN UP” button.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Login</strong>
+    <ul>
+      <li>Access with <strong>email &amp; password</strong> using the “LOGIN” button.</li>
+      <li>Supports <strong>Kakao social login</strong>.</li>
+      <li>Automatic login if the user has previously logged in.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3 id="2-product-list">2. Product List</h3>
+
+<p><img src="https://user-images.githubusercontent.com/76472415/184139183-eeb65784-5125-4c7a-89cc-2724f827451b.PNG" alt="4"></p>
+
+<p><strong>Main Features</strong></p>
+<ul>
+  <li>
+<strong>Regional Filtering</strong>
+    <ul>
+      <li>Filter products by selecting <strong>city/district/neighborhood</strong>.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Category Filtering</strong>
+    <ul>
+      <li>Filter products by category type.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Search Bar</strong>
+    <ul>
+      <li>Search for specific products by name.</li>
+      <li>Provides <strong>autocomplete suggestions</strong> when searching.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3 id="3-product-details">3. Product Details</h3>
+
+<p><img src="https://user-images.githubusercontent.com/76472415/184139236-e9abc6c6-e55c-47b1-ae61-a638bf6888ef.PNG" alt="5"></p>
+
+<p><strong>Main Features</strong></p>
+<ul>
+  <li>
+<strong>Save to Favorites</strong>
+    <ul>
+      <li>Add products to favorites with the <strong>heart button</strong>.</li>
+      <li>Toggle again to remove from favorites.</li>
+      <li>View saved items in the <strong>Favorites list</strong>.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Join Group Purchase</strong>
+    <ul>
+      <li>Join a group-buy via the “공구 참여하기” (Join Group Purchase) button and proceed with payment.</li>
+      <li>When the <strong>minimum number of participants</strong> is reached, the group resets and a new round begins.</li>
+      <li>View ongoing group-buys in the <strong>Active Participation list</strong>.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3 id="4-user-information">4. User Information</h3>
+
+<p><img src="https://user-images.githubusercontent.com/76472415/184139259-64778529-42e6-4441-91fe-7f8ede65fc78.PNG" alt="6"></p>
+
+<p><strong>Main Features</strong></p>
+<ul>
+  <li>
+<strong>User Profile</strong>
+    <ul>
+      <li>Display profile picture.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Balance</strong>
+    <ul>
+      <li>Check current <strong>point balance</strong>.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Recharge</strong>
+    <ul>
+      <li>Add funds via the <strong>Recharge button</strong>.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Purchase History</strong>
+    <ul>
+      <li>View previously joined group-buys that have already been delivered.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="installation">Installation</h2>
+
+<ol>
+  <li>Initialize the database by sending the following request <strong>once</strong>:<br>
+```bash
+GET “http://domain/item/itemCrawl”</li>
+  <li>This request triggers the server to web scrape sample products from the Emart online mall, process them, and store them in the database in a format compatible with this service.</li>
+</ol>
 
           </article>
 
