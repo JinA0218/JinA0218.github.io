@@ -3,7 +3,7 @@ layout: page
 title: CSE 442
 description: (2025F, 8th Semester, UW) Gene-Centric PubMed Publication and Citation Network Visualization
 img: assets/img/project/gene_citation.png
-redirect: https://bio-graphs-369768.pages.cs.washington.edu
+redirect: https://cse442.pages.cs.washington.edu/25au/a3/bio-graphs
 importance: 0
 category: coursework
 ---
