@@ -22,9 +22,11 @@ I'm a first year PhD student at Princeton Computer Science, advised by [Dr. Elle
 
 During my undergrad, I was incredibly fortunate to conduct research at [KAIST MLAI](https://www.mlai-kaist.com/) and the [University of Washington](https://www.washington.edu/). I’m sincerely grateful to my collaborators and advisors for the supportive and stimulating exchanges that have shaped and strengthened my research journey.
 
-Outside of research, I enjoy cooking with my roommates, reading, camping and hiking, swimming, and traveling with friends. I especially love exploring new places, trying new things, and learning about different cultures and ways of life. 
+Outside of research, I enjoy cooking with my roommates, reading, camping and hiking, swimming, and traveling with friends. I love exploring new places and cultures, meeting people from diverse backgrounds, and exchanging ideas. Happy to [connect](https://x.com/JinaK_0218) 😊!
 
-I love meeting people from diverse backgrounds, exchanging ideas, and exploring potential collaborations. Happy to [connect](https://x.com/JinaK_0218) 😊!
+<!-- I especially love exploring new places, trying new things, and learning about different cultures and ways of life. 
+
+I love meeting people from diverse backgrounds, exchanging ideas, and exploring potential collaborations. Happy to [connect](https://x.com/JinaK_0218) 😊! -->
 
 <!-- This autumn, I’m excited to join the [University of Washington](https://www.washington.edu/) as an exchange student and visiting student in the [Paul G. Allen School of Computer Science & Engineering](https://www.cs.washington.edu/)!  -->
 
