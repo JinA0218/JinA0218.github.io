@@ -1,31 +1,16 @@
 ---
 ---
-@article{jeon2026agentic,
+@misc{jeon2026agentic,
       title={Agentic campaign control for high-throughput de novo binder design},
       author={Jeon, Minkyu and Song, Jinyeop and Kim, Jina and Zhong, Ellen D},
       journal={bioRxiv},
       pages={2026--09},
       year={2026},
-      publisher={Cold Spring Harbor Laboratory}
+      publisher={Cold Spring Harbor Laboratory},
       pdf = {https://www.biorxiv.org/content/10.64898/2026.09.22.753604v2},
       preview = {trex.png},
       code = {https://github.com/ml-struct-bio/T-REX},
       abstract = {Progress in artificial intelligence has produced a rapidly growing ecosystem of methods for de novo protein design. With access to many specialized and often complementary tools, how does one use them effectively, especially with a finite compute budget? Here, we introduce Target-adaptive Rescue–Explore–eXploit (T-REX), an agentic protein binder design framework that orchestrates multiple state-of-the-art protein generative models and structure evaluators. Over the course of a design campaign, T-REX leverages large language model (LLM) agents to reason over accumulating outcomes and decide whether to rescue promising candidates, explore alternative settings, or exploit productive routes, while a deterministic controller validates and schedules proposed actions. Across seven targets, we find that T-REX adaptively allocates its compute across methods in a target-dependent manner and achieves the highest throughput of structurally distinct hits compared to all baselines. These results suggest that adaptive orchestration can complement increasingly powerful protein design models, and we openly release T-REX to support compute-efficient binder design workflows.},
-      selected={true}
-}
-
-@misc{jeon2026agentic,
-      title={Robust Molecular Property Prediction via Densifying Scarce Labeled Data}, 
-      author={Jina Kim* and Jeffrey Willette* and Bruno Andreis* and Sung Ju Hwang},
-      year={2025},
-      eprint={2506.11877},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      pdf = {https://arxiv.org/abs/2506.11877},
-      preview = {robust_ood.png},
-      conference = {GenBio ICML Workshop},
-      code = {https://github.com/JinA0218/drugood-densify},
-      abstract = {A widely recognized limitation of molecular prediction models is their reliance on structures observed in the training data, resulting in poor generalization to out-of-distribution compounds. Yet in drug discovery, the compounds most critical for advancing research often lie beyond the training set, making the bias toward the training data particularly problematic. This mismatch introduces substantial covariate shift, under which standard deep learning models produce unstable and inaccurate predictions. Furthermore, the scarcity of labeled data, stemming from the onerous and costly nature of experimental validation, further exacerbates the difficulty of achieving reliable generalization. To address these limitations, we propose a novel meta-learning-based approach that leverages unlabeled data to interpolate between in-distribution (ID) and out-of-distribution (OOD) data, enabling the model to meta-learn how to generalize beyond the training distribution. We demonstrate significant performance gains on challenging real-world datasets with substantial covariate shift, supported by t-SNE visualizations highlighting our interpolation method.},
       selected={true}
 }
 
