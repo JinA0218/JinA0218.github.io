@@ -133,6 +133,78 @@
 <p>An up-to-date list is available on <a href="https://scholar.google.com/citations?user=R2pIbY8AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>.</p>
 
 <div class="publications">
+  <h2 class="year">2026</h2>
+  <ol class="bibliography"><li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div class="col-sm-2 preview">
+<img id="trexpng" class="preview z-depth-1 rounded myImg" src="/assets/img/publication_preview/trex.png"><div id="trexpng-modal" class="modal2">
+      <span class="closeimg" onclick="document.getElementById('trexpng-modal').style.display='none'">×</span>
+      <div class="myCaption"></div>
+      <img class="modal-content2" id="trexpng-modal-img">
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("trexpng-modal");
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById('trexpng');
+      var modalImg = document.getElementById("trexpng-modal-img");
+      var captionText = modal.getElementsByTagName('div')[0];
+      img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "";
+      }
+      // Get the <span> element that closes the modal
+      var span = modal.getElementsByTagName('span')[0];
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+      modal.onclick = function () {
+        modal.style.display = "none";
+      }
+    </script>
+</div>
+
+  <!-- Entry bib key -->
+  <div id="jeon2026agentic" class="col-sm-8 col-md-9">
+    <!-- Title -->
+    <div class="title">Agentic campaign control for high-throughput de novo binder design</div>
+    <!-- Author -->
+    <div class="author">
+      
+
+      Minkyu Jeon, Jinyeop Song, <em>Jina Kim</em>, and Ellen D Zhong</div>
+
+    <!-- Journal/Book title and date -->
+    
+    
+    <div class="periodical">
+      2026
+    </div>
+    <div class="periodical">
+      
+    </div>
+
+    <!-- Links/Buttons -->
+    <div class="links">
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+      <a href="https://www.biorxiv.org/content/10.64898/2026.09.22.753604v2" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a>
+      <a href="https://github.com/ml-struct-bio/T-REX" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+    </div>
+    
+    <div class="badges">
+    </div>
+
+    <!-- Hidden abstract block -->
+    <div class="abstract hidden">
+      <p>Progress in artificial intelligence has produced a rapidly growing ecosystem of methods for de novo protein design. With access to many specialized and often complementary tools, how does one use them effectively, especially with a finite compute budget? Here, we introduce Target-adaptive Rescue–Explore–eXploit (T-REX), an agentic protein binder design framework that orchestrates multiple state-of-the-art protein generative models and structure evaluators. Over the course of a design campaign, T-REX leverages large language model (LLM) agents to reason over accumulating outcomes and decide whether to rescue promising candidates, explore alternative settings, or exploit productive routes, while a deterministic controller validates and schedules proposed actions. Across seven targets, we find that T-REX adaptively allocates its compute across methods in a target-dependent manner and achieves the highest throughput of structurally distinct hits compared to all baselines. These results suggest that adaptive orchestration can complement increasingly powerful protein design models, and we openly release T-REX to support compute-efficient binder design workflows.</p>
+    </div>
+  </div>
+</div>
+</li></ol>
+
   <h2 class="year">2025</h2>
   <ol class="bibliography">
 <li>
