@@ -24,7 +24,7 @@ During my undergrad, I was incredibly fortunate to conduct research at [KAIST ML
 
 Outside of research, I enjoy cooking with my roommates, reading, camping and hiking, swimming, and traveling with friends. I especially love exploring new places, trying new things, and learning about different cultures and ways of life. 
 
-I love meeting people from diverse backgrounds, exchanging ideas, and exploring potential collaborations. Happy to [connect](https://x.com/jk020218) 😊!
+I love meeting people from diverse backgrounds, exchanging ideas, and exploring potential collaborations. Happy to [connect](https://x.com/JinaK_0218) 😊!
 
 <!-- This autumn, I’m excited to join the [University of Washington](https://www.washington.edu/) as an exchange student and visiting student in the [Paul G. Allen School of Computer Science & Engineering](https://www.cs.washington.edu/)!  -->
 
