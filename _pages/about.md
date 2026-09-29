@@ -18,7 +18,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 Hi!👋
-I'm a first year PhD student at Princeton Computer Science, working with [Dr. Ellen Zhong](https://ezlab.princeton.edu). 
+I'm a first year PhD student at Princeton Computer Science, advised by [Dr. Ellen Zhong](https://ezlab.princeton.edu). 
 
 During my undergrad, I was incredibly fortunate to conduct research at [KAIST MLAI](https://www.mlai-kaist.com/) and the [University of Washington](https://www.washington.edu/). I’m sincerely grateful to my collaborators and advisors for the supportive and stimulating exchanges that have shaped and strengthened my research journey. I love meeting people from diverse backgrounds, exchanging ideas, and exploring potential collaborations. Happy to [connect](https://x.com/jk020218) 😊!
 
