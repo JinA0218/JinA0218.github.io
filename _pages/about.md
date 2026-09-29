@@ -9,7 +9,7 @@ profile:
   image: jinakim.png
   image_circular: false # crops the image to make it circular
   address: >
-    <p>Email: jk1531@princeton.edu</p>
+    <p>jk1531@princeton.edu</p>
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
