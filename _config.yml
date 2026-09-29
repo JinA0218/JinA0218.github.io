@@ -8,7 +8,7 @@ middle_name:
 last_name: Kim
 chinese_last_name: 김
 chinese_first_name: 지나
-email: jinakim@kaist.ac.kr
+email: jk1531@princeton.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >

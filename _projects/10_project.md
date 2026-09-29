@@ -13,7 +13,7 @@ category: presentation
     </div>
 </div>
 <div class="caption">
-    For access to the slides, please contact jinakim@kaist.ac.kr
+    For access to the slides, please contact jk1531@princeton.edu
 </div>
 
 Please free to reach out if you're interested in discussing ideas or potential collaboration! 😊
