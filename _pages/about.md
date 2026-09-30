@@ -20,7 +20,7 @@ social: true  # includes social icons at the bottom of the page
 Hi!👋
 I'm a first year PhD student at Princeton Computer Science, advised by [Dr. Ellen Zhong](https://ezlab.princeton.edu). 
 
-During my undergrad, I was incredibly fortunate to conduct research at [KAIST MLAI](https://www.mlai-kaist.com/) and the [University of Washington](https://www.washington.edu/). I’m sincerely grateful to my collaborators and advisors for the supportive and stimulating exchanges that have shaped and strengthened my research journey.
+I earned my bachelor’s degree in Computer Science at [KAIST](https://www.kaist.ac.kr/en/), and during my undergraduate years, I was incredibly fortunate to conduct research at [KAIST MLAI](https://www.mlai-kaist.com/) and the [University of Washington](https://www.washington.edu/). I’m sincerely grateful to my collaborators and advisors for the supportive and stimulating exchanges that have shaped and strengthened my research journey.
 
 Outside of research, I enjoy cooking with my roommates, reading, camping and hiking, swimming, and traveling with friends. I love exploring new places and cultures, meeting people from diverse backgrounds, and exchanging ideas. Happy to [connect](https://x.com/JinaK_0218)! 😊
 
