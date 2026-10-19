@@ -606,10 +606,11 @@ footer.sticky-bottom {
   display: flex;
   align-items: center;
 }
-.projects .grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 10px;
+.projects .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  align-items: start;
 }
 .projects .grid-sizer {
   display: none;
@@ -617,6 +618,10 @@ footer.sticky-bottom {
 .projects .grid-item {
   width: 250px;
   margin-bottom: 10px;
+}
+.projects .project-grid .grid-item {
+  width: auto;
+  margin-bottom: 0;
 }
 .projects h2.category {
   color: var(--global-divider-color);
