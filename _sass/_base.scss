@@ -524,7 +524,17 @@ footer.sticky-bottom {
     }
   }
 
-  .grid-sizer,
+  // lay cards out side by side even before (or without) masonry
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 10px;
+  }
+
+  .grid-sizer {
+    display: none;
+  }
+
   .grid-item {
     width: 250px;
     margin-bottom: 10px;

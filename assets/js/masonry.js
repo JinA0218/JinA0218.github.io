@@ -9,4 +9,8 @@ $(document).ready(function() {
   $grid.imagesLoaded().progress( function() {
     $grid.masonry('layout');
   });
+  // Re-layout once fonts and everything else have finished loading
+  $(window).on('load', function() {
+    $grid.masonry('layout');
+  });
 });
