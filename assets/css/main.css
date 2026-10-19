@@ -606,7 +606,14 @@ footer.sticky-bottom {
   display: flex;
   align-items: center;
 }
-.projects .grid-sizer,
+.projects .grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 10px;
+}
+.projects .grid-sizer {
+  display: none;
+}
 .projects .grid-item {
   width: 250px;
   margin-bottom: 10px;
