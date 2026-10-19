@@ -3,7 +3,7 @@ layout: page
 title: selected projects
 permalink: /projects/
 description: Coursework, Presentations (Idea Proposal etc), Hackathons, and Beyond.
-nav: false
+nav: true
 nav_order: 2
 display_categories: [coursework, presentation, hackathon]
 horizontal: false
