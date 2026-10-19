@@ -524,11 +524,12 @@ footer.sticky-bottom {
     }
   }
 
-  // lay cards out side by side even before (or without) masonry
-  .grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 10px;
+  // multiple cards per row with plain CSS grid (no masonry)
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+    align-items: start;
   }
 
   .grid-sizer {
@@ -538,6 +539,11 @@ footer.sticky-bottom {
   .grid-item {
     width: 250px;
     margin-bottom: 10px;
+  }
+
+  .project-grid .grid-item {
+    width: auto;
+    margin-bottom: 0;
   }
 
   h2.category {
